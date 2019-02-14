@@ -24,13 +24,6 @@ $countOfSuccesfulFields = 0;
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {/*copied from www.w3school.com */
   session_start();
-  if (empty($_POST["name"])) {
-    $nameErr = "First name is required";
-  } else {
-    $name = test_input($_POST["name"]);
-    $_SESSION["name"] = $name;
-    $countOfSuccesfulFields ++;
-  }
   
   if (empty($_POST["pass"])) {
     $passErr = "Last name is required";
@@ -51,11 +44,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {/*copied from www.w3school.com */
     $countOfSuccesfulFields ++;
   }
   
-  if($countOfSuccesfulFields == 3)
+  if($countOfSuccesfulFields == 2)
   {
         $_SESSION["loggedIn"] = 0;
         while($row = $result->fetch_assoc()) 
-            if($row["name"] == $name && $row["pass"] = $pass && $row["email"] == $email)
+            if($row["pass"] = $pass && $row["email"] == $email)
             {
                 $_SESSION["loggedIn"] = 1;
                 header('Location: index.html');
