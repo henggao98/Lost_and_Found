@@ -48,9 +48,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {/*copied from www.w3school.com */
   {
         $_SESSION["loggedIn"] = 0;
         while($row = $result->fetch_assoc()) 
-            if($row["pass"] = $pass && $row["email"] == $email)
+            if($row["Pass"] == $pass && $row["Email"] == $email)
             {
                 $_SESSION["loggedIn"] = 1;
+                $_SESSION["id"] = $row["ID"];
                 header('Location: index.html');
             }
         
