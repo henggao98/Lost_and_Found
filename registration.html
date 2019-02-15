@@ -1,0 +1,29 @@
+<html>
+
+Registration form.
+<form method="post" action="registration.php">
+  <fieldset>
+    <legend>Personal information:</legend>
+    First name:<br>
+    <input type="text" name="name" value="<?php echo $name;?>">
+    <span class="error">* <?php echo $nameErr;?></span>
+    <br>
+    Email:<br>
+    <input type="text" name="email" value="<?php echo $email;?>">
+    <span class="error">* <?php echo $emailErr;?></span>
+    <br>
+    Password:<br>
+    <input type="password" name="pass">
+    <span class="error">* <?php echo $passErr;?></span>
+    <br>
+    Repeat Password:<br>
+    <input type="password" name="pass2">
+    <span class="error">* <?php echo $pass2Err;?></span>
+    <br>
+    <br>
+    <input type="submit" value="Submit">
+  </fieldset>
+</form>
+
+
+</html>
