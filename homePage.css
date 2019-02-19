@@ -104,6 +104,7 @@ i {
     border-width: 0 2px 2px 0;
     display: inline-block;
     padding: 6px;
+	
 }
 
 .down {
@@ -118,18 +119,17 @@ i {
 
 .dropdown .dropbtn {
     cursor: pointer;
-    font-size: 16px;  
-	font-weight: bold;
-	font-family: Helvetica;
     border: none;
     outline: none;
-    color: #FFFFFF;
     padding: 14px 16px;
     background-color: inherit;
+	border-radius: 50px;
+	margin-bottom: 6px;
 }
 
 .dropdown:hover .dropbtn:hover, .dropbtn:focus {
-    background-color: #F37E3D;
+    background-color: #FF6252;
+	box-shadow: 0 4px 4px 0 rgba(58, 8, 95, 0.2), 0 4px 4px 0 rgba(0, 0, 0, 0.2);
 }
 
 .dropdown-content {
