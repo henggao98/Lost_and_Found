@@ -1,36 +1,36 @@
 .background {
     background-size: cover, contain;
     background-repeat: no-repeat;
-    height: auto;
+	height: auto;
 }
 
 .logo {
-    width: 35%;
-    margin-top: 2%;
+	width: 35%;
+	margin-top: 2%;
     margin-left: 37%;
 }
 
 .buttons {
-    background-color: #FFFAE5;
-    -moz-border-radius: 10px;
-    -webkit-border-radius: 10px;
-    border-radius: 50px;
-    border: 3px solid #FFBB33;
-    display: inline-block;
-    cursor: pointer;
-    color: #FFBB33;
-    width: 400px;
-    height: 80px;
-    text-align: center;
-    line-height: 80px;
-    font-family: Helvetica;
-    font-size: 25px;
-    font-weight: bold;
-    outline: none;
+	background-color: #FFFAE5;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 50px;
+	border: 3px solid #FFBB33;
+	display: inline-block;
+	cursor: pointer;
+	color: #FFBB33;
+	width: 400px;
+	height: 80px;
+	text-align: center;
+	line-height: 80px;
+	font-family: Helvetica;
+	font-size: 25px;
+	font-weight: bold;
+	outline: none;
 }
 
 .buttons:hover {
-    box-shadow: 0 10px 50px 0 rgba(255, 128, 0, 0.2), 0 10px 50px 0 rgba(0,0,0,0.2);
+	box-shadow: 0 10px 50px 0 rgba(255, 128, 0, 0.2), 0 10px 50px 0 rgba(0,0,0,0.2);
 }
 
 .buttons:active {
@@ -38,65 +38,65 @@
 }
 
 .lostButtonFloated {
-    float: left;
+	float: left;
     margin-left: 15%;
-    margin-top: 1%;
-    margin-bottom: 0%;
+	margin-top: 1%;
+	margin-bottom: 0%;
 }
 
 .foundButtonFloated {
-    float: right;
+	float: right;
     margin-right: 15%;
-    margin-top: 1%;
-    margin-bottom: 0%;
+	margin-top: 1%;
+	margin-bottom: 0%;
 }
 
 .locationButton {
-    background-color: #FFFAE5;
-    -moz-border-radius: 10px;
-    -webkit-border-radius: 10px;
-    border-radius: 50px;
-    border: 3px solid #F37E3D;
-    display: inline-block;
-    cursor: pointer;
-    color: #F37E3D;
-    width: 500px;
-    height: 80px;
-    text-align: center;
-    line-height: 80px;
-    font-family: Helvetica;
-    font-size: 25px;
-    font-weight: bold;
-    outline: none;
-    float: center;
-    margin-top: 2%;
-    margin-bottom: 2%;
+	background-color: #FFFAE5;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 50px;
+	border: 3px solid #F37E3D;
+	display: inline-block;
+	cursor: pointer;
+	color: #F37E3D;
+	width: 500px;
+	height: 80px;
+	text-align: center;
+	line-height: 80px;
+	font-family: Helvetica;
+	font-size: 25px;
+	font-weight: bold;
+	outline: none;
+	float: center;
+	margin-top: 2%;
+	margin-bottom: 2%;
 }
 
 .locationButton:hover {
-    box-shadow: 0 10px 50px 0 rgba(255, 128, 0, 0.2), 0 10px 50px 0 rgba(0,0,0,0.2);
+	box-shadow: 0 10px 50px 0 rgba(255, 128, 0, 0.2), 0 10px 50px 0 rgba(0,0,0,0.2);
 }
 .locationButton:active {
     top: 1px;
 }
 
 .loginButton {
-    width: 40px;
-    height: 30px;
-    float: right;
-    margin-top: 20px;
+	width: 40px;
+	height: 30px;
+	float: right;
+	margin-top: 20px;
     margin-right: 20px;
-    margin-left: 20px;
-    background-color: #FFFAE5;
+	margin-left: 20px;
+	background-color: #FFFAE5;
     border-radius: 50px;
-    border: 2px solid #FFBB33;
-    display: inline-block;
-    cursor: pointer;
-    outline: none;
+	border: 2px solid #FFBB33;
+	display: inline-block;
+	cursor: pointer;
+	outline: none;
 }
 
 .loginButton:hover {
-    box-shadow: 0 6px 60px 0 rgba(58, 8, 95, 0.2), 0 6px 60px 0 rgba(0, 0, 0, 0.2);
+	box-shadow: 0 6px 60px 0 rgba(58, 8, 95, 0.2), 0 6px 60px 0 rgba(0, 0, 0, 0.2);
 }
 
 i {
@@ -104,6 +104,7 @@ i {
     border-width: 0 2px 2px 0;
     display: inline-block;
     padding: 6px;
+	
 }
 
 .down {
@@ -118,24 +119,23 @@ i {
 
 .dropdown .dropbtn {
     cursor: pointer;
-    font-size: 16px;  
-    font-weight: bold;
-    font-family: Helvetica;
     border: none;
     outline: none;
-    color: #FFFFFF;
     padding: 14px 16px;
     background-color: inherit;
+	border-radius: 50px;
+	margin-bottom: 6px;
 }
 
 .dropdown:hover .dropbtn:hover, .dropbtn:focus {
-    background-color: #F37E3D;
+    background-color: #FF6252;
+	box-shadow: 0 4px 4px 0 rgba(58, 8, 95, 0.2), 0 4px 4px 0 rgba(0, 0, 0, 0.2);
 }
 
 .dropdown-content {
-    width: 100%;
-    height: 60px;
-    display: none;
+	width: 100%;
+	height: 60px;
+	display: none;
     background-color: #FFFAE5;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
