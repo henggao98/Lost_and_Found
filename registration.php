@@ -20,7 +20,7 @@ $sql = "SELECT Email FROM Users";
 $email_check = $conn->query($sql);
 
 
-
+$isTaken = false;
 $name = $lname = $email = "";
 $nameErr = $emailErr = $passErr = "";
 $countOfSuccesfulFields = 0;
@@ -73,11 +73,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {/*copied from www.w3school.com */
   }
   else{
     $email = test_input($_POST["email"]);
-    $isTaken = false;
-    while($row = $email_check->fetch_assoc()) 
+    
+    while($row = $email_check->fetch_assoc())
+    {
       if($row["Email"] == $email)
         $isTaken = true;
-    if(isTaken)
+    }
+
+    if($isTaken)
     {
       $emailErr = "Email has already been taken";
     }
@@ -90,9 +93,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {/*copied from www.w3school.com */
   
   if($countOfSuccesfulFields == 4)
   {
-        
+    $hashPass = password_hash($pass, PASSWORD_DEFAULT);
     $insertQuery = "INSERT INTO Users (Name, Email, Pass)
-                VALUES ('{$name}', '{$email}', '{$pass}')";
+                VALUES ('{$name}', '{$email}', '{$hashPass}')";
 
     if($conn->query($insertQuery) === TRUE)
       echo "New record created successfully";
@@ -112,36 +115,3 @@ function test_input($data) {/*copied from www.w3school.com */
 }
 
 ?>
-
-
-<!DOCTYPE html>
-<html>
-<body>
-
-Registration form.
-<form method="post" action="/lost/Lost_and_Found/registration.php">
-  <fieldset>
-    <legend>Personal information:</legend>
-    First name:<br>
-    <input type="text" name="name" value="<?php echo $name;?>" required>
-    <span class="error">* <?php echo $nameErr;?> </span>
-    <br>
-    Email:<br>
-    <input type="email" name="email" value="<?php echo $email;?>" required>
-    <span class="error">* <?php echo $emailErr;?> </span>
-    <br>
-    Password:<br>
-    <input type="password" name="pass" required>
-    <span class="error">* <?php echo $passErr;?> </span>
-    <br>
-    Repeat Password:<br>
-    <input type="password" name="pass2" required>
-    <span class="error">* <?php echo $pass2Err;?> ></span>
-    <br>
-    <br>
-    <input type="submit" value="Submit">
-  </fieldset>
-</form>
-
-</body>
-</html>

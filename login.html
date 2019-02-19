@@ -1,0 +1,25 @@
+<!-- /lost/Lost_and_Found/registration.php */ -->
+<!DOCTYPE html>
+<html>
+<body>
+
+Registration form.<br>
+<?php echo $_SESSION["loginError"]; ?>
+<form method="post" action="login.php">
+  <fieldset>
+    <legend>Personal information:</legend>
+    Email:<br>
+    <input type="email" name="email" required>
+    <span class="error">* <?php echo $_SESSION["emailErr"];?> </span>
+    <br>
+    Password:<br>
+    <input type="password" name="pass" required>
+    <span class="error">* <?php echo $_SESSION["passErr"];?> </span>
+    <br>
+    <br>
+    <input type="submit" value="Submit">
+  </fieldset>
+</form>
+
+</body>
+</html>

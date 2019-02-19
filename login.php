@@ -14,46 +14,55 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
 
-$sql = "SELECT Name, Pass, Email FROM Users";
+$sql = "SELECT Pass, Email FROM Users";
 $result = $conn->query($sql);
 
 
-$name = $pass = $email = "";
-$nameErr = $passErr = $emailErr = "";
+$pass = $email = "";
+$passErr = $emailErr = "";
 $countOfSuccesfulFields = 0;
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {/*copied from www.w3school.com */
   session_start();
   
-  if (empty($_POST["pass"])) {
-    $passErr = "Last name is required";
-  } else {
-    $pass = test_input($_POST["pass"]);
-    $_SESSION["pass"] = $pass;
-    $countOfSuccesfulFields ++;
-  }
-  
+  // EMAIL
+  /*
   if (empty($_POST["email"])) {
     $emailErr = "Email is required";
-  } else if (!filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)) {/*copied from www.w3school.com */
+  } else if (!filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)) {
     $emailErr = "Invalid email format";
   }
-  else{
+  else{*/
     $email = test_input($_POST["email"]);
-    $_SESSION["email"] = $email;
     $countOfSuccesfulFields ++;
-  }
+  //}
+
+  // PASS
+  /*if (empty($_POST["pass"])) {
+    $passErr = "Last name is required";
+  } else {*/
+    $pass = test_input($_POST["pass"]);
+    $countOfSuccesfulFields ++;
+  //}
+  
+  
   
   if($countOfSuccesfulFields == 2)
   {
-        $_SESSION["loggedIn"] = 0;
-        while($row = $result->fetch_assoc()) 
-            if($row["Pass"] == $pass && $row["Email"] == $email)
-            {
-                $_SESSION["loggedIn"] = 1;
-                $_SESSION["id"] = $row["ID"];
-                header('Location: index.html');
-            }
+    $_SESSION["loggedIn"] = 0;
+    while($row = $result->fetch_assoc()) 
+      if($row["Email"] == $email && password_verify($pass, $row["Pass"]))
+      {
+          $_SESSION["loggedIn"] = 1;
+          $_SESSION["id"] = $row["ID"];
+          $_SESSION["email"] = $email;
+          header('Location: index.html');
+      }
+    if($_SESSION["loggedIn"] == 0)
+    {
+      $_SESSION["loginError"] = "Wrong email or password";
+      header('Location: login.html');
+    }
         
                 
         

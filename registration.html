@@ -1,23 +1,26 @@
+<!-- /lost/Lost_and_Found/registration.php */ -->
+<!DOCTYPE html>
 <html>
+<body>
 
 Registration form.
 <form method="post" action="registration.php">
   <fieldset>
     <legend>Personal information:</legend>
     First name:<br>
-    <input type="text" name="name" value="<?php echo $name;?>">
-    <span class="error">* <?php echo $nameErr;?></span>
+    <input type="text" name="name" value="<?php echo $name;?>" required>
+    <span class="error">* <?php echo $nameErr;?> </span>
     <br>
     Email:<br>
-    <input type="text" name="email" value="<?php echo $email;?>">
-    <span class="error">* <?php echo $emailErr;?></span>
+    <input type="email" name="email" value="<?php echo $email;?>" required>
+    <span class="error">* <?php echo $emailErr;?> </span>
     <br>
     Password:<br>
-    <input type="password" name="pass">
-    <span class="error">* <?php echo $passErr;?></span>
+    <input type="password" name="pass" required>
+    <span class="error">* <?php echo $passErr;?> </span>
     <br>
     Repeat Password:<br>
-    <input type="password" name="pass2">
+    <input type="password" name="pass2" required>
     <span class="error">* <?php echo $pass2Err;?></span>
     <br>
     <br>
@@ -25,5 +28,5 @@ Registration form.
   </fieldset>
 </form>
 
-
+</body>
 </html>
