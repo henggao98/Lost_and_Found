@@ -1,3 +1,13 @@
 h1{
 color:green;
 }
+
+body{
+    text-align:center;
+    color:white;
+    background:black;
+    padding:5px;
+    font-family:cursive;
+    font-size:18px;
+    margin-top:90px;
+}
