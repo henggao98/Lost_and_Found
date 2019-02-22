@@ -1,18 +1,5 @@
 <?php
-// define variables and set to empty values
-
-$servername = "dbhost.cs.man.ac.uk";
-$username = "j78532kt";
-$password = "kaloyandb";
-$dbname = "2018_comp10120_z8";
-
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-} 
+include_once 'db_connection.php';
 
 $sql = "SELECT Pass, Email FROM Users";
 $result = $conn->query($sql);
