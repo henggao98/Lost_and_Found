@@ -13,21 +13,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {/*copied from www.w3school.com */
   session_start();
   
   // EMAIL
-  /*
+  
   if (empty($_POST["email"])) {
     $emailErr = "Email is required";
   } else if (!filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)) {
     $emailErr = "Invalid email format";
   }
-  else{*/
+  else{
     $email = test_input($_POST["email"]);
     $countOfSuccesfulFields ++;
   //}
 
   // PASS
-  /*if (empty($_POST["pass"])) {
+  if (empty($_POST["pass"])) {
     $passErr = "Last name is required";
-  } else {*/
+  } else {
     $pass = test_input($_POST["pass"]);
     $countOfSuccesfulFields ++;
   //}

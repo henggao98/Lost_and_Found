@@ -4,22 +4,51 @@ include_once 'db_connection.php';
 
 $sql = "SELECT ItemName, Descript, Location, Date FROM Items";
 $result = $conn->query($sql);
+
+
 $category = "";
 $location = "";
+$searched = "";
 
-if(isset($_GET["category"]))
-{
-  $category = $_GET['category'];
-}
+session_start();
+if(!empty($_SESSION["category"]))
+  $category = $_SESSION["category"];
+if(!empty($_SESSION["search"]))
+  $searched = $_SESSION["search"];
+if(!empty($_SESSION["location"]))
+  $location = $_SESSION["location"];
 
-if(isset($_GET["location"]))
-{
-  $location = $_GET["location"];
-}
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") 
 {
-    echo "Probe";
+  if(isset($_POST["search"])){
+
+    $searched = test_input($_POST["search"]);
+    $_SESSION["search"] = $searched;
+    //echo "1";
+  }
+  
+  elseif(isset($_POST["category"])){
+
+    $category = $_POST["category"];
+    $_SESSION["category"] = $category;
+    //echo "2";
+  }
+  
+  elseif(isset($_POST["location"])){
+
+    $location = $_POST["location"];
+    $_SESSION["location"] = $location;
+    //echo "3";
+  }
+
+}
+
+function test_input($data) {
+  $data = trim($data);
+  $data = stripslashes($data);
+  $data = htmlspecialchars($data);
+  return $data;
 }
 
 ?>
@@ -33,7 +62,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
   <script>
     function autoSubmitCategory()
     {
-        var categoryFormObject = document.forms['categotyForm'];
+        var categoryFormObject = document.forms['categoryForm'];
         categoryFormObject.submit();
     }
     function autoSubmitLocation()
@@ -48,11 +77,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
 <div class="topnav">
   <a href="#" style="float:right">Home</a>
   <a href="#" style="float:right">Account</a>
-  <form name="search" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
-    <input type="text" name="search" placeholder="Search..">
-    <input type="submitSearch" 
+  <form name="searchForm" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
+    <input type="text" name="search" placeholder="Search.." value="<?php echo($_SESSION['search']); ?>">
+    <input type="submit" 
        style="position: absolute; left: -9999px; width: 1px; height: 1px;"
-       tabindex="-1" />
+       tabindex="-1"  name="submitSearch" value="<?php echo $searched; ?>" />
   </form>
 </div>
 
@@ -60,7 +89,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
   <div class="leftcolumn">
 
       <div class="card">
-        <form name="categotyForm" id="categotyForm">
+        <form name="categoryForm" id="categoryForm" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
           <h2>Category</h2>
           <label class="container">View All
             <input type="radio" name="category" <?php if ($category == "") { ?>checked='checked' <?php } ?>value="" onChange="autoSubmitCategory();">
@@ -90,7 +119,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
       </div>
 
       <div class="card">
-        <form name="locationForm" id="locationForm">
+        <form name="locationForm" id="locationForm" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
           <h2>Location</h2>
           <label class="container">View All
             <input type="radio" name="location" <?php if ($location == "") { ?>checked='checked' <?php } ?>value="" onChange="autoSubmitLocation();">
@@ -105,7 +134,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
             <span class="checkmark"></span>
           </label>
           <label class="container">Street
-            <input type="radio" name="location" <?php if ($location == "Stree") { ?>checked='checked' <?php } ?>value="Street" onChange="autoSubmitLocation();">
+            <input type="radio" name="location" <?php if ($location == "Street") { ?>checked='checked' <?php } ?>value="Street" onChange="autoSubmitLocation();">
             <span class="checkmark"></span>
           </label>
           <label class="container">Restaurant
