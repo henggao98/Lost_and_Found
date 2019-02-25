@@ -13,10 +13,18 @@ $searched = "";
 session_start();
 if(!empty($_SESSION["category"]))
   $category = $_SESSION["category"];
+else 
+  $_SESSION["category"] = "";
+
 if(!empty($_SESSION["search"]))
   $searched = $_SESSION["search"];
+else
+  $_SESSION["search"] = "";
+
 if(!empty($_SESSION["location"]))
   $location = $_SESSION["location"];
+else
+  $_SESSION["location"] = "";
 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") 
