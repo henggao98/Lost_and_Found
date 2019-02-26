@@ -2,8 +2,34 @@
 // define variables and set to empty values
 include_once 'db_connection.php';
 
-$sql = "SELECT ItemName, Descript, Location, Date FROM Items";
+$sql = "SELECT ID, ItemName, Descript, Location, Date FROM Items";
 $result = $conn->query($sql);
+
+$totalItems = mysqli_num_rows($result);
+$itemsPerPage = 3;
+$totalPages = ceil($totalItems / $itemsPerPage);
+
+// Check that the page number is set.
+if(!isset($_GET['page'])){
+    $_GET['page'] = 0;
+}else{
+    // Convert the page number to an integer
+    $_GET['page'] = (int)$_GET['page'];
+
+}
+
+
+
+// If the page number is less than 1, make it 1.
+if($_GET['page'] < 1){
+    $_GET['page'] = 1;
+    // Check that the page is below the last page
+}else if($_GET['page'] > $totalPages){
+    $_GET['page'] = $totalPages;
+}
+
+$currentPage = (int)$_GET['page'];
+
 
 
 $category = "";
@@ -164,14 +190,9 @@ function test_input($data) {
 <div class="footer">
   <div class="center">
   <div class="pagination">
-  <a href="#">&laquo;</a>
-  <a href="#" class="active">1</a>
-  <a href="#">2</a>
-  <a href="#">3</a>
-  <a href="#">4</a>
-  <a href="#">5</a>
-  <a href="#">6</a>
-  <a href="#">&raquo;</a>
+  
+  <?php include 'pagination.php'; ?>
+
   </div>
 </div>
 </div>
