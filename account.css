@@ -1,13 +1,93 @@
-h1{
-color:green;
-}
-
 body{
-    text-align:center;
-    color:white;
-    background:black;
-    padding:5px;
-    font-family:cursive;
+    Color:white;
+    padding:20px;
+    font-family: Arial;
     font-size:18px;
     margin-top:90px;
+ background-image: url("https://tpc.googlesyndication.com/simgad/1532538639158191695?w=200&h=200");
+}
+
+
+
+h1{
+Color:white;
+}
+
+#b1 {
+  border: 2px solid black;
+  outline: #4CAF50 solid 10px;
+  margin: auto;  
+  padding: 10px;
+  text-align: center;
+
+background-color:red
+border: 1px solid powderblue;
+}
+
+#b2 {
+  border: 2px solid black;
+  outline: #4CAF50 solid 10px;
+  margin: auto;  
+  padding: 20px;
+  text-align: center;
+
+background-color:grey;
+border: 1px solid powderblue;
+}
+
+#b3 {
+  border: 2px solid black;
+  outline: #4CAF50 solid 10px;
+  margin: auto;  
+  padding: 20px;
+  text-align: center;
+
+background-color:purple;
+border: 1px solid powderblue;
+}
+
+#b4{ 
+  border: 2px solid black;
+  outline: #4CAF50 solid 10px;
+  margin: auto;  
+  padding: 20px;
+  text-align: center;
+
+Background-color:pink;
+border: 1px solid powderblue;
+
+}
+
+#footer{
+Margin:20;
+background-color:#FFA500;
+clear:both;
+text-align:center;
+}
+
+
+
+
+
+.header img {
+  float: left;
+  width: 100px;
+  height: 100px;
+  background: #555;
+}
+
+.header h1 {
+  Text-align:center;
+  color:green;
+  position: relative;
+  top: 18px;
+  left: 10px;
+}
+
+.header nav{
+  Text-align:right;
+}
+
+#s{
+ Font-size:30
 }
