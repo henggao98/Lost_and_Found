@@ -1,7 +1,15 @@
 .background {
-    background-size: cover, contain;
-    background-repeat: no-repeat;
-	height: auto;
+	-webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+	background-repeat: no-repeat;
+	width: auto;
+	height: 640px;
+}
+
+@media (min-width: 0), (min-height: 640px) {
+    background { background-size: auto; }
 }
 
 .logo {
@@ -19,14 +27,15 @@
 	display: inline-block;
 	cursor: pointer;
 	color: #FFBB33;
-	width: 400px;
-	height: 80px;
+	width: 30%;
+	height: 75px;
 	text-align: center;
-	line-height: 80px;
+	line-height: 75px;
 	font-family: Helvetica;
-	font-size: 25px;
+	font-size: 1.7vw;
 	font-weight: bold;
 	outline: none;
+	margin-top: 2%;
 }
 
 .buttons:hover {
@@ -37,18 +46,16 @@
     top: 1px;	
 }
 
-.lostButtonFloated {
-	float: left;
-    margin-left: 15%;
-	margin-top: 1%;
-	margin-bottom: 0%;
+.lostButton {
+	margin-right: 2%;
 }
 
-.foundButtonFloated {
-	float: right;
-    margin-right: 15%;
-	margin-top: 1%;
-	margin-bottom: 0%;
+.foundButton {
+	margin-left: 2%;
+}
+
+.buttonContainer {
+	display: inline;
 }
 
 .locationButton {
@@ -60,17 +67,17 @@
 	display: inline-block;
 	cursor: pointer;
 	color: #F37E3D;
-	width: 500px;
-	height: 80px;
+	width: 35%;
+	height: 75px;
 	text-align: center;
-	line-height: 80px;
+	line-height: 75px;
 	font-family: Helvetica;
-	font-size: 25px;
+	font-size: 1.7vw;
 	font-weight: bold;
 	outline: none;
 	float: center;
 	margin-top: 2%;
-	margin-bottom: 2%;
+	margin-bottom: 0%;
 }
 
 .locationButton:hover {
@@ -85,7 +92,7 @@
 	height: 30px;
 	float: right;
 	margin-top: 20px;
-    margin-right: 20px;
+    margin-right: 30px;
 	margin-left: 20px;
 	background-color: #FFFAE5;
     border-radius: 50px;
@@ -96,7 +103,7 @@
 }
 
 .loginButton:hover {
-	box-shadow: 0 6px 60px 0 rgba(58, 8, 95, 0.2), 0 6px 60px 0 rgba(0, 0, 0, 0.2);
+	box-shadow: 0 7px 40px 0 rgba(58, 8, 95, 0.2), 0 7px 40px 0 rgba(0, 0, 0, 0.2);
 }
 
 i {
@@ -144,6 +151,5 @@ i {
 .show {
     display: block;
 }
-
 
 
