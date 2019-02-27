@@ -8,133 +8,167 @@
   $username = "j78532kt";
   $password = "kaloyandb";
   $dbname = "2018_comp10120_z8";
-  $conn = new mysqli($servername, $username, $password);
+  $conn = new mysqli($servername, $username, $password, $dbname);
 
 //Check the connection
 
   if (!$conn)
   {
     die("Connection failed: " . mysqli_connect_error());
-  } //if
+  }//if
+
 
 //Check that the user is logged in, if not disconnect
 
-  if($_SESSION["loggedIn"] == 0)
+if($_SESSION["loggedIn"] == 0)
   {
     echo "You are not logged in";
-    $conn->close;
+    $conn->close();
   }//if
 
-//A variable representing of the account has been found
-  $accountFound = false;
 
-//Set up an SQL query to select user information, and display if the correct user
+//Set up an SQL query to select user information, check if the account
+//can be found and display the correct user information if so
+
+  $accountFound = false;
   $sql = "SELECT ID, Name, Email, Rating, Phone FROM Users";
   $userResult = $conn->query($sql);
-  echo "Account information: <br>";
-
+  $sessionId = $_SESSION["id"];
+ 
   while($userRow = $userResult->fetch_assoc())
   {
-    if($userRow["ID"] == $_SESSION["id"])
+    if($userRow["ID"] == $sessionId)
     {
-      echo "Your account information: <br>";
+      echo "Your account information: <br><br>";
       echo "Name: " . $userRow["Name"] . "<br>";
       echo "Email: " . $userRow["Email"] . "<br>";
-      echo "Rating: " . $userRow["Rating"] . "<br>";
-      echo "Phone: " . $userRow["Phone"] . "<br>";
+      if($userRow["Rating"] == null)
+        echo "Rating: You haven't got a rating yet <br>";
+      else
+        echo "Rating: " . $userRow["Rating"] . "<br>";
+      if($userRow["Phone"] == null)
+        echo "Phone: Implement a way to input phone <br><br>";
+      else
+        echo "Phone: " . $userRow["Phone"] . "<br><br>";
       $accountFound = true;
     }//if
   }//while
 
-  if(!accountFound)
+  if(!$accountFound)
   {
     echo "Your account cannot be found, please contact Kaloyan";
-    $conn->close;
+    $conn->close();
   }//if
 
-//Select any relevant found items on the site, the following vaiable shows if any items
-//have been found
-  
-  $itemNumber = 1;
+
+//Select any relevant found items on the site and display it's information
+ 
+  $foundItems = 0;
   $sql = "SELECT ID, FinderId, ItemName, Descript, Location, Date FROM Items";
   $itemsResult = $conn->query($sql);
 
-  echo "Found items: <br>";
-
+  echo "Found items: <br><br>";
   while($itemsRow = $itemsResult->fetch_assoc())
   {
-    if($itemsRow["FinderId"] == $_SESSION["id"])
+    if($itemsRow["FinderId"] == $sessionId)
     {
-      echo "Item " . $itemNumber . "<br>";
-      echo "Item name: " . $itemsRow["ItemName"] . "<br>";
-      echo "Decription: " . $itemsRow["Descript"] . "<br>";
-      echo "Location: " . $itemsRow["Location"] . "<br>";
-      echo "Date found: " . $itemsRow["Date"] . "<br>";
-      $itemNumber++;
+      $isMatched = false;   
+      $sql = "SELECT FinderID, MislayerID, ItemID FROM Matched";
+      $matchedResult = $conn->query($sql);
+
+      while($matchedRow = $matchedResult->fetch_assoc())
+      {
+        if($matchedRow["FinderID"] == $sessionId && $matchedRow["ItemID"] == $itemsRow["ID"])
+        {
+          $isMatched = true;
+        }//if
+      }//while
+        
+      if(!$isMatched)
+      {
+        $foundItems++;
+        echo "Item: " . $foundItems . "<br>";
+        printItem($itemsRow["ItemName"], $itemsRow["Descript"], $itemsRow["Location"], 
+                  $itemsRow["Date"]);
+      }//if 
     }//if
   }//while
 
-  if($itemNumber == 1)
-  {
+  if($foundItems == 0)
     echo "You haven't found anything";
-  }//if
 
-//Select any matched items, the following variables indicates how many matches found
-  $matchedItemNumber = 1;
+ 
+//Select any matched items and display them
+
+  $matchedItems = 0;
   $sql = "SELECT FinderID, MislayerID, ItemID FROM Matched";
   $matchedResult = $conn->query($sql);
-
-  echo "Matched items: <br>";
+  echo "Matched items: <br><br>";
   
   while($matchedRow = $matchedResult->fetch_assoc())
   {
-    if($matchedRow["FinderID"] == $_SESSION["id"] || $matchedRow["FinderID"] ==
-    $_SESSION["id"])
+    if($matchedRow["MislayerID"] == $sessionId || $matchedRow["FinderID"] == $sessionId)
     {
+      $sql = "SELECT ID, FinderId, ItemName, Descript, Location, Date FROM Items";
+      $itemsResult = $conn->query($sql);
+
       while($itemsRow = $itemsResult->fetch_assoc())
       {
         if($itemsRow["ID"] == $matchedRow["ItemID"])
         {
-          echo "Matched Item: " . $matchedItemNumber . "<br>";
-          echo "Item name: " . $itemsRow["ItemName"] . "<br>";
-          echo "Decription: " . $itemsRow["Descript"] . "<br>";
-          echo "Location: " . $itemsRow["Location"] . "<br>";
-          echo "Date found: " . $itemsRow["Date"] . "<br>";
-          $matchedItemNumber++;
+          $matchedItems++;        
+          echo "Matched Item: " . $matchedItems . "<br>";
+          printItem($itemsRow["ItemName"], $itemsRow["Descript"], $itemsRow["Location"], 
+                    $itemsRow["Date"]);
         }//if
       }//while
     }//if
   }//while
-
-  if($matchedItemNumber == 1)
+ 
+  if($matchedItems == 0)
   {
-    echo "You have no matched items";
+    echo "You have no matched items <br><br>";
   }//if
 
-//Select the relevant reviews
+
+//Select and print the relevent ratings
   $sql = "SELECT CommenterID, CommentedID, Rating, Comment FROM Ratings";
   $ratingsResult = $conn->query($sql);
-
-//A variable to represent if the user has any reviews
-  $anyReviews = false;
-  echo "Your ratings: <br>";
+  $noOfRatings = 0;
+  echo "Your ratings: <br><br>";
 
   while($ratingsRow = $ratingsResult->fetch_assoc())
   {
-    if($ratingsRow["CommentedID"] == $_SESSION["id"])
+    if($ratingsRow["CommentedID"] == $sessionId)
     {
-      echo "Rating: " . $ratingsRow["Rating"] . "<br>";
-      echo "Comment: " . $ratingsRow["Comment"];
-    
-//This will in future get the name of the corresponding commenter ID
-    
-      echo "Commenter ID: " . $ratingsRow["CommenterID"] . "<br>";
-      $anyReviews = true;
+      echo "Rating " . $ratingsRow["Rating"] . ": <br>";
+      echo "Comment: " . $ratingsRow["Comment"] . "<br>";
+      $sql = "SELECT ID, Name, Email FROM Users";
+      $userResult = $conn->query($sql);
+      while($userRow = $userResult->fetch_assoc())
+      {
+        if($ratingsRow["CommenterID"] == $userRow["ID"])
+        {
+          echo "Commenter name: " . $userRow["Name"] . "<br>";    
+          echo "Commenter E-mail: " . $userRow["Email"] . "<br>";  
+        }//if    
+      }//while
+    $noOfRatings++;  
     }//if
   }//while
    
-  if(!$anyReviews)
+  if($noOfRatings == 0)
   {
     echo "You don't have any reviews";
   }//if
+
+
+//A function to print out an Item, for a corresponding ID
+  function printItem($name, $descript, $location, $date)
+  {
+      echo "Item name: " . $name . "<br>";
+      echo "Decription: " . $descript . "<br>";
+      echo "Location: " . $location . "<br>";
+      echo "Date and time found: " . $date . "<br><br>";
+  }//printItems
 ?>
