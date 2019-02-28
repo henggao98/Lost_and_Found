@@ -22,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {/*copied from www.w3school.com */
   else{
     $email = test_input($_POST["email"]);
     $countOfSuccesfulFields ++;
-  //}
+  }
 
   // PASS
   if (empty($_POST["pass"])) {
@@ -30,7 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {/*copied from www.w3school.com */
   } else {
     $pass = test_input($_POST["pass"]);
     $countOfSuccesfulFields ++;
-  //}
+  }
   
   
   
