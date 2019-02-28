@@ -1,89 +1,120 @@
-<html>
+<!DOCTYPE html>
 
+
+<html>
 <head><link rel="stylesheet" href= "account.css">
-<meta charset="UTF-8">
+<meta charset="utf-8">
 <title>Account Page</title>
 </head>
 
+
 <body>
 
+<nav class="topnav">  
+  <form>
+    <input type="text" name="search" placeholder="Search..">
+  </form>
 
-<div class="header">
-  <img id="logo" src="9150e4e5gw1faimhs70l0j20kv0kv3z5.jpg"； alt="logo">
-  <h1>Account</h1>
- 
-  <nav>
-  <a href="/.../">Home</a> |
-  <a href="/.../">page1</a> |
-  <a href="/.../">page2</a> |
-  <a href="/.../">Contact us</a>
- </nav>
+   <a class="active" href="#news">About</a>
+  <a class="active" href ="#home">Home</a>
 
-</div>
+
+</nav>
 
 
 
-<div id="container" style="height:auto; width:auto; background-color:blue;text-align:center">
-<hr>
+
+<div id="container" >
+
 
 
 
 <div id="b1">
-<ul>
-  <li>Personal Information</li>
-    <ul>
-   <br>
+<div>
+  <h3 class="subtitle">Personal Information</h3>
+ </div>
+<!--end e1 of b1-->
 
-      <li><form>First Name: 
-                          <input type="text"  name="firstName">
+
+<div>
+   <label> First Name<label.
+     <form> <input type="text"  name="firstName">
       </form></li>
-
-
-      <li><form>Last name: 
-                          <input type="text"  name="lastName">
-      </form></li>
-
- 
-      <li>Email:
-                      <input type="text"  name="email">
-      </li>
 <br>
 
-      <li>Phone:
-                      <input type="text"  name="phone">
-<br> 
-     </li>
+  <label> Last Name</label.
+      <form><input type="text"  name="lastName">
+      </form></li>
+<br>
+ 
+  <label> Email</label>
+                      <input type="text"  name="email">
+<br>
 
-   </ul>
+    <label>Phone</label>
+                      <input type="text"  name="phone">
+<br>
 </div>
-<hr>
+<!--end e2 of b1-->
+
+</div><!--end b1-->
+<br>
+
+
+
+
+
 
 <div id="b2">
-  <li>Lost Item
-    <ul>
-      <li>found status</li>
+<div>
+  <h3 class="subtitle">Lost Item</h3>
+ </div>
+<!--e1 of b2-->
 
-<p id="s">❤️
+
+      <div class="card">
+      <h2>ITEM 1</h2>
+      <p class="outset"><h4>Item Type, Location, Date</h4></p>
+      <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    </div>
+
+
+<p id="s" style="color:black">❤️take notes during development here !:
+Text in pers info
+
+Display as Ana's in 2 items instead of links
+
+Nav the same to Ana's
+
 </p>
-
-    </ul>
-  </li>
 </div>
-
-<hr>
+<!--e2 of b2-->
+<br>
 
 <div id="b3">
-  <li>Found Item</li>
-    <ul>
-      <li>lost status </li>
-    </ul>
+
+<div>
+  <h3 class="subtitle">Found Item</h3>
+</div>
+<!--e1 of b3-->
+<div>
+      <div class="card">
+      <h2>ITEM 1</h2>
+      <p class="outset"><h4>Item Type, Location, Date</h4></p>
+      <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    </div>
+
+
+</div>
+<!--e2 of b3-->
 </div>
 
-<hr>
+<br>
 
 <div id="b4">
-  <li>Leave a message</li>
+  <button>Leave a message</button>
 </div>
+<!--b4-->
 
 </div>
 <hr>
@@ -91,6 +122,9 @@
 <div id="footer">
 Copyright www.Lost_and_Found.com
 </div>
+<!--end Container-->
+
+
 
 </body>
 </html>
