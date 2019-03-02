@@ -12,11 +12,11 @@
 
 //Check that the user is logged in, if not disconnect
 
-if($_SESSION["loggedIn"] == 0)
-  {
-    echo "You are not logged in";
-    $conn->close();
-  }//if
+  if($_SESSION["loggedIn"] == 0)
+    {
+      echo "You are not logged in";
+      $conn->close();
+    }//if
 
 
 //Set up an SQL query to select user information, check if the account
