@@ -12,6 +12,8 @@ if($_SESSION["loggedIn"] == 0)
     $conn->close();
   }//if
 
+// <?php echo htmlspecialchars($_SERVER["PHP_SELF"]);>? for selfsubmitting form 
+
 $itemName = $description = $location = $date = "";
 $itemNameErr = $descriptionErr = $locationErr = $dateErr = "";
 $finderID = $_SESSION["id"];
