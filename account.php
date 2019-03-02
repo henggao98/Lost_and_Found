@@ -7,7 +7,7 @@
   
 //Include the file which establishes and checks database conection
 
-  include_once "db_connection.php";
+  include_once 'db_connection.php';
 
 
 //Check that the user is logged in, if not disconnect
