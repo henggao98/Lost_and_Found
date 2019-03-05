@@ -118,8 +118,8 @@ function test_input($data) {
           <input type="radio" name="location" <?php if ($location == "Museum") { ?>checked='checked' <?php } ?>value="Museum" onChange="autoSubmitLocation();">
           <span class="checkmark"></span>
         </label>
-        <label class="container">Street
-          <input type="radio" name="location" <?php if ($location == "Street") { ?>checked='checked' <?php } ?>value="Street" onChange="autoSubmitLocation();">
+        <label class="container">Cafe
+          <input type="radio" name="location" <?php if ($location == "Cafe") { ?>checked='checked' <?php } ?>value="Cafe" onChange="autoSubmitLocation();">
           <span class="checkmark"></span>
         </label>
         <label class="container">Restaurant

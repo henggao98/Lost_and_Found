@@ -2,13 +2,20 @@
 // define variables and set to empty values
 include_once 'db_connection.php';
 session_start();
-$id = $_GET["id"];
-$institutionSQL = "SELECT `Name`, `Email`, `Rating`, `Phone` FROM `Users` WHERE `ID` = '$id'";
+if(!isset($_SESSION['institutionID']))
+{
+  $institutionID = $_GET["id"];
+  $_SESSION['institutionID'] = $institutionID;
+}
+else
+  $institutionID = $_SESSION['institutionID'];
+
+$institutionSQL = "SELECT `Name`, `Email`, `Rating`, `Phone` FROM `Users` WHERE `ID` = '$institutionID'";
 $institutionResult = $conn->query($institutionSQL);
 $institutionDetails = $institutionResult->fetch_assoc();
 $title = $institutionDetails["Name"];
 
-$sql = "SELECT `ID`, `ItemName`, `Descript`, `Location`, `Date` FROM `Items` WHERE `FinderID` = '$id'";
+$sql = "SELECT `ID`, `ItemName`, `Descript`, `Location`, `Date` FROM `Items` WHERE `FinderID` = '$institutionID'";
 $result = $conn->query($sql);
 
 $totalItems = mysqli_num_rows($result);
