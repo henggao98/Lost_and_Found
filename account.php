@@ -4,27 +4,19 @@
 //Server information
 
   session_start();
-  $servername = "dbhost.cs.man.ac.uk";
-  $username = "j78532kt";
-  $password = "kaloyandb";
-  $dbname = "2018_comp10120_z8";
-  $conn = new mysqli($servername, $username, $password, $dbname);
+  
+//Include the file which establishes and checks database conection
 
-//Check the connection
-
-  if (!$conn)
-  {
-    die("Connection failed: " . mysqli_connect_error());
-  }//if
+  include_once 'db_connection.php';
 
 
 //Check that the user is logged in, if not disconnect
 
-if($_SESSION["loggedIn"] == 0)
-  {
-    echo "You are not logged in";
-    $conn->close();
-  }//if
+  if($_SESSION["loggedIn"] == 0)
+    {
+      echo "You are not logged in";
+      $conn->close();
+    }//if
 
 
 //Set up an SQL query to select user information, check if the account

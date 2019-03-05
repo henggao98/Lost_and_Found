@@ -39,7 +39,7 @@ $searched = "";
 session_start();
 if(!empty($_SESSION["category"]))
   $category = $_SESSION["category"];
-else 
+else
   $_SESSION["category"] = "";
 
 if(!empty($_SESSION["search"]))
@@ -53,7 +53,7 @@ else
   $_SESSION["location"] = "";
 
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") 
+if ($_SERVER["REQUEST_METHOD"] == "POST")
 {
   if(isset($_POST["search"])){
 
@@ -61,14 +61,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
     $_SESSION["search"] = $searched;
     //echo "1";
   }
-  
+
   elseif(isset($_POST["category"])){
 
     $category = $_POST["category"];
     $_SESSION["category"] = $category;
     //echo "2";
   }
-  
+
   elseif(isset($_POST["location"])){
 
     $location = $_POST["location"];
@@ -106,14 +106,18 @@ function test_input($data) {
     }
   </script>
 </head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <body>
 
+<img src="homePageLogo.png" class="logo">
+
 <div class="topnav">
-  <a href="#" style="float:right">Home</a>
-  <a href="#" style="float:right">Account</a>
+  <a href="#" style="float:right"><i class="fa fa-fw fa-home"></i>Home</a>
+  <a href="#" style="float:right"><i class="fa fa-fw fa-user"></i>Account</a>
   <form name="searchForm" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
     <input type="text" name="search" placeholder="Search.." value="<?php echo($_SESSION['search']); ?>">
-    <input type="submit" 
+    <input type="submit"
        style="position: absolute; left: -9999px; width: 1px; height: 1px;"
        tabindex="-1"  name="submitSearch" value="<?php echo $searched; ?>" />
   </form>
@@ -190,7 +194,7 @@ function test_input($data) {
 <div class="footer">
   <div class="center">
   <div class="pagination">
-  
+
   <?php include 'pagination.php'; ?>
 
   </div>
@@ -199,4 +203,3 @@ function test_input($data) {
 
 </body>
 </html>
-

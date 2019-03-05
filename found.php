@@ -1,32 +1,74 @@
 <?php
-$servername = "dbhost.cs.man.ac.uk";
-$username = "j78532kt";
-$password = "kaloyandb";
-$dbname = "2018_comp10120_z8";
+include_once 'db_connection.php';
 
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
+// For the sake of testing
+session_start();
+$_SESSION["loggedIn"] = 1;
+$_SESSION["id"] = 9;
+//Check that the user is logged in, if not disconnect
+if($_SESSION["loggedIn"] == 0)
+  {
+    echo "You are not logged in";
+    $conn->close();
+  }//if
 
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-} 
+// <?php echo htmlspecialchars($_SERVER["PHP_SELF"]);>? for selfsubmitting form 
 
-$finderID = $itemName = $description = $location = $date = "";
-$finderIDErr = $itemNameErr = $descriptionErr = $locationErr = $dateErr = "";
-$countOfSuccesfulFields = 0;
+$itemName = $description = $location = $date = "";
+$itemNameErr = $descriptionErr = $locationErr = $dateErr = "";
+$finderID = $_SESSION["id"];
+$countOfSuccessfulFields = 0;
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {/*copied from www.w3school.com */
-  session_start();
+
+  // For each item check there has been data entered for it. If there has been
+  // data enetered for every requied item then enter the values into the ITEMS??
+  // table.
+
+  // The name of the item
   if (empty($_POST["itemName"])) {
     $nameErr = "The type of item is required";
   } else {
-    $name = test_input($_POST["itemName"]);
-    $_SESSION["itemName"] = $itemName;
-    $countOfSuccesfulFields ++;
+    $itemName = test_input($_POST["itemName"]);
+    $countOfSuccessfulFields ++;
   }
 
-$sql = "INSERT INTO Items (FinderID, ItemName, Descript, Location, Date)
-VALUES (     )";
+  // The description of the item
+  if (empty($_POST["description"])) {
+    $descriptionErr = "A short description of the item is required";
+  } else {
+    $description = test_input($_POST["description"]);
+    $countOfSuccessfulFields ++;
+  }
+
+  // The location of the item
+  if (empty($_POST["location"])) {
+    $locationErr = "The location of the item is required";
+  } else {
+    $location = test_input($_POST["location"]);
+    $countOfSuccessfulFields ++;
+  }
+
+  // If all required information has been entered, the information is inserted
+  // into the database
+  if($countOfSuccessfulFields == 3) {
+    $insertQuery = "INSERT INTO Items (FinderID, ItemName, Descript, Location, Date)
+          VALUES ('{$finderID}', '{$itemName}', '{$description}', '{$location}', NOW())";
+
+    if($conn->query($insertQuery) === TRUE)
+      echo "New item added successfully";
+    else
+      echo "Error";
+  }
+  else
+    echo "Error";
+}
+
+function test_input($data) {/*copied from www.w3school.com */
+  $data = trim($data);
+  $data = stripslashes($data);
+  $data = htmlspecialchars($data);
+  return $data;
+}
 
 ?>

@@ -2,22 +2,29 @@
   box-sizing: border-box;
 }
 
-body 
+body
 {
-  font-family: Arial;
+  font-family: Helvetica;
   padding: 10px;
   background: #F8F4E6;
 }
 
+/* Lost and found logo */
+.logo
+{
+  width: 8%;
+  margin-left: 47%;
+}
+
 /* Style the top navigation bar */
-.topnav 
+.topnav
 {
   overflow: hidden;
   background-color: #EDB100;
 }
 
 /* Style the topnav links */
-.topnav a 
+.topnav a
 {
   float: left;
   display: block;
@@ -30,19 +37,19 @@ body
 /* Change color on hover */
 .topnav a:hover
 {
-  background-color: #ddd;
-  color: black;
+  background-color: #F4D475;
+  color: white;
 }
 
 /* Left column */
-.leftcolumn 
-{   
+.leftcolumn
+{
   float: left;
   width: 25%;
 }
 
 /* Right column */
-.rightcolumn 
+.rightcolumn
 {
   float: left;
   width: 75%;
@@ -51,7 +58,7 @@ body
 }
 
 /* Add a card effect for articles */
-.card 
+.card
 {
   background-color: white;
   padding: 20px;
@@ -59,7 +66,7 @@ body
 }
 
 /* Clear floats after the columns */
-.row:after 
+.row:after
 {
   content: "";
   display: table;
@@ -67,7 +74,7 @@ body
 }
 
 /* Footer */
-.footer 
+.footer
 {
   padding: 5px;
   text-align: center;
@@ -76,25 +83,25 @@ body
 }
 
 /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 800px) 
+@media screen and (max-width: 800px)
 {
-  .leftcolumn, .rightcolumn {   
+  .leftcolumn, .rightcolumn {
     width: 100%;
     padding: 0;
   }
 }
 
 /* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
-@media screen and (max-width: 400px) 
+@media screen and (max-width: 400px)
 {
-  .topnav a 
+  .topnav a
   {
     float: none;
     width: 100%;
   }
 }
 
-input[type=text] 
+input[type=text]
 {
   width: 130px;
   box-sizing: border-box;
@@ -102,48 +109,48 @@ input[type=text]
   font-size: 16px;
   background-color: white;
   background-image: url('searchicon.png');
-  background-position: 10px 10px; 
+  background-position: 10px 10px;
   background-repeat: no-repeat;
   padding: 10px 15px 10px 40px;
   -webkit-transition: width 0.4s ease-in-out;
   transition: width 0.4s ease-in-out;
 }
 
-input[type=text]:focus 
+input[type=text]:focus
 {
   width: 70%;
 }
 
 /* for the pagination in the footer*/
-.center 
+.center
 {
   text-align: center;
 }
 
-.pagination 
+.pagination
 {
   display: inline-block;
 }
 
-.pagination a 
+.pagination a
 {
-  color: black;
+  color: #F8F4E6;
   float: left;
   padding: 8px 15px;
   text-decoration: none;
   transition: background-color .3s;
-  border: 1px solid #ddd;
+  border: 1px solid #F8F4E6;
   margin: 0 4px;
 }
 
-.pagination a.active 
+.pagination a.active
 {
-  background-color: #585858;
+  background-color: #FFDB4D;
   color: white;
-  border: 1px solid #151515;
+  border: 1px solid #FFFAE5;
 }
 
-.pagination a:hover:not(.active) {background-color: #ddd;}
+.pagination a:hover:not(.active) {background-color: #F4D475;}
 
 
 /* For the checkboxes */
@@ -215,7 +222,7 @@ input[type=text]:focus
   transform: rotate(45deg);
 }
 
-p.outset 
+p.outset
 {
   border-style: outset;
   border-color: #F9E6AD
