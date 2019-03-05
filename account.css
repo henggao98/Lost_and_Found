@@ -14,7 +14,7 @@ body{
 }
 
 .header {
-  padding: 80px;
+  padding: 80px;/*the distance from title"Lost_and_found" to the border*/
   text-align: center;
   background: #EDB100;
   color: white;
@@ -50,15 +50,13 @@ body{
 .row {
     list-style-type: none;
     background-color: #F8F4E6;
-    border: 2px solid black;
-    outline: #F4D475 solid 10px;
+    border: 5px solid #F4D475;
     margin-top: 20px;
-    margin-left:10px;
     padding: 10px;
     text-align: center;
 
 
-  border: 1px solid powderblue;
+
   display: -ms-flexbox; /* IE10 */
   display: flex;
   -ms-flex-wrap: wrap; /* IE10 */
@@ -73,15 +71,39 @@ body{
   padding: 20px;
 }
 
+.PI{
+  text-align:left;
+  padding:50px;
+  border: 5px solid #F4D475;
+}
+
 /* Main column */
 .main {
   -ms-flex: 70%; /* IE10 */
   flex: 70%;
   padding: 20px;
+  overflow:hidden;
+  height:auto;
+  width:auto;
+  Background-color:#F8F4E6;
+  text-align:center;
 }
 
+.button{
+  background-color: #EDB100;
+  border: none;
+  color:white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+
 #footer{
-  Margin:20px;
+
+  margin-top: 10px;
   background-color:#EDB100;
   Color: white;
   text-align:center;
@@ -120,6 +142,12 @@ color:#FF9900;
     margin-top: 20px;
   }
 
+  .card:hover{
+    -ms-transform: scale(1.2); /* IE 9 */
+    -webkit-transform: scale(1.2); /* Safari 3-8 */
+    transform: scale(1.2);
+  }
+
   input[type=text]
   {
     width: 130px;
@@ -138,13 +166,4 @@ color:#FF9900;
   input[type=text]:focus
   {
     width: 40%;
-  }
-
-  .main{
-    overflow:hidden;
-
-    height:auto;
-    width:auto;
-    Background-color:#F8F4E6;
-    text-align:center;
   }
