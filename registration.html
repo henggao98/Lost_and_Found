@@ -1,32 +1,75 @@
-<!-- /lost/Lost_and_Found/registration.php */ -->
 <!DOCTYPE html>
 <html>
+<head>
+  <link rel="stylesheet" href="loginAndRegistration.css">
+</head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <body>
 
-Registration form.
-<form method="post" action="registration.php">
-  <fieldset>
-    <legend>Personal information:</legend>
-    First name:<br>
-    <input type="text" name="name" value="<?php echo $name;?>" required>
-    <span class="error">* <?php echo $nameErr;?> </span>
-    <br>
-    Email:<br>
-    <input type="email" name="email" value="<?php echo $email;?>" required>
-    <span class="error">* <?php echo $emailErr;?> </span>
-    <br>
-    Password:<br>
-    <input type="password" name="pass" required>
-    <span class="error">* <?php echo $passErr;?> </span>
-    <br>
-    Repeat Password:<br>
-    <input type="password" name="pass2" required>
-    <span class="error">* <?php echo $pass2Err;?></span>
-    <br>
-    <br>
-    <input type="submit" value="Submit">
-  </fieldset>
-</form>
+<img src="homePageLogo.png" class="logo">
+
+<div class="navbar">
+  <a class="homeButton" href="index.html"><i class="fa fa-fw fa-home"></i>Home</a>
+</div>
+
+
+<div class="gridContainer">
+
+  <div class="gridItem">
+    <h1><legend align="center"><b>Register as a guest</b></legend></h1>
+	<br>
+    <form method="post" action="registrationGuest.php">
+      <span class="error">* <?php echo $_SESSION["nameErr"];?> </span>
+      <label for="name">Name</label>
+      <input type="text" name="name" placeholder="Your name..">
+
+      <span class="error">* <?php echo $_SESSION["emailErr"];?> </span>
+      <label for="email">Email</label>
+      <input type="text" name="email" placeholder="Your email..">
+	  
+	  <label class="termsAndCond">I have read and agree to the
+	    <a href="#"> Terms and conditions</a> and the
+		<a href="#"> Privacy Policy.</a>
+      <input type="checkbox">
+      <span class="checkmark"></span>
+      </label>
+  
+      <input class="buttons" type="submit" value="Register">
+    </form>
+  </div>
+  
+  <div class="gridItem">
+    <h1><legend align="center"><b>Register</b></legend></h1>
+	<br>
+    <form method="post" action="registration.php">
+      <span class="error">* <?php echo $nameErr;?> </span>
+      <label for="name">Name</label>
+      <input type="text" name="name" placeholder="Your name..">
+
+      <span class="error">* <?php echo $emailErr;?> </span>
+      <label for="email">Email</label>
+      <input type="text" name="email" placeholder="Your email..">
+
+      <span class="error">* <?php echo $passErr;?> </span>
+      <label for="password">Password</label>
+      <input type="text" name="pass" placeholder="Your password..">
+
+      <span class="error">* <?php echo $pass2Err;?></span>
+      <label for="password">Confirm password</label>
+      <input type="text" name="pass2" placeholder="Confirm password..">
+	  
+	  <label class="termsAndCond">I have read and agree to the
+	    <a href="#"> Terms and conditions</a> and the
+		<a href="#"> Privacy Policy.</a>
+      <input type="checkbox">
+      <span class="checkmark"></span>
+      </label>
+  
+      <input class="buttons" type="submit" value="Register">
+    </form>
+  </div>
+</div>
 
 </body>
 </html>
