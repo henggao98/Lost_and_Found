@@ -1,0 +1,345 @@
+body{
+	font-family: Helvetica, sans-serif;
+	background-color: rgba(246, 203, 28, 0.4);
+}
+* {
+  box-sizing: border-box;
+}
+
+.box {
+  border-radius: 5px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+
+}
+
+/* Style the header */
+.header {
+  background-color: #FFF8CC;
+  padding: 10px;
+  text-align: center;
+  font-size: 40px;
+  color: #edb100;
+}
+
+.header0 {
+  color: #ffffff;
+  border-radius: 5px 5px 0px 0px;
+  background-color: #edb100;
+  padding: 5px;
+  text-align: center;
+  font-size: 45px;
+}
+
+/* Create three unequal columns that floats next to each other */
+.column {
+  float: left;
+  padding: 5px;
+
+}
+
+.column.side{
+	background-color: #111;
+	width: 15%
+}
+
+/* Middle column */
+.column.middle {
+  background-color: #111/*#FFF8CC*/;
+  width: 70%;
+}
+@media screen and (max-width: 600px) {
+  .column.side, .column.middle {
+    width: 100%;
+  }
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Style the footer */
+.footer {
+  border-radius: 0px 0px 5px 5px;
+  background-color: #111;
+  padding: 5px;
+  text-align: center;
+  color: #FF7F00;
+}
+
+
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+
+button[type=button] {
+  background-color: #edb100;
+  color: white;
+  padding: 12.3px 30px;
+  border: none;
+  border-radius: 60px;
+  cursor: pointer;
+  float: right;
+}
+
+button[type=button]:hover {
+  background-color: #E06C00;
+}
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+input[type=submit] {
+  background-color: #edb100;
+  color: white;
+  padding: 12.3px 30px;
+  border: none;
+  border-radius: 60px;
+  cursor: pointer;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #fffae5;
+  padding: 20px;
+}
+
+.col-25 {
+  float: left;
+  width: 35%;
+  margin-top: 6px;
+  color:#000;
+  font-size:16px;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  color: #111;
+  background-color: #FFF;
+  border-radius: 5px;
+  min-width: 200px;
+  padding: 9px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  font-size:13px;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.col-75 {
+  float: left;
+  width: 65%;
+  margin-top: 6px;
+}
+
+.title{
+  color: #000;
+  padding: 15px;
+  text-align: center;
+  font-size: 30px;
+}
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .col-25, .col-75, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #edb100
+
+}
+
+li {
+  float: right;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+  background-color: #f4d475;
+}
+.error {
+    color: #FF0000;
+}
+li {
+    float: right;
+}
+.sidebar {
+  height: 100%; /* 100% Full-height */
+  width: 0; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Stay on top */
+  top: 0;
+  left: 0;
+  background-color: #111; /* Black*/
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 60px; /* Place content 60px from the top */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidebar */
+}
+
+/* The sidebar links */
+.sidebar a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidebar a:hover {
+  color: #FFF8CC;
+}
+
+/* Position and style the close button (top right corner) */
+.sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+/* The button used to open the sidebar */
+.openbtn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #FF7F00;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+}
+
+.openbtn:hover {
+  background-color: #444;
+}
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+  transition: margin-left .5s; /* If you want a transition effect */
+  padding: 20px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidebar {padding-top: 15px;}
+  .sidebar a {font-size: 18px;}
+}
+
+@import "lesshat";
+
+@slide-count: 3;
+@duration: 30s;
+@display-time: 3s;
+@width: 125px;
+
+
+div.slides-frame {
+  border: 3px solid #AAA;
+  width: @width;
+  height: @height;
+  overflow: hidden;
+  position: relative;
+  margin: 0 auto;
+}
+div.slides {
+  .animation(slideUp @duration alternate infinite);
+  position: relative;
+}
+  
+  div.slide {
+    width: @width;
+    height: @height;
+    font-size: 0; 
+    
+    &-1 {      
+      background: smartphone.png;
+    }
+    &-2 {
+      background: train.png;
+    }
+    &-3 {
+      background: passport.png;
+    }
+    &-4 {
+      background: wallet.png;
+    }
+  }
+
+
+.keyframes(~'slideUp, 0% {bottom: 0 ;} 20% { bottom: 0; } 27% { bottom: 480px; } 47% { bottom: 480px; } 54% { bottom: 960px; } 74% { bottom: 960px; } 80% { bottom: 1440px; } 100% { bottom: 1440px; }');
