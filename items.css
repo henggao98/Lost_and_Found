@@ -12,8 +12,11 @@ body
 /* Lost and found logo */
 .logo
 {
-  width: 8%;
-  margin-left: 47%;
+  text-align: center;
+  padding: 5px;
+  background-color: #EDB100;
+  color: white;
+  font-size: 55px;
 }
 
 /* Style the top navigation bar */

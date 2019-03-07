@@ -110,11 +110,14 @@ function test_input($data) {
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <body>
 
-<img src="homePageLogo.png" class="logo">
+<div class="logo">
+  <b> Lost & Found </b>
+</div>
 
 <div class="topnav">
   <a href="#" style="float:right"><i class="fa fa-fw fa-home"></i>Home</a>
   <a href="#" style="float:right"><i class="fa fa-fw fa-user"></i>Account</a>
+  <a href="institutions.php" style="float:right"><i class="fa fa-fw fa-globe"></i>Search Places</a>
   <form name="searchForm" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
     <input type="text" name="search" placeholder="Search.." value="<?php echo($_SESSION['search']); ?>">
     <input type="submit"
