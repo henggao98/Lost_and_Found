@@ -74,7 +74,7 @@ function test_input($data) {
 <!DOCTYPE html>
 <html>
 <head>
-  <link rel="stylesheet" href="items.css">
+  <link rel="stylesheet" href="institutions.css">
   <script>
     function autoSubmitCategory()
     {
@@ -91,8 +91,9 @@ function test_input($data) {
 <body>
 
 <div class="topnav">
-  <a href="#" style="float:right">Home</a>
-  <a href="#" style="float:right">Account</a>
+  <a href="#" style="float:right"><i class="fa fa-fw fa-home"></i>Home</a>
+  <a href="#" style="float:right"><i class="fa fa-fw fa-user"></i>Account</a>
+  <a href="items.php" style="float:right"><i class="fa fa-fw fa-globe"></i>
   <form name="searchForm" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
     <input type="text" name="search" placeholder="Search.." value="<?php echo($_SESSION['search']); ?>">
     <input type="submit" 

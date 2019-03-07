@@ -1,7 +1,8 @@
 <?php
+$counter = 1;
 while($row = $result->fetch_assoc()){
   $rowID = $row["ID"];
-  $link = "./institution.php?id=";
+  //$link = "./institution.php?id=";
   if(empty($searched) && empty($location))
   {
     include 'showInstitution.php';
