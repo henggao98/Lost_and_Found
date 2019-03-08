@@ -1,7 +1,7 @@
 <?php
 include_once 'db_connection.php';
 
-$sql = "SELECT Pass, Email FROM Users";
+$sql = "SELECT ID, Pass, Email FROM Users";
 $result = $conn->query($sql);
 
 
@@ -22,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {/*copied from www.w3school.com */
   else{
     $email = test_input($_POST["email"]);
     $countOfSuccesfulFields ++;
-  //}
+  }
 
   // PASS
   if (empty($_POST["pass"])) {
@@ -30,7 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {/*copied from www.w3school.com */
   } else {
     $pass = test_input($_POST["pass"]);
     $countOfSuccesfulFields ++;
-  //}
+  }
   
   
   
@@ -42,8 +42,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {/*copied from www.w3school.com */
       {
           $_SESSION["loggedIn"] = 1;
           $_SESSION["id"] = $row["ID"];
+          echo $row["ID"];
           $_SESSION["email"] = $email;
-          header('Location: index.html');
+          //header('Location: index.html');
       }
     if($_SESSION["loggedIn"] == 0)
     {

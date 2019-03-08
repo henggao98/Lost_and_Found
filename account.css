@@ -1,13 +1,155 @@
-h1{
-color:green;
-}
-
 body{
-    text-align:center;
-    color:white;
-    background:black;
-    padding:5px;
-    font-family:cursive;
+    Color:#e6af4b;
+    padding:20px;
+    font-family: Arial;
     font-size:18px;
     margin-top:90px;
+    Background-color: #FFFAE5;
 }
+
+.topnav 
+{
+  overflow: hidden;
+  background-color: #EDB100;
+}
+
+
+/* Style the topnav links */
+.topnav a 
+{
+  float: right;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change color on hover */
+.topnav a:hover
+{
+  background-color: #ddd;
+  color: black;
+}
+
+
+
+
+
+/* Add a card effect for articles */
+.card 
+{
+  background-color: #003366;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+
+
+input[type=text] 
+{
+  width: 130px;
+  box-sizing: border-box;
+  border: 4px solid #F4D475;
+  font-size: 16px;
+  background-color: white;
+  background-image: url('searchicon.png');
+  background-position: 10px 10px; 
+  background-repeat: no-repeat;
+  padding: 10px 15px 10px 40px;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+}
+
+input[type=text]:focus 
+{
+  width: 40%;
+}
+
+#container{
+height:auto;
+width:auto;
+Background-color:#F8F4E6;
+text-align:center;
+}
+
+
+
+#b1 {
+list-style-type: none;
+
+  border: 2px solid black;
+  outline: #F4D475 solid 10px;
+  margin: auto;  
+  padding: 10px;
+  text-align: center;
+
+
+border: 1px solid powderblue;
+}
+
+#b2 {
+list-style-type: none;
+  border: 2px solid black;
+  outline: #F4D475 solid 10px;
+  margin: auto;  
+  padding: 20px;
+  text-align: center;
+
+
+border: 1px solid powderblue;
+}
+
+#b3 {
+  list-style-type: none;
+  border: 2px solid black;
+  outline: #F4D475 solid 10px;
+  margin: auto;  
+  padding: 20px;
+  text-align: center;
+
+
+border: 1px solid powderblue;
+}
+
+#b4{ 
+  border: 2px solid black;
+  outline: #F4D475 solid 10px;
+  margin: auto;  
+  padding: 20px;
+  text-align: center;
+
+
+border: 1px solid powderblue;
+
+}
+
+#footer{
+Margin:20;
+background-color:#f2cbbc;
+Color: white;
+clear:both;
+text-align:center;
+}
+
+
+.subtitle{
+font-size:30px;
+color:#FF9900;
+} 
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 800px) 
+{
+  .leftcolumn, .rightcolumn {   
+    width: 100%;
+    padding: 0;
+  }
+}
+
+/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 400px) 
+{
+
+
+
