@@ -1,8 +1,21 @@
 <?php
 // define variables and set to empty values
 include_once 'db_connection.php';
+session_start();
+if(!isset($_SESSION['institutionID']))
+{
+  $institutionID = $_GET["id"];
+  $_SESSION['institutionID'] = $institutionID;
+}
+else
+  $institutionID = $_SESSION['institutionID'];
 
-$sql = "SELECT ID, ItemName, Descript, Location, Date FROM Items";
+$institutionSQL = "SELECT `Name`, `Email`, `Rating`, `Phone` FROM `Users` WHERE `ID` = '$institutionID'";
+$institutionResult = $conn->query($institutionSQL);
+$institutionDetails = $institutionResult->fetch_assoc();
+$title = $institutionDetails["Name"];
+
+$sql = "SELECT `ID`, `ItemName`, `Descript`, `Location`, `Date` FROM `Items` WHERE `FinderID` = '$institutionID'";
 $result = $conn->query($sql);
 
 $totalItems = mysqli_num_rows($result);
@@ -15,10 +28,7 @@ if(!isset($_GET['page'])){
 }else{
     // Convert the page number to an integer
     $_GET['page'] = (int)$_GET['page'];
-
 }
-
-
 
 // If the page number is less than 1, make it 1.
 if($_GET['page'] < 1){
@@ -33,13 +43,12 @@ $currentPage = (int)$_GET['page'];
 
 
 $category = "";
-$location = "";
 $searched = "";
 
-session_start();
+
 if(!empty($_SESSION["category"]))
   $category = $_SESSION["category"];
-else
+else 
   $_SESSION["category"] = "";
 
 if(!empty($_SESSION["search"]))
@@ -47,13 +56,9 @@ if(!empty($_SESSION["search"]))
 else
   $_SESSION["search"] = "";
 
-if(!empty($_SESSION["location"]))
-  $location = $_SESSION["location"];
-else
-  $_SESSION["location"] = "";
 
 
-if ($_SERVER["REQUEST_METHOD"] == "POST")
+if ($_SERVER["REQUEST_METHOD"] == "POST") 
 {
   if(isset($_POST["search"])){
 
@@ -61,20 +66,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
     $_SESSION["search"] = $searched;
     //echo "1";
   }
-
-  elseif(isset($_POST["category"])){
+  
+  elseif(isset($_POST["category"]))
+  {
 
     $category = $_POST["category"];
     $_SESSION["category"] = $category;
     //echo "2";
   }
-
-  elseif(isset($_POST["location"])){
-
-    $location = $_POST["location"];
-    $_SESSION["location"] = $location;
-    //echo "3";
-  }
+  
 
 }
 
@@ -99,28 +99,16 @@ function test_input($data) {
         var categoryFormObject = document.forms['categoryForm'];
         categoryFormObject.submit();
     }
-    function autoSubmitLocation()
-    {
-        var locationFormObject = document.forms['locationForm'];
-        locationFormObject.submit();
-    }
   </script>
 </head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <body>
-
-<div class="logo">
-  <b> Lost & Found </b>
-</div>
-
+<h1><?php echo $title; ?></h1>
 <div class="topnav">
-  <a href="index.php" style="float:right"><i class="fa fa-fw fa-home"></i>Home</a>
-  <a href="account.php" style="float:right"><i class="fa fa-fw fa-user"></i>Account</a>
-  <a href="institutions.php" style="float:right"><i class="fa fa-fw fa-globe"></i>Search Places</a>
+  <a href="#" style="float:right">Home</a>
+  <a href="#" style="float:right">Account</a>
   <form name="searchForm" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
     <input type="text" name="search" placeholder="Search.." value="<?php echo($_SESSION['search']); ?>">
-    <input type="submit"
+    <input type="submit" 
        style="position: absolute; left: -9999px; width: 1px; height: 1px;"
        tabindex="-1"  name="submitSearch" value="<?php echo $searched; ?>" />
   </form>
@@ -159,45 +147,16 @@ function test_input($data) {
         </form>
       </div>
 
-      <div class="card">
-        <form name="locationForm" id="locationForm" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-          <h2>Location</h2>
-          <label class="container">View All
-            <input type="radio" name="location" <?php if ($location == "") { ?>checked='checked' <?php } ?>value="" onChange="autoSubmitLocation();">
-            <span class="checkmark"></span>
-          </label>
-          <label class="container">Bus
-            <input type="radio" name="location" <?php if ($location == "Bus") { ?>checked='checked' <?php } ?>value="Bus" onChange="autoSubmitLocation();">
-            <span class="checkmark"></span>
-          </label>
-          <label class="container">Museum
-            <input type="radio" name="location" <?php if ($location == "Museum") { ?>checked='checked' <?php } ?>value="Museum" onChange="autoSubmitLocation();">
-            <span class="checkmark"></span>
-          </label>
-          <label class="container">Street
-            <input type="radio" name="location" <?php if ($location == "Street") { ?>checked='checked' <?php } ?>value="Street" onChange="autoSubmitLocation();">
-            <span class="checkmark"></span>
-          </label>
-          <label class="container">Restaurant
-            <input type="radio" name="location" <?php if ($location == "Restaurant") { ?>checked='checked' <?php } ?>value="Restaurant" onChange="autoSubmitLocation();">
-            <span class="checkmark"></span>
-          </label>
-          <label class="container">Other
-            <input type="radio" name="location" <?php if ($location == "Other") { ?>checked='checked' <?php } ?>value="Other" onChange="autoSubmitLocation();">
-            <span class="checkmark"></span>
-          </label>
-        </form>
-      </div>
   </div>
   <div class="rightcolumn">
-    <?php include 'showItems.php';   ?>
+    <?php include 'showInstitutionItems.php';   ?>
   </div>
 </div>
 
 <div class="footer">
   <div class="center">
   <div class="pagination">
-
+  
   <?php include 'pagination.php'; ?>
 
   </div>
@@ -206,3 +165,4 @@ function test_input($data) {
 
 </body>
 </html>
+
