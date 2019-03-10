@@ -42,7 +42,7 @@ else
   $_SESSION["location"] = "";
 
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") 
+if ($_SERVER["REQUEST_METHOD"] == "POST")
 {
   if(isset($_POST["search"])){
 
@@ -50,7 +50,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
     $_SESSION["search"] = $searched;
     //echo "1";
   }
-  
+
   elseif(isset($_POST["location"])){
 
     $location = $_POST["location"];
@@ -91,11 +91,11 @@ function test_input($data) {
 <body>
 
 <div class="topnav">
-  <a href="#" style="float:right">Home</a>
-  <a href="#" style="float:right">Account</a>
+  <a href="index.php" style="float:right">Home</a>
+  <a href="account.php" style="float:right">Account</a>
   <form name="searchForm" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
     <input type="text" name="search" placeholder="Search.." value="<?php echo($_SESSION['search']); ?>">
-    <input type="submit" 
+    <input type="submit"
        style="position: absolute; left: -9999px; width: 1px; height: 1px;"
        tabindex="-1"  name="submitSearch" value="<?php echo $searched; ?>" />
   </form>
@@ -141,7 +141,7 @@ function test_input($data) {
 <div class="footer">
   <div class="center">
   <div class="pagination">
-  
+
   <?php include 'pagination.php'; ?>
 
   </div>
@@ -150,4 +150,3 @@ function test_input($data) {
 
 </body>
 </html>
-
