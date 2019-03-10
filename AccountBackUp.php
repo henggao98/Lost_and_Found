@@ -17,9 +17,8 @@
       echo "You are not logged in";
       $conn->close();
     }//if
-?>
 
-<?php
+
 //Set up an SQL query to select user information, check if the account
 //can be found and display the correct user information if so
 
@@ -53,11 +52,7 @@
     $conn->close();
   }//if
 
-?>
 
-
-
-<?php
 //Select any relevant found items on the site and display it's information
 
   $foundItems = 0;
@@ -128,9 +123,38 @@
   }//if
 
 
+//Select and print the relevent ratings
+  $sql = "SELECT CommenterID, CommentedID, Rating, Comment FROM Ratings";
+  $ratingsResult = $conn->query($sql);
+  $noOfRatings = 0;
+  echo "Your ratings: <br><br>";
+
+  while($ratingsRow = $ratingsResult->fetch_assoc())
+  {
+    if($ratingsRow["CommentedID"] == $sessionId)
+    {
+      echo "Rating " . $ratingsRow["Rating"] . ": <br>";
+      echo "Comment: " . $ratingsRow["Comment"] . "<br>";
+      $sql = "SELECT ID, Name, Email FROM Users";
+      $userResult = $conn->query($sql);
+      while($userRow = $userResult->fetch_assoc())
+      {
+        if($ratingsRow["CommenterID"] == $userRow["ID"])
+        {
+          echo "Commenter name: " . $userRow["Name"] . "<br>";
+          echo "Commenter E-mail: " . $userRow["Email"] . "<br>";
+        }//if
+      }//while
+    $noOfRatings++;
+    }//if
+  }//while
+
+  if($noOfRatings == 0)
+  {
+    echo "You don't have any reviews";
+  }//if
 
 
-<?php
 //A function to print out an Item, for a corresponding ID
   function printItem($name, $descript, $location, $date)
   {
