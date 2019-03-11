@@ -6,7 +6,7 @@ $sql = "SELECT ID, ItemName, Descript, Location, Date FROM Items";
 $result = $conn->query($sql);
 
 $totalItems = mysqli_num_rows($result);
-$itemsPerPage = 3;
+$itemsPerPage = 10;
 $totalPages = ceil($totalItems / $itemsPerPage);
 
 // Check that the page number is set.

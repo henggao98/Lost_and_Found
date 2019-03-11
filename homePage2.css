@@ -33,7 +33,7 @@ body {
 }
 
 /* Full-width input fields */
-.formContainer input[type=text], .formContainer input[type=password] {
+.formContainer input[type=text], .formContainer input[type=password], .formContainer input[type=email] {
     width: 88%;
     padding: 15px;
     margin-top: 2%;
