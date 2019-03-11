@@ -9,21 +9,53 @@
 
 <body background="homePageBackground.jpg" class="background">
 
-<div id="loginAndRegistrationButton">
-<a href="account.php">
-  <button class="login">Ana-Maria Cirtog</button>
-</a>
-</div>
+<?php 
+include_once 'db_connection.php';
+session_start();
+if(isset($_SESSION["loggedIn"]) && $_SESSION["loggedIn"] == 1)
+{
+  $id = $_SESSION["id"];
+  $sql = "SELECT Name FROM Users WHERE ID = '$id'";
+  $result = $conn->query($sql);
+  $row = $result->fetch_assoc();
+  $name = $row["Name"];
+  ?>
+  <div id="loginAndRegistrationButton">
+    <a href="logout.php">
+      <button class="login">
+        Logout
+      </button>
+    </a>
+    <a href="account.php">
+      <button class="login">
+        <?php echo $name; ?>
+      </button>
+    </a>
+  </div>
+  <?php
+}
+else
+{
+  ?>
+  <div id="loginAndRegistrationButton">
+    <button class="login" onclick="popup()">LOGIN</button>
+      <a href="registration.html">
+        <button class="register">REGISTER</button>
+      </a>
+    </div>
+  <?php
+}
+?>
 
 <div class="formPopup" id="myForm">
-  <form action="login.php" class="formContainer">
+  <form action="login.php" class="formContainer" method="POST">
     <center><h2>Login</h2></center>
 
-	<span class="error"> <?php echo $_SESSION["nameErr"];?> </span>
+	  <!--<span class="error"> <?php echo $_SESSION["nameErr"];?> </span>-->
     <label for="email"><b>Email</b></label>
-    <input type="text" placeholder="Enter Email" name="email" required>
+    <input type="email" placeholder="Enter Email" name="email" required>
 
-	<span class="error"> <?php echo $_SESSION["emailErr"];?> </span>
+	  <!--<span class="error"> <?php echo $_SESSION["emailErr"];?> </span>-->
     <label for="pass"><b>Password</b></label>
     <input type="password" placeholder="Enter Password" name="pass" required>
 
@@ -37,11 +69,11 @@
 
 <div class="buttonContainer">
   <div>
-    <button class="buttons lostButton">LOST SOMETHING</button>
-	<button class="buttons foundButton">FOUND SOMETHING</button>
+    <button onclick="location.href='./items.php';" class="buttons lostButton">LOST SOMETHING</button>
+	<button onclick="location.href='./found.php';" class="buttons foundButton">FOUND SOMETHING</button>
   </div>
   <div>
-	<button class="locationButton">SEARCH FOR A LOCATION</button>
+	<button onclick="location.href='./institutions.php';" class="locationButton">SEARCH FOR A LOCATION</button>
   </div>
 </div>
 
