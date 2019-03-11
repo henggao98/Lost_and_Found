@@ -44,12 +44,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {/*copied from www.w3school.com */
           $_SESSION["id"] = $row["ID"];
           echo $row["ID"];
           $_SESSION["email"] = $email;
-          //header('Location: index.html');
+          header('Location: index.php');
       }
     if($_SESSION["loggedIn"] == 0)
     {
       $_SESSION["loginError"] = "Wrong email or password";
-      header('Location: login.html');
+      header('Location: index.php');
     }
         
                 
