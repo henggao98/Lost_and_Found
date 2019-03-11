@@ -7,7 +7,7 @@ $sql = "SELECT `ID`, `Name`, `Email`, `Rating`, `Phone` FROM `Users` WHERE `isIn
 $result = $conn->query($sql);
 
 $totalItems = mysqli_num_rows($result);
-$itemsPerPage = 3;
+$itemsPerPage = 12;
 $totalPages = ceil($totalItems / $itemsPerPage);
 
 // Check that the page number is set.
@@ -88,12 +88,18 @@ function test_input($data) {
     }
   </script>
 </head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <body>
 
+<div class="logo">
+  <b> Lost & Found </b>
+</div>
+
 <div class="topnav">
-  <a href="#" style="float:right"><i class="fa fa-fw fa-home"></i>Home</a>
-  <a href="#" style="float:right"><i class="fa fa-fw fa-user"></i>Account</a>
-  <a href="items.php" style="float:right"><i class="fa fa-fw fa-globe"></i>
+  <a href="index.php" style="float:right"><i class="fa fa-fw fa-home"></i>Home</a>
+  <a href="account.php" style="float:right"><i class="fa fa-fw fa-user"></i>Account</a>
+  <a href="items.php" style="float:right"><i class="fa fa-fw fa-globe"></i>Search Items</a>
   <form name="searchForm" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
     <input type="text" name="search" placeholder="Search.." value="<?php echo($_SESSION['search']); ?>">
     <input type="submit" 
@@ -104,9 +110,9 @@ function test_input($data) {
 
 <div class="row">
   <div class="leftcolumn">
-    <div class="card">
+    <div class="card2">
       <form name="locationForm" id="locationForm" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-        <h2>Location</h2>
+        <h1>Location</h1>
         <label class="container">View All
           <input type="radio" name="location" <?php if ($location == "") { ?>checked='checked' <?php } ?>value="" onChange="autoSubmitLocation();">
           <span class="checkmark"></span>

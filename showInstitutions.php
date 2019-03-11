@@ -1,7 +1,8 @@
 <?php
 $counter = 1;
+$link = "./institution.php?id=";
 while($row = $result->fetch_assoc()){
-  //$link = "./institution.php?id=";
+  
   if(empty($searched) && empty($location))
   {
     include 'showInstitution.php';
@@ -19,5 +20,7 @@ while($row = $result->fetch_assoc()){
     include 'showInstitution.php';
   }
 }
+if($counter != 1)
+  echo "</div>";
 
 ?>
