@@ -12,7 +12,7 @@
 <body>
 
   <div class="header">
-    <h1>Lost & Found</h1>
+    <b>Lost & Found</b>
   </div>
 
 <nav class="topnav">
@@ -24,31 +24,25 @@
   </form>
 </nav>
 
-<div class="row">
-  <div class="side">
-          <div class="PI">
-          <h3 class="subtitle">Personal Information</h3>
-
-           <label> First Name<label>
+<div class="row"><!--genericContainer-->
+  <div class="side"><!--left column-->
+    <div class="PersonalInformationContainer">
+      <h3 class="subtitle">Personal Information</h3>
+      <label> Account：<label>
+       <br>
+       <label> Name: <label>
         <br>
-
-          <label> Last Name</label>
+       <label> Email: </label>
         <br>
-
-          <label> Email</label>
-
-        <br>
-
-            <label>Phone</label>
-        </div>
-        <br>
-
+      <label>Phone: </label>
+    </div>
   </div>
+
 
 
   <div class="main" >
 
-    <div class="LI">
+    <div class="LostItemContainer">
        <h3 class="subtitle">Lost Item</h3>
 
         <div class="card">
@@ -57,9 +51,9 @@
           <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
         </div> <!--e2 of b2-->
     </div>
-    <br>
 
-    <div class="FI">
+
+    <div class="MatchedItemsContainer">
       <h3 class="subtitle">Found Item</h3>
 
         <div class="card">
@@ -68,13 +62,8 @@
         <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
         </div>
     </div>
-
     <br>
 
-    <div id="b4">
-      <button class="button">Leave a message</button>
-    </div>
-    <!--b4-->
   </div>  <!--end main-->
 </div>
 

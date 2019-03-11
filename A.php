@@ -1,5 +1,4 @@
-<?php include 'loginState.php'; ?>
-  <!DOCTYPE html>
+<!DOCTYPE html>
 
 
   <html>
@@ -13,7 +12,7 @@
  <body>
 
   <div class="header">
-    <h1>Lost & Found</h1>
+    <b>Lost & Found</b>
   </div>
 
 <nav class="topnav">
@@ -25,9 +24,9 @@
   </form>
 </nav>
 
-<div class="row">
-  <div class="side">
-          <div class="PI">
+<div class="row"><!--genericContainer-->
+  <div class="side"><!--left column-->
+    <div class="PersonalInformationContainer">
           <h2 class="subtitle">Personal Information</h2>
            <?php include 'PersonalInformation.php';?>
           </div>
