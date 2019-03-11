@@ -2,18 +2,24 @@
 // define variables and set to empty values
 include_once 'db_connection.php';
 session_start();
-if(!isset($_SESSION['institutionID']))
+if(isset($_GET['id']))
 {
-  $institutionID = $_GET["id"];
-  $_SESSION['institutionID'] = $institutionID;
+  $getInstitutionID = $_GET["id"];
+  $_SESSION['getInstitutionID'] = $getInstitutionID;
+}
+elseif(!isset($_SESSION['getInstitutionID']) && isset($_GET['id']))
+{
+  $getInstitutionID = $_GET["id"];
+  $_SESSION['getInstitutionID'] = $getInstitutionID;
 }
 else
-  $institutionID = $_SESSION['institutionID'];
+  $getInstitutionID = $_SESSION['getInstitutionID'];
 
-$institutionSQL = "SELECT `Name`, `Email`, `Rating`, `Phone` FROM `Users` WHERE `ID` = '$institutionID'";
+$institutionSQL = "SELECT `ID`, `Name`, `Email`, `Rating`, `Phone` FROM `Users` WHERE `ID` = '$getInstitutionID' AND `isInstitution` = '1'";
 $institutionResult = $conn->query($institutionSQL);
 $institutionDetails = $institutionResult->fetch_assoc();
 $title = $institutionDetails["Name"];
+$institutionID = $institutionDetails["ID"];
 
 $sql = "SELECT `ID`, `ItemName`, `Descript`, `Location`, `Date` FROM `Items` WHERE `FinderID` = '$institutionID'";
 $result = $conn->query($sql);
@@ -101,11 +107,14 @@ function test_input($data) {
     }
   </script>
 </head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <body>
 <h1><?php echo $title; ?></h1>
 <div class="topnav">
-  <a href="#" style="float:right">Home</a>
-  <a href="#" style="float:right">Account</a>
+  <a href="index.php" style="float:right"><i class="fa fa-fw fa-home"></i>Home</a>
+  <a href="account.php" style="float:right"><i class="fa fa-fw fa-user"></i>Account</a>
+  <a href="items.php" style="float:right"><i class="fa fa-fw fa-globe"></i>Search Items</a>
   <form name="searchForm" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
     <input type="text" name="search" placeholder="Search.." value="<?php echo($_SESSION['search']); ?>">
     <input type="submit" 

@@ -6,7 +6,7 @@ $sql = "SELECT ID, ItemName, Descript, Location, Date FROM Items";
 $result = $conn->query($sql);
 
 $totalItems = mysqli_num_rows($result);
-$itemsPerPage = 3;
+$itemsPerPage = 10;
 $totalPages = ceil($totalItems / $itemsPerPage);
 
 // Check that the page number is set.
@@ -115,8 +115,8 @@ function test_input($data) {
 </div>
 
 <div class="topnav">
-  <a href="#" style="float:right"><i class="fa fa-fw fa-home"></i>Home</a>
-  <a href="#" style="float:right"><i class="fa fa-fw fa-user"></i>Account</a>
+  <a href="index.php" style="float:right"><i class="fa fa-fw fa-home"></i>Home</a>
+  <a href="account.php" style="float:right"><i class="fa fa-fw fa-user"></i>Account</a>
   <a href="institutions.php" style="float:right"><i class="fa fa-fw fa-globe"></i>Search Places</a>
   <form name="searchForm" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
     <input type="text" name="search" placeholder="Search.." value="<?php echo($_SESSION['search']); ?>">
