@@ -14,7 +14,7 @@ body{
 .header {
   padding: 5px;/*the distance from title"Lost_and_found" to the border*/
   text-align: center;
-  font-size: 55px;
+  font-size:55px;
   background: #EDB100;
   color: white;
 }
