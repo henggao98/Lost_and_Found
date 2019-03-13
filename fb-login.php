@@ -11,4 +11,6 @@ $helper = $fb->getRedirectLoginHelper();
 $permissions = ['email']; // Optional permissions
 $loginUrl = $helper->getLoginUrl('https://web.cs.manchester.ac.uk/j78532kt/Lost_and_Found/fb-callback.php', $permissions);
 
+header('Location: ' . $loginUrl);
+
 ?>

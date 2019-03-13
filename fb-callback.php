@@ -75,9 +75,40 @@ var_dump(
     $userNode->getField('email'), $userNode['email']
 );
 */
+$fbEmail = $userNode['email'];
+$fbName = $userNode['name'];
 
+$sql = "SELECT * FROM Users WHERE Email = '$fbEmail' ";
+$result = $conn->query($sql);
 
+$isInDB = false;
+if($result->num_rows > 0)
+{
+  $row = $result->fetch_assoc();
+  $isInDB = true;
+  $_SESSION["loggedIn"] = 1;
+  $_SESSION["id"] = $row["ID"];
+  $_SESSION["email"] = $fbEmail;
+  $_SESSION["name"] = $fbName;
+}
+
+if(!$isInDB)
+{
+  $insertQuery = "INSERT INTO Users (Name, Email)
+                VALUES ('$fbName', '$fbEmail')";
+  if($conn->query($insertQuery) === TRUE)
+  {
+    $_SESSION["loggedIn"] = 1;
+    $_SESSION["id"] = $conn->insert_id;
+    $_SESSION["email"] = $fbEmail;
+    $_SESSION["name"] = $fbName;
+    echo "New record created successfully";
+    header('Location: index.php');
+  }
+  else
+    echo "Error";
+}
 // User is logged in with a long-lived access token.
 // You can redirect them to a members-only page.
-//header('Location: https://example.com/members.php');
+
 ?>
