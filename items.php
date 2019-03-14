@@ -1,5 +1,11 @@
 <?php
 // define variables and set to empty values
+/*
+if(!isset($_SESSION["loggedIn"]))
+  header("Location: index.php");
+elseif($_SESSION["loggedIn"] == 0)
+  header("Location: index.php");
+*/
 include_once 'db_connection.php';
 
 $sql = "SELECT ID, ItemName, Descript, Location, Date FROM Items";

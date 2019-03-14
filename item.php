@@ -4,4 +4,8 @@
 <?php echo $row["Location"] . ', ' . $row["Date"]; ?>
 </h4></p><p>
 <?php echo $row["Descript"]; ?>  
-</p></div>
+</p>
+<div>
+  <a href="claimItem.php?itemID=<?php echo($row['ID']) ?>&mislayerID=<?php echo($_SESSION['id']) ?>">Claim item</a>
+</div>
+</div>
