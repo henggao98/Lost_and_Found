@@ -61,6 +61,7 @@ else
 
     <button type="submit" class="popupLogin">Login</button>
   </form>
+  <a href="fb-login.php">Log in with Facebook!</a>
 </div>
 
 <img src="homePageLogo.png" class="logo">
