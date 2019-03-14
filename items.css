@@ -9,6 +9,34 @@ body
   background: #F8F4E6;
 }
 
+.button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 15%;
+}
+
+.button:hover {
+  background-color: #555;
+}
+
+.buttonInactive {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #555;
+  text-align: center;
+  cursor: default;
+  width: 15%
+}
+
 /* Lost and found logo */
 .logo
 {
