@@ -13,9 +13,9 @@
       $sql = "SELECT ID, FinderId, ItemName, Descript, Location, Date FROM Items";
       $itemsResult = $conn->query($sql);
 
-      while($itemsRow = $itemsResult->fetch_assoc())
+      while($row = $itemsResult->fetch_assoc())
       {
-        if($itemsRow["ID"] == $matchedRow["ItemID"])
+        if($row["ID"] == $matchedRow["ItemID"])
         {
           $matchedItems++;
           echo "<h3>Matched Item: " . $matchedItems . "</h3><br>";
