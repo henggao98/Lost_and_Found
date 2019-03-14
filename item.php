@@ -6,6 +6,6 @@
 <?php echo $row["Descript"]; ?>  
 </p>
 <div>
-  <a href="claimItem.php?itemId=<?php echo($row['ID']); ?>&mislayerID=<?php echo($_SESSION['id']) ?>">Claim Item</a>
+  <a href="claimItem.php?itemId=<?php echo($row['ID']); ?>&mislayerID=<?php echo($_SESSION['id']); ?>">Claim Item</a>
 </div>
 </div>
