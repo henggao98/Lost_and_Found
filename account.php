@@ -1,6 +1,11 @@
-<?php 
-  include_once "db_connection.php"; 
+<?php
   session_start();
+  if(!isset($_SESSION["loggedIn"]))
+    header("Location: index.php");
+  else if(isset($_SESSIOIN["loggedIn"]) && $_SESSION["loggedIn"] == 0)
+    header("Location: index.php");
+
+  include_once "db_connection.php";
 ?>
 <!DOCTYPE html>
 

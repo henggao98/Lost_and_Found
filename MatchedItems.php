@@ -21,7 +21,7 @@
           echo "<h3>Matched Item: " . $matchedItems . "</h3><br>";
           //update the number label of the item.
 
-          include "item.php";
+          include "itemWithoutClaim.php";
         }//if
       }//while
     }//if
