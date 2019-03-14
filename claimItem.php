@@ -10,9 +10,11 @@ if(isset($_GET["itemID"]) && isset($_GET["mislayerID"]))
   $itemResult = $conn->query($itemSQL);
   $itemRow = $itemResult->fetch_assoc();
 
+  $mislayerSQL = "SELECT * FROM Users WHERE ID='$mislayerID'";
+  $mislayerResult = $conn->query($mislayerSQL);
+  $mislayerRow = $mislayerResult->fetch_assoc();
+
   
-
-
 
 
 }
