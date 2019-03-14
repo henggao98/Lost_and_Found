@@ -108,12 +108,12 @@ if(!$isInDB)
     $_SESSION["email"] = $fbEmail;
     $_SESSION["name"] = $fbName;
     echo "New record created successfully";
-    header('Location: index.php');
+    
   }
   else
     echo "Error";
 }
 // User is logged in with a long-lived access token.
-// You can redirect them to a members-only page.
-
+// You can redirect them to index page.
+header('Location: index.php');
 ?>
