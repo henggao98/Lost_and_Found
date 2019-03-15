@@ -4,24 +4,24 @@
 <link rel="stylesheet" type="text/css" href="found.css">
 <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
 </head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <body>
  
   
-  <div class = "box">
-  <div class="header0">
+ <!--<div class = "box">-->
+ <div class="header0">
     <b>Lost & Found</b>
 </div>
    <ul>
-    <li><a class="active" href="homePage.html">Home</a></li>
-    <li><a href="account.html">Account</a></li>
+    <li><a href="index.html"><i class="fa fa-fw fa-home"></i>Home</a></li>
+    <li><a href="account.html"><i class="fa fa-fw fa-user"></i>Account</a></li>
   </ul>
- <!--  <div class="header">
-    Posting the found item
-</div>-->
+  <br>
 <div class="row">
   <div class="column side"><center><br><br>
   <img src="train(1).png" width="125px"><br>
-  <img src="golf-sticks.png" width="125px" alt="Flowers in Chania"><br><br><br>
+  <img src="place.png" width="125px" alt="Flowers in Chania"><br><br><br>
   <img src="museum.png" width="125px"><br></center><br>
   </div>
   <div class="column middle" >
@@ -40,11 +40,13 @@
     </div>
     <div class="col-75">
       <select id="country" name="location">
+	    <optgroup label="Choose type of the location">
         <option value="transport">Public Transport</option>
         <option value="university">University Faculty</option>
         <option value="museum">Museum</option>
 		<option value="library">Library</option>
         <option value="other">Other</option>
+		</optgroup>
       </select>
     </div>
   </div>
@@ -54,11 +56,13 @@
     </div>
     <div class="col-75">
        <select id="type" name="itemName">
-         <option value="wallet">Wallet</option>
-         <option value="keys">Keys</option>
-         <option value="laptop">Laptop</option>
-		 <option value="phone">Phone</option>
-         <option value="other">Other</option>
+	     <optgroup label="Choose type of the object">
+         	<option value="wallet">Wallet</option>
+         	<option value="keys">Keys</option>
+         	<option value="laptop">Laptop</option>
+		 	<option value="phone">Phone</option>
+         	<option value="other">Other</option>
+		 </optgroup>
        </select>
 	</div>
 	</div>
@@ -75,79 +79,24 @@
 
       </div>
       <div class="col-75">
-        <textarea id="item_description" name="description" placeholder="Write something.." style="height:100px"></textarea>
+        <textarea id="item_description" name="description" placeholder="Provide description of the object as well as more exact location" style="height:210px"></textarea>
       </div>
     </div>
 	<br>
     <div class="row">
- <input type="submit" value="Submit"/>
- <!-- <div id="myModal" class="modal">
-
-  <div class="modal-content">
-    <center>
-    <span class="close">&times;</span>
-    <p>Thank you for filling out the form, if you are sure it's complete click the button below.</p>
-	<button id="submit" type="submit">Yes, submit</button> 
-	</center>
-  </div>-->
-
-    </div>
+ <input type="submit" value="Submit">
     </div>
 	
 	</div>
-	<script>
-// Get the modal
-var modal = document.getElementById('myModal');
-
-// Get the button that opens the modal
-var myBtn = document.getElementById("myBtn");
-
-var buton = document.getElementById("submit");
-
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
-
-// When the user clicks the button, open the modal 
-myBtn.onclick = function() {
-  modal.style.display = "block";
-}
-
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-  modal.style.display = "none";
-}
-
-buton.onclick = function() {
-  modal.style.display = "none";
-}
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-</script>
     </form>
 </div>
 
-  <div class="column side" >
-  <!--<div id="cp_widget_4a8446aa-2ce9-48cc-a3b4-e4ecf6a6d938">...</div><script type="text/javascript">
-var cpo = []; cpo["_object"] ="cp_widget_4a8446aa-2ce9-48cc-a3b4-e4ecf6a6d938"; cpo["_fid"] = "AsPAHeuveoxw";
-var _cpmp = _cpmp || []; _cpmp.push(cpo);
-(function() { var cp = document.createElement("script"); cp.type = "text/javascript";
-cp.async = true; cp.src = "//www.cincopa.com/media-platform/runtime/libasync.js";
-var c = document.getElementsByTagName("script")[0];
-c.parentNode.insertBefore(cp, c); })(); </script>-->
-  <center><br><br><img src="passport.png" width="125px"><br><br>
-  <img src="wallet.png" width="125px" alt="Flowers in Chania"><br><br>
+  <div class="column side" ><center><br><br>
+  <img src="passport.png" width="125px"><br><br>
+  <img src="wallet.png" width="125px"><br><br>
   <img src="smartphone.png" width="125px"><br></center><br>
   </div>
   </div>
-  
-<div class="footer">
-Footer
-</div>
-</div>
+  </div>
 </body>
 </html>
-
