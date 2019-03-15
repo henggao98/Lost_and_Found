@@ -11,7 +11,6 @@
   {
     if($userRow["ID"] == $sessionId)
     {
-      echo "<label> Account: " . $userRow["ID"] . "</label><br>";
       echo "<label> Name: " . $userRow["Name"] . "</label><br>";
       echo "<label> Email: " . $userRow["Email"] . "<label><br>";
 

@@ -71,7 +71,7 @@ else
 <div class="buttonContainer">
   <div>
     <button onclick="location.href='./items.php';" class="buttons lostButton">LOST SOMETHING</button>
-	<button onclick="location.href='./found.php';" class="buttons foundButton">FOUND SOMETHING</button>
+	<button onclick="location.href='./found.html';" class="buttons foundButton">FOUND SOMETHING</button>
   </div>
   <div>
 	<button onclick="location.href='./institutions.php';" class="locationButton">SEARCH FOR A LOCATION</button>

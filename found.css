@@ -1,35 +1,35 @@
 body{
 	font-family: Helvetica, sans-serif;
-	background-color: rgba(246, 203, 28, 0.4);
+	background-color: #FFF8CC;
 }
 * {
   box-sizing: border-box;
 }
 
-.box {
+/*.box {
   border-radius: 5px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  background-color: #000
 
 
+}*/
+p{
+	text-align: justify;
 }
-
-/* Style the header */
-.header {
-  background-color: #FFF8CC;
-  padding: 10px;
-  text-align: center;
-  font-size: 40px;
-  color: #edb100;
+.clearfix {
+  overflow: auto;
+  float: left;
+  text-align: justify;
 }
 
 .header0 {
   color: #ffffff;
-  border-radius: 5px 5px 0px 0px;
   background-color: #edb100;
   padding: 5px;
   text-align: center;
   font-size: 45px;
 }
+
 
 /* Create three unequal columns that floats next to each other */
 .column {
@@ -37,19 +37,35 @@ body{
   padding: 5px;
 
 }
-
+.column0 {
+  width:2.5%;
+  float: left;
+  padding: 5px;
+}
+.column1 {
+  float: left;
+  padding: 5px;
+  background-color: #edb100;
+  color: #fff;
+  width:47.5%;
+}
 .column.side{
-	background-color: #111;
+	background-color:;
 	width: 15%
 }
 
 /* Middle column */
 .column.middle {
-  background-color: #111/*#FFF8CC*/;
+  background-color: /*#FFF8CC*/;
   width: 70%;
 }
 @media screen and (max-width: 600px) {
   .column.side, .column.middle {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 600px) {
+  .column1, .column0{
     width: 100%;
   }
 }
@@ -62,13 +78,6 @@ body{
 }
 
 /* Style the footer */
-.footer {
-  border-radius: 0px 0px 5px 5px;
-  background-color: #111;
-  padding: 5px;
-  text-align: center;
-  color: #FF7F00;
-}
 
 
 
@@ -128,6 +137,7 @@ input[type=submit] {
   border: none;
   border-radius: 60px;
   cursor: pointer;
+  float: right
 }
 
 /* The Close Button */
@@ -147,13 +157,13 @@ input[type=submit] {
 
 .container {
   border-radius: 5px;
-  background-color: #fffae5;
+  background-color: #fff;
   padding: 20px;
 }
 
 .col-25 {
   float: left;
-  width: 35%;
+  width: 30%;
   margin-top: 6px;
   color:#000;
   font-size:16px;
@@ -183,7 +193,7 @@ input[type=submit] {
 
 .col-75 {
   float: left;
-  width: 65%;
+  width: 70%;
   margin-top: 6px;
 }
 
