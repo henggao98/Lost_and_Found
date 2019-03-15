@@ -1,12 +1,18 @@
 <?php
 // define variables and set to empty values
+session_start();
+if(!isset($_SESSION["loggedIn"]))
+  header("Location: index.php");
+else if(isset($_SESSION["loggedIn"]) && $_SESSION["loggedIn"] == 0)
+  header("Location: index.php");
+
 include_once 'db_connection.php';
 
 $sql = "SELECT ID, ItemName, Descript, Location, Date FROM Items";
 $result = $conn->query($sql);
 
 $totalItems = mysqli_num_rows($result);
-$itemsPerPage = 3;
+$itemsPerPage = 10;
 $totalPages = ceil($totalItems / $itemsPerPage);
 
 // Check that the page number is set.
@@ -36,7 +42,7 @@ $category = "";
 $location = "";
 $searched = "";
 
-session_start();
+
 if(!empty($_SESSION["category"]))
   $category = $_SESSION["category"];
 else
@@ -115,8 +121,8 @@ function test_input($data) {
 </div>
 
 <div class="topnav">
-  <a href="#" style="float:right"><i class="fa fa-fw fa-home"></i>Home</a>
-  <a href="#" style="float:right"><i class="fa fa-fw fa-user"></i>Account</a>
+  <a href="index.php" style="float:right"><i class="fa fa-fw fa-home"></i>Home</a>
+  <a href="account.php" style="float:right"><i class="fa fa-fw fa-user"></i>Account</a>
   <a href="institutions.php" style="float:right"><i class="fa fa-fw fa-globe"></i>Search Places</a>
   <form name="searchForm" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
     <input type="text" name="search" placeholder="Search.." value="<?php echo($_SESSION['search']); ?>">
