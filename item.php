@@ -16,7 +16,7 @@ if(isset($_SESSION["loggedIn"]) && $_SESSION["loggedIn"] == 1)
   $matchedMislayerSQL = "SELECT * FROM Matched WHERE MislayerID='$userID' AND  ItemID='$itemID' ";
   $matchedMislayerResult = $conn->query($matchedMislayerSQL);
 
-  if($itemID == $user)
+  if($itemID == $userID)
   {
   ?>
     <p><button class="buttonInactive" disabled>Item posted by you</button></p>
