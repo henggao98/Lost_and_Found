@@ -13,30 +13,26 @@ if(isset($_SESSION["loggedIn"]) && $_SESSION["loggedIn"] == 1)
 {
   $itemID = $row['ID'];
 
-  $matchedFinderSQL = "SELECT * FROM Matched WHERE FinderID='$userID' AND  ItemID='$itemID' ";
-  $matchedFinderResult = $conn->query($matchedFinderSQL);
-
   $matchedMislayerSQL = "SELECT * FROM Matched WHERE MislayerID='$userID' AND  ItemID='$itemID' ";
   $matchedMislayerResult = $conn->query($matchedMislayerSQL);
 
   if($itemID == $user)
   {
   ?>
-    <h3> This item is posted by you.</h3>>
+    <p><button class="buttonInactive" disabled>Item posted by you</button></p>
   <?php
   }
   elseif($matchedMislayerResult->num_rows > 0)
   {
   ?>
-    <h3> This item has already been claimed by you. </h3>
+      <p><button class="buttonInactive" disabled>Claimed Item</button></p>
   <?php
   }
   else
   {
   ?>
-    <div>
-      <a href="claimItem.php?itemID=<?php echo($row['ID']); ?>&mislayerID=<?php echo($_SESSION['id']); ?>">Claim Item</a>
-    </div>
+      <p><button class="button" onclick="location.href='claimItem.php?itemID=<?php echo($itemID); ?>&mislayerID=<?php echo($userID); ?>' " >Claim Item</button></p>
+
   <?php
   }
 }
