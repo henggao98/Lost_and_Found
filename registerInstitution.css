@@ -1,6 +1,6 @@
 body {
   font-family: Helvetica;
-  font-size: 15px;
+  font-size: 14px;
 }
 
 /* Navigation bar */
@@ -40,24 +40,6 @@ li a:hover, li a:active {
 i {
   margin-right: 2px;
 }
- 
-/* Home button in the navigation bar */ 
-.homeButton:link, .homeButton:visited {
-  color: white;
-  padding: 14px 25px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-}
-
-.homeButton:hover, .homeButton:active {
-  background-color: #F4D475;
-}
-
-/* Home icon */
-i {
-  margin-right: 2px;
-}
 
 /* Lost and found logo */
 .logo {
@@ -65,49 +47,28 @@ i {
   margin-left: 47%;
 }
 
-/* Container for the two registration forms */
+/* Container for the form */
 .gridContainer {
   display: flex;
-  align-content: left;
-  grid-gap: 0px;
   background-color: white;
   padding-top: 0.5%;
-  padding-left: 10%;
-  padding-right: 10%;
   padding-bottom: 1%;
-  margin-top: 1%;
+  margin-top: 2%;
+  align-content: center;
+  -webkit-align-content: center;
+  margin-left: 10vw;
+  margin-right: 10vw;
+  height: auto;
 }
 
-/* Container for the registration forms */
+/* Container for the institution registration */
 .gridItem {
   background-color: #FFFAE5;
-  width: 50%;
-  margin-right: 1%;
-  margin-left: 1%;
-  padding-left: 5%;
-  padding-right: 5%;
-  padding-top: 1.5%;
-  padding-bottom: 1.5%;
+  padding: 3%;
+  height: auto;
 }
 
-/* Put the two registration forms on top of each other
-if the screen size in less than 600px */
-@media screen and (max-width: 600px) {
-  .gridContainer {
-    display: grid;
-    align-content: center;
-    padding-left: 5%;
-    padding-right: 5%;
-  }
-  .gridItem {
-    width: 90%;
-    padding: 5%;
-	margin-top: 2%;
-	margin-bottom: 2%;
-  }
-}
-
-/* Buttons for submitting the registration */
+/* Button for submitting the registration */
 .buttons {
   float: right;
   margin-top: 2%;
@@ -126,7 +87,7 @@ if the screen size in less than 600px */
 }
 
 /* Text input fields */
-input[type=text] {
+input[type=text]{
   width: 100%;
   padding: 12px 20px;
   margin: 5px 0;
@@ -141,8 +102,22 @@ input[type=text]:focus {
   border: 3px solid #FFBB33;
 }
 
-/* Password input fields */
-input[type=password] {
+input[type=tel] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 5px 0;
+  box-sizing: border-box;
+  border: 3px solid #ccc;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  outline: none;	
+}
+
+input[type=tel]:focus {
+  border: 3px solid #FFBB33;
+}
+
+input[type=email] {
   width: 100%;
   padding: 12px 20px;
   margin: 5px 0;
@@ -153,8 +128,13 @@ input[type=password] {
   outline: none;
 }
 
-input[type=password]:focus {
+input[type=email]:focus {
   border: 3px solid #FFBB33;
+}
+
+input[type=file] {
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 /* Terms and conditions text container */
