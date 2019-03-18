@@ -5,11 +5,12 @@ session_start();
 if(isset($_SESSION["loggedIn"]) && $_SESSION["loggedIn"] == 1)
 {
   $userID = $_SESSION["id"];
+  $loggedIn = true;
 }
 
 include_once 'db_connection.php';
 
-$sql = "SELECT ID, ItemName, Descript, Location, Date FROM Items";
+$sql = "SELECT * FROM Items";
 $result = $conn->query($sql);
 
 $totalItems = mysqli_num_rows($result);
