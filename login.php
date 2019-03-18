@@ -1,16 +1,16 @@
 <?php
-//include_once 'db_connection.php';
+include_once 'db_connection.php';
 
 $sql = "SELECT ID, Pass, Email FROM Users";
 $result = $conn->query($sql);
 
 
 $pass = $email = "";
-$passErr = $emailErr = $Error = "";
+$passErr = $emailErr = "";
 $countOfSuccesfulFields = 0;
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {/*copied from www.w3school.com */
-  //session_start();
+  session_start();
   
   // EMAIL
   
@@ -42,14 +42,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {/*copied from www.w3school.com */
       {
           $_SESSION["loggedIn"] = 1;
           $_SESSION["id"] = $row["ID"];
-          $_SESSION["name"] = $row["Name"];
+          echo $row["ID"];
           $_SESSION["email"] = $email;
           header('Location: index.php');
       }
     if($_SESSION["loggedIn"] == 0)
     {
-      $Error = "Wrong email or password";
-      //header('Location: index.php');
+      $_SESSION["loginError"] = "Wrong email or password";
+      header('Location: index.php');
     }
         
                 

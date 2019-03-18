@@ -12,7 +12,6 @@
 <?php 
 include_once 'db_connection.php';
 session_start();
-include 'login.php';
 if(isset($_SESSION["loggedIn"]) && $_SESSION["loggedIn"] == 1)
 {
   $id = $_SESSION["id"];
@@ -49,18 +48,16 @@ else
 ?>
 
 <div class="formPopup" id="myForm">
-  <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" class="formContainer" method="POST">
+  <form action="login.php" class="formContainer" method="POST">
     <center><h2>Login</h2></center>
 
-	  <span class="error"> <?php echo $emailErr;?> </span>
+	  <!--<span class="error"> <?php echo $_SESSION["nameErr"];?> </span>-->
     <label for="email"><b>Email</b></label>
     <input type="email" placeholder="Enter Email" name="email" required>
 
-	  <span class="error"> <?php echo $emailErr;?> </span>
+	  <!--<span class="error"> <?php echo $_SESSION["emailErr"];?> </span>-->
     <label for="pass"><b>Password</b></label>
     <input type="password" placeholder="Enter Password" name="pass" required>
-    
-    <span class="error"> <?php echo $Error;?> </span>
 
     <button type="submit" class="popupLogin">Login</button>
   </form>
