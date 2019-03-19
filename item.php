@@ -23,18 +23,20 @@ if($loggedIn)
   <?php echo $row["ItemName"]; ?>
 </h2>
 
-<p class="outset"><h4>
-  <?php echo $row["Location"] . ', ' . $row["Date"]; ?>
-</h4></p>
 <?php if($loggedIn){ ?>
 <p>
-  <h4>Found by <a href="viewComments.php?id=<?php echo($userID) ?>">
+  <h4 style="float:right">Found by <a href="viewComments.php?id=<?php echo($userID) ?>" style="color:#EDB100">
     <?php
     echo $finderRow["Name"];
     ?>
   </a></h4>
 </p>  
 <?php } ?>
+
+<p class="outset"><h4>
+  <?php echo $row["Location"] . ', ' . $row["Date"]; ?>
+</h4></p>
+
 <p>
 <?php echo $row["Descript"]; ?>  
 </p>
