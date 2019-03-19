@@ -1,104 +1,111 @@
-
-
 <?php
 include_once 'db_connection.php';
 
 $sql = "SELECT Email FROM Users";
 $email_check = $conn->query($sql);
 
+$isTakenG = false;
+$name = $email = "";
+$nameErrG = $emailErrG = "";
+$countOfSuccesfulFieldsG = 0;
 
-$isTaken = false;
+$isTakenF = false;
 $name = $pass = $email = "";
-$nameErr = $emailErr = $passErr = "";
-$countOfSuccesfulFields = 0;
+$nameErrF = $emailErrF = $passErrF = "";
+$countOfSuccesfulFieldsF = 0;
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {/*copied from www.w3school.com */
-  session_start();
-  
-  // Name
-  if (empty($_POST["name"])) {
-    $nameErr = "First name is required";
-  } else {
-    $name = test_input($_POST["name"]);
-    $_SESSION["name"] = $name;
-    $countOfSuccesfulFields ++;
-  }
+session_start();
 
 
-  // PASS
-  if (empty($_POST["pass"])) {
-    $passErr = "Empty field";
-  } else{
-    $countOfSuccesfulFields ++;
-  }
-
-
-
-  // PASS2
-  if (empty($_POST["pass2"])) {
-    $passErr = "Empty field";
-  }
-  else if($_POST["pass2"] != $_POST["pass"])
+if ($_SERVER["REQUEST_METHOD"] == "POST") 
+{
+  if(!empty($_POST["Full"]))
   {
-    $passErr = "Do not match";
-  } 
-  else {
-    $pass = test_input($_POST["pass"]);
-    $countOfSuccesfulFields ++;
+    include 'registration_functionality.php';
+
   }
-
-  
-  
-  
-
-
-  // EMAIL
-  if (empty($_POST["email"])) {
-    $emailErr = "Email is required";
-  } else if (!filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)) {/*copied from www.w3school.com */
-    $emailErr = "Invalid email format";
-  }
-  else{
-    $email = test_input($_POST["email"]);
-    
-    while($row = $email_check->fetch_assoc())
-    {
-      if($row["Email"] == $email)
-        $isTaken = true;
-    }
-
-    if($isTaken)
-    {
-      $emailErr = "Email has already been taken";
-    }
-    else
-    {
-      $_SESSION["email"] = $email;
-      $countOfSuccesfulFields ++;
-    }
-  }
-  
-  if($countOfSuccesfulFields == 4)
+  elseif(!empty($_POST["Guest"]))
   {
-    $hashPass = password_hash($pass, PASSWORD_DEFAULT);
-    $insertQuery = "INSERT INTO Users (Name, Email, Pass)
-                VALUES ('{$name}', '{$email}', '{$hashPass}')";
+    include 'registrationGuest.php';
+  }
 
-    if($conn->query($insertQuery) === TRUE)
-      echo "New record created successfully";
-      //header('Location: greeting.php');
-    else
-      echo "Error";
+}
 
-        
-  }//if
-}//if
-
-function test_input($data) {/*copied from www.w3school.com */
+function test_input($data) {
   $data = trim($data);
   $data = stripslashes($data);
   $data = htmlspecialchars($data);
   return $data;
 }
-
 ?>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="registration.css">
+</head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<body>
+
+<img src="homePageLogo.png" class="logo">
+
+<div class="navbar">
+  <a class="homeButton" href="index.php"><i class="fa fa-fw fa-home"></i>Home</a>
+</div>
+
+
+<div class="gridContainer">
+
+  <div class="gridItem">
+    <h1><legend align="center"><b>Register as a guest</b></legend></h1>
+  <br>
+    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+      <span class="error">* <?php echo $nameErrG;?> </span>
+      <input type="text" name="name" placeholder="Your name.." required>
+
+      <span class="error">* <?php echo $emailErrG;?> </span>
+      <input type="text" name="email" placeholder="Your email.." required>
+    
+    <label class="termsAndCond">I have read and agree to the
+      <a href="#"> Terms and conditions</a> and the
+    <a href="#"> Privacy Policy.</a>
+      <input type="checkbox" required>
+      <span class="checkmark"></span>
+      </label>
+  
+      <input class="buttons" type="submit" value="Register" name="Guest">
+    </form>
+  </div>
+  
+  <div class="gridItem">
+    <h1><legend align="center"><b>Register</b></legend></h1>
+  <br>
+    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+      <span class="error">* <?php echo $nameErrF;?> </span>
+      <input type="text" name="name" placeholder="Your name.." required>
+
+      <span class="error">* <?php echo $emailErrF;?> </span>
+      <input type="text" name="email" placeholder="Your email.." required>
+
+      <span class="error">* <?php echo $passErrF;?> </span>
+      <input type="password" name="pass" placeholder="Your password.." required>
+
+      <span class="error">*</span>
+      <input type="password" name="pass2" placeholder="Confirm password.." required>
+    
+    <label class="termsAndCond">I have read and agree to the
+      <a href="#"> Terms and conditions</a> and the
+    <a href="#"> Privacy Policy.</a>
+      <input type="checkbox" required>
+      <span class="checkmark"></span>
+      </label>
+  
+      <input class="buttons" type="submit" value="Register" name="Full">
+    </form>
+  </div>
+</div>
+
+</body>
+</html>

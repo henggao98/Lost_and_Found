@@ -2,6 +2,9 @@
 // define variables and set to empty values
 include_once 'db_connection.php';
 session_start();
+if(isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] == 1)
+  $userID = $_SESSION['id'];
+
 if(isset($_GET['id']))
 {
   $getInstitutionID = $_GET["id"];

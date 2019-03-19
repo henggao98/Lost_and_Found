@@ -1,15 +1,17 @@
 <?php
 // define variables and set to empty values
 session_start();
-/*
-if(!isset($_SESSION["loggedIn"]))
-  header("Location: index.php");
-else if(isset($_SESSION["loggedIn"]) && $_SESSION["loggedIn"] == 0)
-  header("Location: index.php");
-*/
+
+$loggedIn = false;
+if(isset($_SESSION["loggedIn"]) && $_SESSION["loggedIn"] == 1)
+{
+  $userID = $_SESSION["id"];
+  $loggedIn = true;
+}
+
 include_once 'db_connection.php';
 
-$sql = "SELECT ID, ItemName, Descript, Location, Date FROM Items";
+$sql = "SELECT * FROM Items";
 $result = $conn->query($sql);
 
 $totalItems = mysqli_num_rows($result);
