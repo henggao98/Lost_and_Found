@@ -1,6 +1,10 @@
 body {
   font-family: Helvetica;
-  font-size: 15px;
+  font-size: 14px;
+}
+
+.error {
+	color: #ff0000;
 }
 
 /* Navigation bar */
@@ -38,7 +42,7 @@ li a:hover, li a:active {
 
 /* Home icon */
 i {
-  margin-right: 2px;
+  margin-right: 3px;
 }
  
 /* Home button in the navigation bar */ 
