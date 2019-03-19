@@ -10,7 +10,7 @@ body {
     background-size: cover;
 	background-repeat: no-repeat;
 	width: auto;
-	height: 97.4vh;
+	height: 100vh;
 }
 
 /* The popup form - hidden by default */
@@ -61,18 +61,30 @@ body {
 	margin-bottom: 5%;
 }
 
+/* Facebook login button */
+.facebook {
+	float: left;
+    background-color: #EDB100;
+    padding: 10px 20px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    outline: none;
+    margin-top: 5%;
+	margin-bottom: 5%;
+}
+
 /* Add some hover effects to buttons */
-.formContainer .popupLogin:hover, .open-button:hover {
+.formContainer .popupLogin:hover, .open-button:hover, .facebook:hover {
     background-color: #F4D475;
 }
 
 /* Login button */
 .login {
-	width: 10%;
 	height: 30px;
 	float: right;
 	margin-top: 20px;
-    margin-right: 30px;
+    margin-right: 20px;
 	margin-left: 20px;
 	background-color: #FFFAE5;
     border-radius: 50px;
@@ -93,10 +105,10 @@ body {
 
 /* Registration button */
 .register {
-	width: 95px;
 	height: 30px;
 	float: right;
 	margin-top: 20px;
+	margin-left: 20px;
 	background-color: #FFFAE5;
     border-radius: 50px;
 	border: 2px solid #FFBB33;
@@ -114,11 +126,113 @@ body {
 	box-shadow: 0 7px 40px 0 rgba(58, 8, 95, 0.2), 0 7px 40px 0 rgba(0, 0, 0, 0.2);
 }
 
+/* About button */
+.about {
+	height: 30px;
+	width: 65px;
+	float: right;
+	margin-top: 20px;
+	margin-left: 20px;
+	background-color: #FFFAE5;
+    border-radius: 50px;
+	border: 2px solid #FFBB33;
+	display: inline-block;
+	cursor: pointer;
+	outline: none;
+	text-align: center;
+	font-family: Helvetica;
+	font-size: 12px;
+	font-weight: bold;
+	color: #FFBB33;
+}
+
+.about:hover {
+	box-shadow: 0 7px 40px 0 rgba(58, 8, 95, 0.2), 0 7px 40px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* Info button */
+.info {
+	height: 30px;
+	width: 65px;
+	float: right;
+	margin-top: 20px;
+	margin-left: 20px;
+	background-color: #FFFAE5;
+    border-radius: 50px;
+	border: 2px solid #FFBB33;
+	display: inline-block;
+	cursor: pointer;
+	outline: none;
+	text-align: center;
+	font-family: Helvetica;
+	font-size: 12px;
+	font-weight: bold;
+	color: #FFBB33;
+}
+
+.info:hover {
+	box-shadow: 0 7px 40px 0 rgba(58, 8, 95, 0.2), 0 7px 40px 0 rgba(0, 0, 0, 0.2);
+}
+
 /* Lost and found logo */
 .logo {
 	width: 35%;
 	margin-top: 2%;
     margin-left: 37%;
+}
+
+/* Popover styling */
+a {
+  text-decoration: none;
+}
+
+.popoverTitle {
+  text-decoration: none;
+  color: #FFBB33;
+  font-size: 12px;
+}
+
+.popoverWrapper {
+  float: right;
+  display: inline-block;
+}
+.popoverContent {
+  margin-top: 5rem;
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  transform: translate(0, 10px);
+  background-color: #FFFAE5;
+  padding: 1.5rem;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  width: 20vw;
+}
+.popoverContent:before {
+  position: absolute;
+  z-index: -1;
+  content: "";
+  right: calc(40% - 10px);
+  border-style: solid 2px;
+  border-width: 0px 10px 10px 10px;
+  border-color: transparent transparent #FFBB33 transparent;
+  transition-duration: 0.2s;
+  transition-property: transform;
+}
+.popoverWrapper:hover .popoverContent {
+  z-index: 10;
+  opacity: 1;
+  visibility: visible;
+  transform: translate(0, -20px);
+  transition: all 0.5s cubic-bezier(0.75, -0.02, 0.2, 0.97);
+}
+.popoverMessage {
+  text-align: left;
+}
+
+/* Container for the LOST SOMETHING and FOUND SOMETHING button */
+.buttonContainer {
+	display: grid;
+	float: middle;
 }
 
 /* Large buttons for lost and found something */
@@ -131,14 +245,22 @@ body {
 	display: inline-block;
 	cursor: pointer;
 	color: #FFBB33;
-	width: 30vw;
-	height: 5.5vw;
+	width: 400px;
+	height: 70px;
 	text-align: center;
 	font-family: Helvetica;
-	font-size: 1.7vw;
+	font-size: 25px;
 	font-weight: bold;
 	outline: none;
-	margin-top: 2%;
+	margin-top: 3%;
+}
+
+.lostButton {
+	margin-right: 2%;
+}
+
+.foundButton {
+    margin-left: 2%;
 }
 
 .buttons:hover {
@@ -147,22 +269,6 @@ body {
 
 .buttons:active {
     top: 1px;
-}
-
-/* Position of the LOST SOMETHING button */
-.lostButton {
-	margin-right: 2%;
-}
-
-/* Position of the FOUND SOMETHING button */
-.foundButton {
-	margin-left: 2%;
-}
-
-/* Container for the LOST SOMETHING and FOUND SOMETHING button */
-.buttonContainer {
-	display: inline;
-	float: middle;
 }
 
 /* Button for SEARCH FOR A LOCATION */
@@ -175,16 +281,15 @@ body {
 	display: inline-block;
 	cursor: pointer;
 	color: #F37E3D;
-	width: 35vw;
-	height: 5.5vw;
+	width: 400px;
+	height: 70px;
 	text-align: center;
 	font-family: Helvetica;
-	font-size: 1.7vw;
+	font-size: 25px;
 	font-weight: bold;
 	outline: none;
 	float: center;
-	margin-top: 2%;
-	margin-bottom: 0%;
+	margin-top: 3%;
 }
 
 .locationButton:hover {
@@ -194,52 +299,29 @@ body {
     top: 1px;
 }
 
-/* Down arrow at the bottom */
-i {
-    border: solid white;
-    border-width: 0 2px 2px 0;
-    display: inline-block;
-    padding: 6px;
-	transform: rotate(45deg);
-    -webkit-transform: rotate(45deg);
-}
-
-/* Contents of the "ABOUT" page */
-.dropdown {
-    float: center;
-    overflow: hidden;
-}
-
-/* Button to open the ABOUT page */
-.dropdown .dropbtn {
-    cursor: pointer;
-    border: none;
-    outline: none;
-    padding: 14px 16px;
-    background-color: inherit;
-	border-radius: 50px;
-	margin-bottom: 6px;
-}
-
-.dropdown:hover .dropbtn:hover, .dropbtn:focus {
-    background-color: #FF6252;
-	box-shadow: 0 4px 4px 0 rgba(58, 8, 95, 0.2), 0 4px 4px 0 rgba(0, 0, 0, 0.2);
-}
-
-/* Contents of the ABOUT page */
-.dropdownContent {
-	width: 100%;
-	height: 60px;
-	display: none;
-    background-color: #FFFAE5;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-	margin-bottom: 0.5%;
-}
-
 .show {
     display: block;
 }
+
+@media screen and (max-width: 850px) {
+	.lostButton {
+		margin-right: 0;
+	}
+	
+	.foundButton {
+		margin-left: 0;
+	}
+	
+	.popoverContent {
+	    width: 32vw;
+	}
+}
+
+@media screen and (max-width: 600px) {
+    .popoverContent {
+		width: 40vw;
+	}
+}	
 
 @media screen and (max-width: 450px) {
 	.formPopup {
