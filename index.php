@@ -40,7 +40,7 @@ else
   ?>
   <div id="loginAndRegistrationButton">
     <button class="login" onclick="popup()">LOGIN</button>
-      <a href="registration.html">
+      <a href="registration.php">
         <button class="register">REGISTER</button>
       </a>
     </div>

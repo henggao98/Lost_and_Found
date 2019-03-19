@@ -3,34 +3,34 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
 require_once "vendor/autoload.php";
-include_once 'db_connection.php';
-
+//include_once 'db_connection.php';
+/*
 $sql = "SELECT Email FROM Users";
 $email_check = $conn->query($sql);
 
 
-$isTaken = false;
+$isTakenG = false;
 $name = $email = "";
-$nameErr = $emailErr = "";
-$countOfSuccesfulFields = 0;
+$nameErrG = $emailErrG = "";
+$countOfSuccesfulFieldsG = 0;
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {/*copied from www.w3school.com */
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
   session_start();
-  
+*/  
   // Name
   if (empty($_POST["name"])) {
-    $nameErr = "First name is required";
+    $nameErrG = "First name is required";
   } else {
     $name = test_input($_POST["name"]);
-    $_SESSION["name"] = $name;
-    $countOfSuccesfulFields ++;
+    //$_SESSION["inputNameG"] = $name;
+    $countOfSuccesfulFieldsG ++;
   }
 
   // EMAIL
   if (empty($_POST["email"])) {
-    $emailErr = "Email is required";
+    $emailErrG = "Email is required";
   } else if (!filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)) {/*copied from www.w3school.com */
-    $emailErr = "Invalid email format";
+    $emailErrG = "Invalid email format";
   }
   else{
     $email = test_input($_POST["email"]);
@@ -38,21 +38,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {/*copied from www.w3school.com */
     while($row = $email_check->fetch_assoc())
     {
       if($row["Email"] == $email)
-        $isTaken = true;
+        $isTakenG = true;
     }
 
-    if($isTaken)
+    if($isTakenG)
     {
-      $emailErr = "Email has already been taken";
+      $emailErrG = "Email has already been taken";
     }
     else
     {
-      $_SESSION["email"] = $email;
-      $countOfSuccesfulFields ++;
+      //$_SESSION["inputEmailG"] = $email;
+      $countOfSuccesfulFieldsG ++;
     }
   }
   
-  if($countOfSuccesfulFields == 2)
+  if($countOfSuccesfulFieldsG == 2)
   {
     $pass = randomPassword();
     print $pass;
@@ -103,11 +103,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {/*copied from www.w3school.com */
     $insertQuery = "INSERT INTO Users (Name, Email, Pass)
                 VALUES ('{$name}', '{$email}', '{$hashPass}')";
 
-    session_start();
+    //session_start();
     $_SESSION['loggedIn'] = 0;
     if($conn->query($insertQuery) === TRUE)
     {
-      echo "New record created successfully";
+      //echo "New record created successfully";
       $_SESSION['id'] = $conn->insert_id;
       $_SESSION['loggedIn'] = 1;
       $_SESSION['name'] = $name;
@@ -119,15 +119,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {/*copied from www.w3school.com */
 
         
   }//if
+/*
 }//if
 
-function test_input($data) {/*copied from www.w3school.com */
+function test_input($data) {
   $data = trim($data);
   $data = stripslashes($data);
   $data = htmlspecialchars($data);
   return $data;
 }
-
+*/
 function randomPassword() {
     $alphabet = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890';
     $pass = array(); //remember to declare $pass as an array
