@@ -3,4 +3,6 @@
 
   $id = $_GET['matchedID'];
   $sql = "UPDATE Matched SET Status = '1' WHERE ID = '$id'";
+  $conn->query($sql);
+  header("Location: account.php");
 ?>
