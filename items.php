@@ -2,6 +2,7 @@
 // define variables and set to empty values
 session_start();
 
+$loggedIn = false;
 if(isset($_SESSION["loggedIn"]) && $_SESSION["loggedIn"] == 1)
 {
   $userID = $_SESSION["id"];

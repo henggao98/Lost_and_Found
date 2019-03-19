@@ -26,7 +26,7 @@ if($loggedIn)
 <p class="outset"><h4>
   <?php echo $row["Location"] . ', ' . $row["Date"]; ?>
 </h4></p>
-
+<?php if($loggedIn){ ?>
 <p>
   <h4>Found by <a href="viewComments.php?id=<?php echo($userID) ?>">
     <?php
@@ -34,7 +34,7 @@ if($loggedIn)
     ?>
   </a></h4>
 </p>  
-
+<?php } ?>
 <p>
 <?php echo $row["Descript"]; ?>  
 </p>
