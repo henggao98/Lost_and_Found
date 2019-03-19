@@ -21,7 +21,7 @@ if(isset($_SESSION["loggedIn"]) && $_SESSION["loggedIn"] == 1)
   $row = $result->fetch_assoc();
   $name = $row["Name"];
   ?>
-  <div id="loginAndRegistrationButton">
+  <div id="topnavbar">
     <a href="logout.php">
       <button class="login">
         Logout
@@ -38,10 +38,17 @@ if(isset($_SESSION["loggedIn"]) && $_SESSION["loggedIn"] == 1)
 else
 {
   ?>
-  <div id="loginAndRegistrationButton">
+  <div id="topnavbar">
     <button class="login" onclick="popup()">LOGIN</button>
       <a href="registration.php">
         <button class="register">REGISTER</button>
+	  <a href="info.html"><button class="about">ABOUT</button></a>
+      <div class="popoverWrapper">
+        <button class="popoverTitle info">INFO</button>
+        <div class="popoverContent">
+        <p class="popoverMessage">You can search for an item by clicking on the LOST SOMETHING button. You can post an item that you found by clicking on the FOUND SOMETHING button. When you are logged in, you are able to claim lost items.</p>
+        </div>
+      </div>
       </a>
     </div>
   <?php
@@ -62,9 +69,10 @@ else
     
     <span class="error"> <?php echo $Error;?> </span>
 
-    <button type="submit" class="popupLogin">Login</button>
+    <a href="fb-login.php"><button class="facebook">Log in with Facebook!</button></a>
+	
+	<button type="submit" class="popupLogin">Login</button>
   </form>
-  <a href="fb-login.php">Log in with Facebook!</a>
 </div>
 
 <img src="homePageLogo.png" class="logo">
@@ -81,21 +89,6 @@ else
   </div>
 </div>
 
-<br>
-
-<div class="navbar">
-  <div class="dropdown">
-  <button class="dropbtn" onclick="myFunction(); scrollWin(0, 60)">
-    <i id="down arrow"></i>
-  </button>
-  <div class="dropdownContent" id="myDropdown">
-    <p>some stuff here
-	<br>blah blah blah
-	<br>blah blah blah</p>
-  </div>
-  </div>
-</div>
-
 <center>
 
 <script>
@@ -104,30 +97,6 @@ toggle between hiding and showing the login form */
 function popup()
 {
   document.getElementById("myForm").classList.toggle("show");
-}
-
-/* When the user clicks on the button,
-toggle between hiding and showing the dropdown content */
-function scrollWin(x, y)
-{
-  window.scrollBy(x, y);
-}
-
-function myFunction()
-{
-  document.getElementById("myDropdown").classList.toggle("show");
-}
-
-// Close the dropdown if the user clicks outside of it
-window.onclick = function(e)
-{
-  if (!e.target.matches('.dropbtn'))
-  {
-    if (document.getElementById("myDropdown").classList.contains('show'))
-	{
-      document.getElementById("myDropdown").classList.remove('show');
-    }
-  }
 }
 </script>
 

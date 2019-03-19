@@ -2,18 +2,26 @@
 <html>
 
 <head>
-  <link rel="stylesheet" href="homePage.css">
+  <link rel="stylesheet" href="homePage2.css">
   <title>Lost and Found Home Page</title>
 </head>
 
 
 <body background="homePageBackground.jpg" class="background">
 
-<div id="loginAndRegistrationButton">
-<button class="login" onclick="popup()">LOGIN</button>
-<a href="registration.html">
-  <button class="register">REGISTER</button>
-</a>
+<div id="topnavbar">
+  <button class="login" onclick="popup()">LOGIN</button>
+  <a href="registration.html"><button class="register">REGISTER</button></a>
+  <a href="info.html"><button class="about">ABOUT</button></a>
+  <div class="popoverWrapper">
+    <button class="popoverTitle info">INFO</button>
+      <div class="popoverContent">
+        <p class="popoverMessage">
+	  To search for an item, you need to login first.
+	  After logging in, you can search for an item by clicking on the LOST SOMETHING button. Or you can post an item that you found by clicking on the FOUND SOMETHING button.
+	    </p>
+      </div>
+    </div>
 </div>
 
 <div class="formPopup" id="myForm">
@@ -28,6 +36,7 @@
     <label for="pass"><b>Password</b></label>
     <input type="password" placeholder="Enter Password" name="pass" required>
 
+	<a href="fb-login.php"><button class="facebook">Log in with Facebook!</button></a>
     <button type="submit" class="popupLogin">Login</button>
   </form>
 </div>
@@ -42,23 +51,8 @@
 	<button class="buttons foundButton">FOUND SOMETHING</button>
   </div>
   <div>
-	<button class="locationButton">SEARCH FOR A LOCATION</button>
+	<button class="locationButton">PUBLIC PLACES</button>
   </div>
-</div>
-
-<br>
-
-<div class="navbar">
-  <div class="dropdown">
-  <button class="dropbtn" onclick="myFunction(); scrollWin(0, 60)">
-    <i id="down arrow"></i>
-  </button>
-  <div class="dropdownContent" id="myDropdown">
-    <p>some stuff here
-	<br>blah blah blah
-	<br>blah blah blah</p>
-  </div>
-  </div> 
 </div>
 
 <center>
@@ -69,30 +63,6 @@ toggle between hiding and showing the login form */
 function popup()
 {
   document.getElementById("myForm").classList.toggle("show");
-}
-
-/* When the user clicks on the button, 
-toggle between hiding and showing the dropdown content */
-function scrollWin(x, y)
-{
-  window.scrollBy(x, y);
-}
-
-function myFunction()
-{
-  document.getElementById("myDropdown").classList.toggle("show");
-}
-
-// Close the dropdown if the user clicks outside of it
-window.onclick = function(e)
-{
-  if (!e.target.matches('.dropbtn'))
-  {
-    if (document.getElementById("myDropdown").classList.contains('show'))
-	{
-      document.getElementById("myDropdown").classList.remove('show');
-    }
-  }
 }
 </script>
 
