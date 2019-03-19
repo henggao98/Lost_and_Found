@@ -9,5 +9,18 @@
 <! When this button is pressed call the recievedItem function with $row["ItemID"] as the 
 argument>
 
-<input type="button" value ="Recieved from Finder" <?php if($matchedRow["Status"] == '0'){ ?> disabled <?php } ?>
+<?php
+if($matchedRow["Status"] == 1)
+{
+?>
+<p><button class="button" onclick="location.href='itemRecieved.php?itemID=<?php echo($row["ID"]) ?> &  matchedID = <?php echo($matchedRow["ID"])?>Recieved from Finder</button></p>
+<?php
+}
+else
+{
+?>
+<p><button type="button" disabled>Awaiting confirmation from finder</button>
+<?php
+}
+?>
 </div>

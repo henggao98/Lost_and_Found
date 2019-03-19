@@ -4,6 +4,8 @@
     header("Location: index.php");
   else if(isset($_SESSION["loggedIn"]) && $_SESSION["loggedIn"] == 0)
     header("Location: index.php");
+  else if($_SESSION["loggedIn"] == 1 && isset($_SESSION["loggedIn"]))
+    $loggedIn = true;
 
   include_once "db_connection.php";
 ?>
@@ -67,21 +69,6 @@
 
   </div>  <!--end main-->
 </div><!--coloumn-->
-
-
-
  </body>
  </html>
 
-<?php
-function itemReturned($id)
-{
-  $sql = "UPDATE Matched SET Status = '1' WHERE Matched . ID = $id";
-}
-
-function itemRecieved($id)
-{
-  $sql = "DELETE FROM Items WHERE ID = $id";
-  $sql = "DELETE FROM Matched WHERE ItemID = $id";
-}
-?>
