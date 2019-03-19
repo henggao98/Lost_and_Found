@@ -11,13 +11,7 @@
   {
     if($userRow["ID"] == $sessionId)
     {
-      echo "<label> Name: " . $userRow["Name"] . "</label><br>";
-      echo "<label> Email: " . $userRow["Email"] . "<label><br>";
-
-      if($userRow["Phone"] == null)
-        echo "  <label>Phone:    <label><br>";
-      else
-        echo "<label>Phone: " . $userRow["Phone"] . "<label><br>";
+      include "showPersonalInformation.php";
       $accountFound = true;
     }//if
   }//while
