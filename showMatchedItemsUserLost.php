@@ -13,13 +13,13 @@ argument>
 if($matchedRow["Status"] == 1)
 {
 ?>
-<p><button class="button" onclick="location.href='itemRecieved.php?itemID=<?php echo($row["ID"]) ?> &  matchedID = <?php echo($matchedRow["ID"])?>Recieved from Finder</button></p>
+<p><button class="button" onclick="location.href='itemRecieved.php?itemID=<?php echo($row["ID"]) ?> &  matchedID = <?php echo($matchedRow["ID"])?>'">Recieved from Finder</button></p>
 <?php
 }
 else
 {
 ?>
-<p><button type="button" disabled>Awaiting confirmation from finder</button>
+<p><button class="button" disabled>Awaiting confirmation from finder</button></p>
 <?php
 }
 ?>

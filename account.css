@@ -8,7 +8,7 @@ body{
     Color:black;
     padding:10px;
     font-family: Helvetica;
-    Background-color: #FFFAE5;
+    Background-color: #F8F4E6;
 }
 
 .header {
@@ -71,7 +71,7 @@ body{
 }
 
 .PersonalInformationContainer{
-  font-size-adjust: auto;
+   font-size-adjust: auto;
    padding:10% 30% 25% 10%;
    border: 4px solid #F4D475;
    text-align: center;
@@ -119,9 +119,8 @@ color:#EDB100;
   /* Add a card effect for articles */
   .card
   {
-    background-color: #EDB100;
+    background-color: white;
     padding: 20px;
-    color:black;
     margin-top: 20px;
   }
 
