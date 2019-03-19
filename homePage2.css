@@ -2,6 +2,10 @@ body {
 	font-family: Helvetica;
 }
 
+.error {
+  color: #ff0000;
+}
+
 /* Background picture */
 .background {
 	-webkit-background-size: cover;
