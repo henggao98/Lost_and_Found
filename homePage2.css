@@ -209,7 +209,7 @@ a {
 	    </p>
       </div>
     </div>
-*/
+
 
 .popoverTitle {
   text-decoration: none;
@@ -254,6 +254,8 @@ a {
   text-align: left;
 }
 
+*/
+
 /* Container for the LOST SOMETHING and FOUND SOMETHING button */
 .buttonContainer {
 	display: grid;
@@ -263,8 +265,8 @@ a {
 /* Large buttons for lost and found something */
 .buttons {
 	background-color: #FFFAE5;
-	-moz-border-radius: 10px;
-	-webkit-border-radius: 10px;
+	-moz-border-radius: 50px;
+	-webkit-border-radius: 50px;
 	border-radius: 50px;
 	border: 3px solid #FFBB33;
 	display: inline-block;
@@ -274,7 +276,7 @@ a {
 	height: 70px;
 	text-align: center;
 	font-family: Helvetica;
-	font-size: 25px;
+	font-size: 26px;
 	font-weight: bold;
 	outline: none;
 	margin-top: 3%;
@@ -299,8 +301,8 @@ a {
 /* Button for SEARCH FOR A LOCATION */
 .locationButton {
 	background-color: #FFFAE5;
-	-moz-border-radius: 10px;
-	-webkit-border-radius: 10px;
+	-moz-border-radius: 50px;
+	-webkit-border-radius: 50px;
 	border-radius: 50px;
 	border: 3px solid #F37E3D;
 	display: inline-block;
@@ -310,7 +312,7 @@ a {
 	height: 70px;
 	text-align: center;
 	font-family: Helvetica;
-	font-size: 25px;
+	font-size: 26px;
 	font-weight: bold;
 	outline: none;
 	float: center;
@@ -339,6 +341,48 @@ a {
 	opacity: 0.9;
 }
 
+.column0 {
+    width: 40vw;
+    float: left;
+    padding: 1vw;
+	display: grid;
+}
+.column1 {
+	width: 40vw;
+    float: right;
+    padding: 1vw;
+	display: grid;
+}
+
+ul.b {
+  list-style-type: circle;
+}
+ul.b li{
+	float: none;
+}
+
+.card{
+	padding: 15px;
+	color: black;
+	background-color: #FFFAE5;
+	text-align: justify;
+	border: 3px solid #FFBB33;
+	border-radius: 30px;
+	margin: 0 0 0 0;
+}
+
+.clearfix {
+  overflow: auto;
+  text-align: justify;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
 @media screen and (max-width: 850px) {
 	.lostButton {
 		margin-right: 0;
@@ -347,15 +391,21 @@ a {
 	.foundButton {
 		margin-left: 0;
 	}
-	
-	.popoverContent {
-	    width: 32vw;
-	}
 }
 
-@media screen and (max-width: 600px) {
-    .popoverContent {
-		width: 40vw;
+@media screen and (max-width: 700px) {
+    .column0 {
+        width: auto;
+        padding: 1vw;
+    }
+    .column1 {
+	    width: auto;
+        padding: 1vw;
+		margin-top: 1%;
+    }
+	.row {
+		margin-top: 2%;
+		margin-bottom: 2%;
 	}
 }	
 
