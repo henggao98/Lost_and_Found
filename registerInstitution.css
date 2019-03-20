@@ -4,7 +4,7 @@ body {
 }
 
 .error {
-  color: #ff0000;
+	color: #ff0000;
 }
 
 /* Navigation bar */
@@ -42,7 +42,7 @@ li a:hover, li a:active {
 
 /* Home icon */
 i {
-  margin-right: 2px;
+  margin-right: 3px;
 }
 
 /* Lost and found logo */

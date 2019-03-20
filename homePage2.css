@@ -1,9 +1,13 @@
+html {
+    scroll-behavior: smooth;
+}
+
 body {
 	font-family: Helvetica;
 }
 
 .error {
-  color: #ff0000;
+	color: #ff0000;
 }
 
 /* Background picture */
@@ -14,7 +18,8 @@ body {
     background-size: cover;
 	background-repeat: no-repeat;
 	width: auto;
-	height: 100vh;
+	height: auto;
+	background-attachment: fixed;
 }
 
 /* The popup form - hidden by default */
@@ -26,7 +31,7 @@ body {
     border: 3px solid #FFBB33;
     background-color: #FFFAE5;
     z-index: 9;
-    width: 310px;
+    width: 300px;
     padding: 1%;
 }
 
@@ -68,7 +73,7 @@ body {
 /* Facebook login button */
 .facebook {
 	float: left;
-    background-color: #EDB100;
+    background-color: #5474b7;
     padding: 10px 20px;
     border: none;
     color: white;
@@ -78,8 +83,12 @@ body {
 	margin-bottom: 5%;
 }
 
+.facebook:hover {
+    background-color: #6c8bcc;
+}
+
 /* Add some hover effects to buttons */
-.formContainer .popupLogin:hover, .open-button:hover, .facebook:hover {
+.formContainer .popupLogin:hover, .open-button:hover {
     background-color: #F4D475;
 }
 
@@ -189,6 +198,18 @@ body {
 a {
   text-decoration: none;
 }
+
+/* Removed from html
+  <div class="popoverWrapper">
+    <button class="popoverTitle info">ABOUT</button>
+      <div class="popoverContent">
+        <p class="popoverMessage">
+	  You can search for an item by clicking on the LOST SOMETHING button.
+	  You can post an item that you found by clicking on the FOUND SOMETHING button. When you are logged in, you are able to claim lost items.
+	    </p>
+      </div>
+    </div>
+*/
 
 .popoverTitle {
   text-decoration: none;
@@ -305,6 +326,17 @@ a {
 
 .show {
     display: block;
+}
+
+.infoContainer {
+    background-color: #FFFAE5;
+	box-shadow: 0 10px 50px 0 rgba(255, 128, 0, 0.2), 0 10px 50px 0 rgba(0,0,0,0.2);
+	text-align: justify;
+	margin: 8% 3% 4% 3%; /* top right bottom left */
+	padding: 2%;
+	border-radius: 40px;
+	border: 3px solid #FFBB33;
+	opacity: 0.9;
 }
 
 @media screen and (max-width: 850px) {
