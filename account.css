@@ -49,7 +49,6 @@ body{
 .row {
     list-style-type: none;
     background-color: #F8F4E6;
-    border: 5px solid #F4D475;
     margin-top: 20px;
     padding: 10px;
     text-align: center;
@@ -71,10 +70,10 @@ body{
 }
 
 .PersonalInformationContainer{
-  font-size-adjust: auto;
-   padding:10% 30% 25% 10%;
-   border: 4px solid #F4D475;
+   font-size-adjust: auto;
    text-align: center;
+   background-color: white;
+   padding: 10px;
 }
 
 
@@ -83,7 +82,6 @@ body{
   -ms-flex: 70%; /* IE10 */
   flex: 70%;
   padding: 10%;
-  border: 4px solid #F4D475;
   overflow:hidden;
   height:auto;
   width:auto;
@@ -94,7 +92,7 @@ body{
 
 .subtitle{
 font-size:30px;
-color:#EDB100;
+color:#black;
 }
 
 /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
@@ -123,7 +121,7 @@ color:#EDB100;
     padding: 20px;
     margin-top: 20px;
   }
-  
+
   .card:hover{
     -ms-transform: scale(1.2); /* IE 9 */
     -webkit-transform: scale(1.2); /* Safari 3-8 */
@@ -147,5 +145,5 @@ color:#EDB100;
 
   input[type=text]:focus
   {
-    width: 40%;
+    width: 70%;
   }
