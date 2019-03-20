@@ -2,34 +2,62 @@
   box-sizing: border-box;
 }
 
-
-
-body{
-    Color:black;
-    padding:10px;
-    font-family: Helvetica;
-    Background-color: #F8F4E6;
+body
+{
+  font-family: Helvetica;
+  padding: 10px;
+  background: #F8F4E6;
 }
 
-.header {
-  padding: 5px;/*the distance from title"Lost_and_found" to the border*/
-  text-align: center;
-  font-size:55px;
-  background: #EDB100;
+.button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
   color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 15%;
 }
 
+.button:hover {
+  background-color: #555;
+}
+
+.buttonInactive {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #555;
+  text-align: center;
+  cursor: default;
+  width: 15%
+}
+
+/* Lost and found logo */
+.logo
+{
+  text-align: center;
+  padding: 5px;
+  background-color: #EDB100;
+  color: white;
+  font-size: 55px;
+}
+
+/* Style the top navigation bar */
 .topnav
 {
   overflow: hidden;
   background-color: #EDB100;
 }
 
-
 /* Style the topnav links */
 .topnav a
 {
-  float: right;
+  float: left;
   display: block;
   color: #f2f2f2;
   text-align: center;
@@ -37,64 +65,52 @@ body{
   text-decoration: none;
 }
 
-
 /* Change color on hover */
 .topnav a:hover
 {
-  background-color: #ddd;
-  color: black;
+  background-color: #F4D475;
+  color: white;
 }
 
-/* Column container */
-.row {
-    list-style-type: none;
-    background-color: #F8F4E6;
-    border: 5px solid #F4D475;
-    margin-top: 20px;
-    padding: 10px;
-    text-align: center;
-
-
-
-  display: -ms-flexbox; /* IE10 */
-  display: flex;
-  -ms-flex-wrap: wrap; /* IE10 */
-  flex-wrap: wrap;
+/* Left column */
+.leftcolumn
+{
+  float: left;
+  width: 25%;
 }
 
-/* Create two unequal columns that sits next to each other */
-/* Sidebar/left column */
-.side {
-  -ms-flex: 30%; /* IE10 */
-  flex: 30%;
+/* Right column */
+.rightcolumn
+{
+  float: left;
+  width: 75%;
+  background-color: #F8F4E6;
+  padding-left: 20px;
+}
+
+/* Add a card effect for articles */
+.card
+{
+  background-color: white;
   padding: 20px;
+  margin-top: 20px;
 }
 
-.PersonalInformationContainer{
-   font-size-adjust: auto;
-   padding:10% 30% 25% 10%;
-   border: 4px solid #F4D475;
-   text-align: center;
+/* Clear floats after the columns */
+.row:after
+{
+  content: "";
+  display: table;
+  clear: both;
 }
 
-
-/* Main column */
-.main {
-  -ms-flex: 70%; /* IE10 */
-  flex: 70%;
-  padding: 10%;
-  border: 4px solid #F4D475;
-  overflow:hidden;
-  height:auto;
-  width:auto;
-  Background-color:#F8F4E6;
-  text-align:center;
-}
-
-
-.subtitle{
-font-size:30px;
-color:#EDB100;
+/* Footer */
+.footer
+{
+  padding: 5px;
+  text-align: center;
+  background: #EDB100;
+  margin-top: 5px;
 }
 
 /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
@@ -116,36 +132,110 @@ color:#EDB100;
   }
 }
 
-  /* Add a card effect for articles */
-  .card
-  {
-    background-color: white;
-    padding: 20px;
-    margin-top: 20px;
-  }
+/* for the pagination in the footer*/
+.center
+{
+  text-align: center;
+}
 
-  .card:hover{
-    -ms-transform: scale(1.2); /* IE 9 */
-    -webkit-transform: scale(1.2); /* Safari 3-8 */
-    transform: scale(1.2);
-  }
+.pagination
+{
+  display: inline-block;
+}
 
-  input[type=text]
-  {
-    width: 130px;
-    box-sizing: border-box;
-    border: 4px solid #F4D475;
-    font-size: 16px;
-    background-color: white;
-    background-image: url('searchicon.png');
-    background-position: 10px 10px;
-    background-repeat: no-repeat;
-    padding: 10px 15px 10px 40px;
-    -webkit-transition: width 0.4s ease-in-out;
-    transition: width 0.4s ease-in-out;
-  }
+.pagination a
+{
+  color: #F8F4E6;
+  float: left;
+  padding: 8px 15px;
+  text-decoration: none;
+  transition: background-color .3s;
+  border: 1px solid #F8F4E6;
+  margin: 0 4px;
+}
 
-  input[type=text]:focus
-  {
-    width: 40%;
-  }
+.pagination a.active
+{
+  background-color: #FFDB4D;
+  color: white;
+  border: 1px solid #FFFAE5;
+}
+
+.pagination a:hover:not(.active) {background-color: #F4D475;}
+
+
+/* For the checkboxes */
+/* The container */
+.container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 15px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: #eee;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+  background-color: #F4D475;
+}
+
+/* When the checkbox is checked, add a blue background */
+.container input:checked ~ .checkmark {
+  background-color: #EDB100;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+  left: 6px;
+  top: 2px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+p.outset
+{
+  border-style: outset;
+  border-color: #F9E6AD
+
+}

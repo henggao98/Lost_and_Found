@@ -14,7 +14,7 @@ matchedRow["ID"]>
 if($matchedRow["Status"] == 1)
 {
 ?>
-  <p><button class="button" disabled>Waiting for owners confirmation</button></p>;
+  <p><button class="buttonInactive" disabled>Waiting for owners confirmation</button></p>;
 <?php
 }
 elseif ($matchedRow["Status"] == 0)

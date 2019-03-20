@@ -1,8 +1,19 @@
-<div class ="PersonalInformationContainer"><h3>
+<h4>
 <?php echo "Name: " . $userRow["Name"]; ?>
-</h3><h3>
+</h4><h4>
 <?php echo "Email: " . $userRow["Email"]; ?>
-</h3><h3>
-<?php echo "Phone number: " . $userRow["Phone"]; ?>
-</h3>
- 
+</h4><h4>
+<?php
+  if($userRow["Phone"] == null)
+  {
+?>
+  <form method="post" action="phoneNumber.php">
+    Phone: <input type="text" name="phone">
+    <input type="submit" value="Submit">
+  </form>
+<?php
+  }else
+    echo "Phone number: " . $userRow["Phone"]; ?>
+
+</h4>
+

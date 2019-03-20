@@ -17,58 +17,54 @@
   <head><link rel="stylesheet" href= "account.css">
   <meta charset="utf-8">
 
- </head>
+  </head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <body>
 
+<div class="logo">
+  <b>Lost & Found</b>
+</div>
 
- <body>
+<div class="topnav">
+  <a href="index.php" style="float:right"><i class="fa fa-fw fa-home"></i>Home</a>
+  <a href="items.php" style="float:right"><i class="fa fa-fw fa-globe"></i>Search Items</a>
+  <a href="about.html" style="float:right"><i class="fa fa-fw fa-info-circle"></i>About</a>
+  <a href="institutions.php" style="float:right"><i class="fa fa-fw fa-globe"></i>Search Places</a>
+</div>
 
-  <div class="header">
-    <b>Lost & Found</b>
-  </div>
-
-<nav class="topnav">
-  <a class="active" href="#news">About</a>
-  <a class="active" href ="#home">Home</a>
-
-  <form>
-    <input type="text" name="search" placeholder="Search..">
-  </form>
-</nav>
-
-<div class="row"><!--genericContainer-->
-  <div class="side"><!--left column-->
-    <div class="PersonalInformationContainer">
-      <h2 class="subtitle">Account Information</h2>
+<div class="row">
+  <div class="leftcolumn">
+    <div class="card">
+      <h3>Account Information:</h3>
       <?php include 'PersonalInformation.php';?>
     </div>
+    <div class="card">
+      <h2>Comments:</h2>
+      <?php include 'accountComments.php';?>
+    </div>
   </div>
 
-  <div class="main" >
-    <div class="MatchedItemContainer">
-      <h2 class="subtitle">Matched Items</h2>
+
+  <div class="rightcolumn" >
+    <div class="card">
+    <h1 align="center", style="color:#EDB100;">Matched Items</h1>
       <br>
-        <div class="rightcolumn">
-          <h4 class="subtitle">Items you've found</h4>
-          <?php include 'matchedItemsUserFound.php';?>
-        </div>
-        <br>
-        <div class="rightcolumn">
-          <h3 class="subtitle">Item's you've lost</h3>
-          <?php include 'matchedItemsUserLost.php';?>
-        </div>
-    </div>
-    <br>
-
-
-    <div class="FoundItemsContainer">
-      <h2 class="subtitle">Found Items</h2>
+      <div class="card">
+      <h2>Items you've found</h2>
+      <?php include 'matchedItemsUserFound.php';?>
+      </div>
+      <br>
+      <div class="card">
+      <h2 class="subtitle">Item's you've lost</h2>
+      <?php include 'matchedItemsUserLost.php';?>
+      </div>
+      <div class="card">
+      <h1 align="center", style="color:#EDB100";">Found Items</h1>
       <br>
       <?php include 'FoundItems.php';?>
-    </div>
-    <br>
-
-  </div>  <!--end main-->
-</div><!--coloumn-->
+      </div>
+  </div><!--coloumn-->
  </body>
  </html>
 
