@@ -24,14 +24,17 @@
     <b>Lost & Found</b>
   </div>
 
-<nav class="topnav">
-  <a class="active" href="#news">About</a>
-  <a class="active" href ="#home">Home</a>
-
-  <form>
-    <input type="text" name="search" placeholder="Search..">
-  </form>
-</nav>
+  <div class="topnav">
+    <a href="index.php" style="float:right"><i class="fa fa-fw fa-home"></i>Home</a>
+    <a href="account.php" style="float:right"><i class="fa fa-fw fa-user"></i>Account</a>
+    <a href="institutions.php" style="float:right"><i class="fa fa-fw fa-globe"></i>Search Places</a>
+    <form name="searchForm" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
+      <input type="text" name="search" placeholder="Search.." value="<?php echo($_SESSION['search']); ?>">
+      <input type="submit"
+         style="position: absolute; left: -9999px; width: 1px; height: 1px;"
+         tabindex="-1"  name="submitSearch" value="<?php echo $searched; ?>" />
+    </form>
+  </div>
 
 <div class="row"><!--genericContainer-->
   <div class="side"><!--left column-->

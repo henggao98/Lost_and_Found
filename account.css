@@ -119,12 +119,11 @@ color:#EDB100;
   /* Add a card effect for articles */
   .card
   {
-    background-color: #EDB100;
+    background-color: white;
     padding: 20px;
-    color:black;
     margin-top: 20px;
   }
-
+  
   .card:hover{
     -ms-transform: scale(1.2); /* IE 9 */
     -webkit-transform: scale(1.2); /* Safari 3-8 */
