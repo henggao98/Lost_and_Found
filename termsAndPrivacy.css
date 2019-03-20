@@ -1,0 +1,101 @@
+body{
+	font-family: Helvetica;
+	background-color: #FFFBE5;
+	padding: 10px;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a:active {
+  text-decoration: underline;
+}
+
+p{
+	text-align: justify;
+}
+
+.header0 {
+  color: #ffffff;
+  background-color: #EDB100;
+  padding: 5px;
+  text-align: center;
+  font-size: 45px;
+}
+
+ul.b {
+  list-style-type: circle;
+}
+
+ul.b li{
+	float: none;
+}
+
+.card{
+	padding: 0 20px 15px 20px;
+	color: black;
+	background-color: #FFF8CC;
+	text-align: justify;
+	border: 3px solid #EDB100;
+	border-radius: 50px;
+	box-shadow: 0 10px 50px 0 rgba(255, 128, 0, 0.2), 0 10px 50px 0 rgba(0,0,0,0.2);
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.footer{
+	background-color: #FFFBE5;
+	color: #FFFBE5;
+	padding: 5px;
+	margin-top: 17px;
+}
+
+ul.a {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #edb100;
+
+}
+
+ul li{
+	float: right;
+}
+
+li {
+    float: right;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  background-color: #EDB100;
+}
+
+/* Change the link color on hover */
+li a:hover {
+  background-color: #f4d475;
+  text-decoration: none;
+}
+
+.error {
+    color: #FF0000;
+}
