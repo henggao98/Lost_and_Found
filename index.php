@@ -41,15 +41,8 @@ else
   <div id="topnavbar">
     <button class="login" onclick="popup()">LOGIN</button>
       <a href="registration.php">
-        <button class="register">REGISTER</button>
-	  <a href="info.html"><button class="about">ABOUT</button></a>
-      <div class="popoverWrapper">
-        <button class="popoverTitle info">INFO</button>
-        <div class="popoverContent">
-        <p class="popoverMessage">You can search for an item by clicking on the LOST SOMETHING button. You can post an item that you found by clicking on the FOUND SOMETHING button. When you are logged in, you are able to claim lost items.</p>
-        </div>
-      </div>
-      </a>
+        <button class="register">REGISTER</button></a>
+	    <a href="info.html"><button class="info">ABOUT</button></a>
     </div>
   <?php
 }
@@ -90,6 +83,9 @@ else
 </div>
 
 <center>
+
+<div class="infoContainer">
+</div>
 
 <script>
 /* When the user clicks on the login button,
