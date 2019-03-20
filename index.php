@@ -41,15 +41,8 @@ else
   <div id="topnavbar">
     <button class="login" onclick="popup()">LOGIN</button>
       <a href="registration.php">
-        <button class="register">REGISTER</button>
-	  <a href="info.html"><button class="about">ABOUT</button></a>
-      <div class="popoverWrapper">
-        <button class="popoverTitle info">INFO</button>
-        <div class="popoverContent">
-        <p class="popoverMessage">You can search for an item by clicking on the LOST SOMETHING button. You can post an item that you found by clicking on the FOUND SOMETHING button. When you are logged in, you are able to claim lost items.</p>
-        </div>
-      </div>
-      </a>
+        <button class="register">REGISTER</button></a>
+	    <a href="info.html"><button class="info">ABOUT</button></a>
     </div>
   <?php
 }
@@ -90,6 +83,60 @@ else
 </div>
 
 <center>
+
+<div class="infoContainer" id="info">
+  <div class="row">
+    <div class="column0" >
+		<div class="card">
+			<h2>How to look for a lost item?</h2>	
+			<div class="clearfix"> <i class="fa fa-search" style=" font-size:120px; float:right; padding:10px"></i> Are you looking for an item you misplaced in Manchester? Welcome to <b>Lost&Found</b> where you don't even have to create 
+			an account to look for your belongings! If an item you are looking for has been posted, it is available to view on this <a href="items.html" style="color:#FFBB33">page</a>. 
+			In order to look for an object you might use the search engine provided or choose from the options enlisted on the side.
+		</div>
+	</div>
+	
+		<br>
+		<div class="card">
+			<h2>How to exchange the item?</h2>
+			<div class="clearfix">
+			<i class="fas fa-coffee" style="font-size:100px; float:right; padding:10px"></i> In order to exchange the item the owner of the item must claim it from the user that uploaded the given item to the <b>Lost&Found</b> website.
+			</div>
+		</div>
+	</div>
+	
+	<div class="column1" >
+		<div class="card">
+			<h2>How to upload a found item?</h2>
+			<p>If you happened to have found an item that does not belong to you and would like to find the owner you found the 
+			perfect website for the job! Our website enables you to upload an item in the most convenient ways, you don't even have to 
+			create an account, provide us just with your email and we will take care of the rest!</p>
+			<p>Registering with our website in order to exchange the found item comprises of just 3 simple steps:</p>
+				<h3><a href="registration.html" style="color:#FFBB33">Register</a></h3>
+					<div class="clearfix">
+					<i class="far fa-address-card" style="font-size:100px; float:left; padding:10px"></i> 
+					As a <b>finder</b> you need to provide us with some details. Our registration process is simple and takes no more than 2 minutes.
+					However, if you don't feel like creating the account on yet another website ours offers a <a href="registration.html" style="color:#FFBB33">guest registration</a>, where you provide us only with
+					your first name and an email enabling the owner of the found property to contact with you.
+					<br>
+					</div>
+				<h3>Complete the item form</h3>
+					<div class="clearfix">
+					<i class="fa fa-upload" style="font-size:120px; float:left; padding:10px"></i>
+					As a <b>finder</b> you need to provide us with some details. Our registration process is simple and takes no more than 2 minutes.
+					However, if you don't feel like creating the account on yet another website ours offers a guest registration, where you provide us only with
+					your first name and an email enabling the owner of the found property to contact with you.<br>
+					</div>
+				<h3>Meet</h3>
+					<div class="clearfix">
+					<i class="fa fa-handshake-o" style="font-size:87px; float:left; padding:10px"></i>
+					As a <b>finder</b> you need to provide us with some details. Our registration process is simple and takes no more than 2 minutes.
+					However, if you don't feel like creating the account on yet another website ours offers a guest registration, where you provide us only with
+					your first name and an email enabling the owner of the found property to contact with you.
+					</div>
+		</div>
+	</div>
+  </div>
+</div>
 
 <script>
 /* When the user clicks on the login button,

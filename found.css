@@ -1,6 +1,7 @@
 body{
 	font-family: Helvetica, sans-serif;
 	background-color: #FFF8CC;
+	padding:10px;
 }
 * {
   box-sizing: border-box;
@@ -13,12 +14,26 @@ body{
 
 
 }*/
+a:link {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a:active {
+  text-decoration: underline;
+}
 p{
 	text-align: justify;
 }
 .clearfix {
   overflow: auto;
-  float: left;
   text-align: justify;
 }
 
@@ -34,20 +49,31 @@ p{
 /* Create three unequal columns that floats next to each other */
 .column {
   float: left;
-  padding: 5px;
+  padding: 0px;
 
 }
 .column0 {
-  width:2.5%;
+  width:45.5%;
   float: left;
-  padding: 5px;
+  padding: 10px;
 }
 .column1 {
-  float: left;
-  padding: 5px;
-  background-color: #edb100;
+  float: right;
+  padding: 10px;
   color: #fff;
-  width:47.5%;
+  width:52.5%;
+}
+ul.b {
+  list-style-type: circle;
+}
+ul.b li{
+	float: none;
+}
+.card{
+	padding: 15px;
+	color: #fff;
+	background-color: #edb100;
+	text-align:justify;
 }
 .column.side{
 	background-color:;
@@ -65,7 +91,7 @@ p{
   }
 }
 @media screen and (max-width: 600px) {
-  .column1, .column0{
+  .column1, .column0, .column2{
     width: 100%;
   }
 }
@@ -138,6 +164,12 @@ input[type=submit] {
   border-radius: 60px;
   cursor: pointer;
   float: right
+}
+
+.footer{
+	background-color: #fff1ac;
+	color: #fff;
+	padding:5px;
 }
 
 /* The Close Button */
@@ -217,17 +249,17 @@ input[type=submit] {
     margin-top: 0;
   }
 }
-ul {
+ul.a {
   list-style-type: none;
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #edb100
+  background-color: #edb100;
 
 }
 
-li {
-  float: right;
+ul li{
+	float: right;
 }
 
 li a {
