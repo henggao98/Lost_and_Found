@@ -6,15 +6,12 @@
 <?php echo $row["Descript"]; ?>
 </p>
 
-<!Allen you need to make this button call the function itemReturned with the argument as 
-matchedRow["ID"]>
-
 <?php
 
 if($matchedRow["Status"] == 1)
 {
 ?>
-  <p><button class="buttonInactive" disabled>Waiting for owners confirmation</button></p>;
+  <p><button class="buttonInactive" disabled>Waiting for owners confirmation</button></p>
 <?php
 }
 elseif ($matchedRow["Status"] == 0)
