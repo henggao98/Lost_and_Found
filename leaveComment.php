@@ -7,16 +7,15 @@
 
   session_start();
 
-  if(isset($_GET["matchedRow"]) && isset($_GET['itemID']) && isset($_GET['CommenterID']) && isset($_GET['CommentedID']) && $_GET['CommenterID'] == $_SESSION["id"] && !empty($_POST["textArea"]))
+  if(isset($_GET['itemID']) && isset($_GET['CommenterID']) && isset($_GET['CommentedID']) && !empty($_POST['rate']) && $_GET['CommenterID'] == $_SESSION["id"] && !empty($_POST["textArea"]))
   {
-    $matchedRow = test_input($_GET["matchedRow"]);
     $itemID = test_input($_GET["itemID"]);
     echo "Item ID: " . $itemID;
     $commenterID = test_input($_GET['CommenterID']);
     echo "CommenterID" . $commenterID;
     $commentedID = test_input($_GET['CommentedID']);
     echo "CommentedID" . $commentedID;
-    //$rating
+    $rating = test_input($_POST['rate']);
     $comment = test_input($_POST["textArea"]);
 
     $matchedSQL = "SELECT * FROM Matched WHERE MislayerID='$commenterID' AND FinderID='$commentedID' AND ItemID='$itemID' AND Status='1'";
@@ -25,61 +24,83 @@
     if($matchedResult->num_rows > 0)
     {
 
-      $commentInsertQuery = "INSERT INTO Ratings (CommenterID, CommentedID, Rating, Comment) VALUES ('{$commenterID}', '{$commentedID}', '3', '{$comment}')";
+      $commentInsertQuery = "INSERT INTO Ratings (CommenterID, CommentedID, Rating, Comment) VALUES ('{$commenterID}', '{$commentedID}', '$rating', '{$comment}')";
+
 
       if($conn->query($commentInsertQuery) === TRUE)
       {
-        $commentedSQL = "SELECT * FROM Users WHERE ID='$commentedID'";
-        $commentedResult = $conn->query($commentedSQL);
-        $commentedRow = $commentedResult->fetch_assoc();
 
-        $commenterSQL = "SELECT * FROM Users WHERE ID='$commenterID'";
-        $commenterResult = $conn->query($commenterSQL);
-        $commenterRow = $commenterResult->fetch_assoc();
-
-        $msg = "You received a new comment from " . $commenterRow["Name"] . " saying \'" . $comment . " \'.";
-        $mail = new PHPMailer(TRUE);
-
-        try {
-           
-           $mail->setFrom('lost.and.found.uom@gmail.com', 'Lost & Found');
-           $mail->addAddress($commentedRow['Email'], $commentedRow['Name']);
-           $mail->Subject = 'New comment on your Lost & Found Account';
-           $mail->Body = $msg;
-           $mail->isSMTP();
-           $mail->Host = 'smtp.gmail.com';
-           $mail->SMTPAuth = TRUE;
-           $mail->SMTPSecure = 'tls';
-           $mail->Username = 'lost.and.found.uom@gmail.com';
-           $mail->Password = 'lost&found';
-           $mail->Port = 587;
-
-           /* Disable some SSL checks. */
-           $mail->SMTPOptions = array(
-              'ssl' => array(
-              'verify_peer' => false,
-              'verify_peer_name' => false,
-              'allow_self_signed' => true
-              )
-           );
-           
-           /* Enable SMTP debug output. */
-           //$mail->SMTPDebug = 4;
-           
-           $mail->send();
-        }
-        catch (Exception $e)
+        $ratingSQL = "SELECT Rating FROM Ratings WHERE CommentedID='$commentedID'";
+        $ratingResult = $conn->query($ratingSQL);
+        $ratingSoFar = 0;
+        $count = 0;
+        while ($ratingRow = $ratingResult->fetch_assoc()) 
         {
-           echo $e->errorMessage();
+          $ratingSoFar += (int)$ratingRow['Rating'];
+          $count++;
         }
-        catch (\Exception $e)
+        $userRating = (float)$ratingSoFar / $count;
+
+        $insertRating = "UPDATE Users SET Rating='$userRating' WHERE ID='$commentedID'";
+
+        if($conn->query($insertRating) === TRUE)
         {
-           echo $e->getMessage();
+
+          $commentedSQL = "SELECT Name, Email FROM Users WHERE ID='$commentedID'";
+          $commentedResult = $conn->query($commentedSQL);
+          $commentedRow = $commentedResult->fetch_assoc();
+
+          $commenterSQL = "SELECT Name, Email FROM Users WHERE ID='$commenterID'";
+          $commenterResult = $conn->query($commenterSQL);
+          $commenterRow = $commenterResult->fetch_assoc();
+
+          $msg = "You received a new comment from " . $commenterRow["Name"] . " saying \'" . $comment . " \'.";
+          $mail = new PHPMailer(TRUE);
+
+          try {
+             
+             $mail->setFrom('lost.and.found.uom@gmail.com', 'Lost & Found');
+             $mail->addAddress($commentedRow['Email'], $commentedRow['Name']);
+             $mail->Subject = 'New comment on your Lost & Found Account';
+             $mail->Body = $msg;
+             $mail->isSMTP();
+             $mail->Host = 'smtp.gmail.com';
+             $mail->SMTPAuth = TRUE;
+             $mail->SMTPSecure = 'tls';
+             $mail->Username = 'lost.and.found.uom@gmail.com';
+             $mail->Password = 'lost&found';
+             $mail->Port = 587;
+
+             /* Disable some SSL checks. */
+             $mail->SMTPOptions = array(
+                'ssl' => array(
+                'verify_peer' => false,
+                'verify_peer_name' => false,
+                'allow_self_signed' => true
+                )
+             );
+             
+             /* Enable SMTP debug output. */
+             //$mail->SMTPDebug = 4;
+             
+             $mail->send();
+          }
+          catch (Exception $e)
+          {
+             echo $e->errorMessage();
+          }
+          catch (\Exception $e)
+          {
+             echo $e->getMessage();
+          }
+
+
+          header("Location: itemRecieved.php?itemID=" . $itemID);
         }
-
-
-        header("Location: itemRecieved.php?itemID=" . $itemID . "&matchedID=" . $matchedRow);
-    
+        else
+        {
+          echo "Insert rating error";
+        }
       }
       else
       {
