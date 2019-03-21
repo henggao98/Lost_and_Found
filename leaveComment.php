@@ -9,14 +9,17 @@
 
   if(isset($_GET["matchedRow"]) && isset($_GET['itemID']) && isset($_GET['CommenterID']) && isset($_GET['CommentedID']) && $_GET['CommenterID'] == $_SESSION["id"] && !empty($_POST["textArea"]))
   {
-    $matchedRow = $_GET["matchedRow"];
-    $itemID = $_GET["itemID"];
-    $commenterID = $_GET['CommenterID'];
-    $commentedID = $_GET['CommentedID'];
+    $matchedRow = test_input($_GET["matchedRow"]);
+    $itemID = test_input($_GET["itemID"]);
+    echo "Item ID: " . $itemID;
+    $commenterID = test_input($_GET['CommenterID']);
+    echo "CommenterID" . $commenterID;
+    $commentedID = test_input($_GET['CommentedID']);
+    echo "CommentedID" . $commentedID;
     //$rating
     $comment = test_input($_POST["textArea"]);
 
-    $matchedSQL = "SELECT * FROM Matched WHERE CommenterID='$commenterID' AND CommentedID='commentedID' AND ItemID='$itemID'";
+    $matchedSQL = "SELECT * FROM Matched WHERE MislayerID='$commenterID' AND FinderID='$commentedID' AND ItemID='$itemID' AND Status='1'";
     $matchedResult = $conn->query($matchedSQL);
     
     if($matchedResult->num_rows > 0)
@@ -100,7 +103,7 @@
 
   function test_input($data) {
   $data = trim($data);
-  //$data = stripslashes($data);
+  $data = stripslashes($data);
   $data = htmlspecialchars($data);
   return $data;
 }
