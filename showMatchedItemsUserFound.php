@@ -5,7 +5,6 @@
 </h4></p><p>
 <?php echo $row["Descript"]; ?>
 </p>
-
 <?php
 
 if($matchedRow["Status"] == 1)

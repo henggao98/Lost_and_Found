@@ -5,3 +5,4 @@
 </h4></p><p>
 <?php echo $itemsRow["Descript"]; ?>
 </p>
+</div>
