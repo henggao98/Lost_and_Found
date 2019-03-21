@@ -21,6 +21,10 @@ include "found_functionality.php";
    <ul class="a">
     <li><a href="index.php"><i class="fa fa-fw fa-home"></i>Home</a></li>
     <li><a href="account.php"><i class="fa fa-fw fa-user"></i>Account</a></li>
+    <li><a href="info.html"><i class="fa fa-fw fa-info-circle"></i>About</a></li>
+    <li><a href="institutions.php"><i class="fa fa-fw fa-globe"></i>Search Places</a></li>
+    <li><a href="items.php"><i class="fa fa-fw fa-search"></i>Search Items</a></li>
+    <li><a href="found.php" class="active">Found Something</a></li>
   </ul>
   <br>
 <div class="row">
