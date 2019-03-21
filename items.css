@@ -155,7 +155,7 @@ input[type=text]
 
 input[type=text]:focus
 {
-  width: 70%;
+  width: 50%;
 }
 
 /* for the pagination in the footer*/
