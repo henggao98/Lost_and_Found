@@ -19,7 +19,7 @@ if($matchedRow["Status"] == 1)
 <button class="button" onclick="document.getElementById('<?php echo("popup" . $itemUSerID) ?>').classList.toggle('show');">Recieved from Finder</button>
 
 <div class="formPopup" id="<?php echo("popup" . $itemUSerID) ?>">
-  <button class="button" onclick="document.getElementById('<?php echo("popup" . $itemUSerID) ?>').classList.toggle('none');">X</button>
+  <button class="button" onclick="document.getElementById('<?php echo("popup" . $itemUSerID) ?>').classList.toggle('show');">X</button>
   <form action="leaveComment.php?CommenterID=<?php echo($USerID) ?>&CommentedID=<?php echo($itemUSerID) ?>&itemID=<?php echo($row['ID']) ?>&matchedRow=<?php echo($matchedRow['ID']) ?>" class="formContainer" method="POST">
 
 
