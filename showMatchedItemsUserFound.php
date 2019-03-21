@@ -10,7 +10,7 @@
 if($matchedRow["Status"] == 1)
 {
 ?>
-  <p><button class="buttonInactive" disabled>Waiting for owners confirmation</button></p>
+  <p></p>
 <?php
 }
 elseif ($matchedRow["Status"] == 0)

@@ -40,7 +40,7 @@
       <?php include 'PersonalInformation.php';?>
     </div>
     <div class="card">
-      <h2>Comments:</h2>
+      <h3>Comments:</h3>
       <?php include 'accountComments.php';?>
     </div>
   </div>

@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-<html>
-<div class="card">
+
 <?php
   $sql = "SELECT CommentedID, CommenterID, Comment FROM Ratings";
   $commentResult = $conn->query($sql);
@@ -17,17 +15,20 @@
       {
         if($commenterRow["ID"] == $commentRow["CommenterID"])
         {
-
-          echo "Comment: " . $commentRow["Comment"];
-?><br>
+?>
+        <p><h4><a href="viewComments.php?id=<?php echo($commenterRow["ID"]) ?>" style="color:#EDB100">
 <?php
-          echo "From: " . $commenterRow["Name"];
-?><br><br>
+  echo $commenterRow["Name"];
+?>
+</a>
+</h4>
+<p><?php
+          echo $commentRow["Comment"];
+?>
+</p>
 <?php
         }
       }
     }
   }
 ?>
-</div>
-</html>
