@@ -32,7 +32,7 @@
 
 <div class="card">
 <h2>Comments: </h2>
-
+<div class="card2">
 <?php
   $id = $_GET["id"];
 
@@ -66,4 +66,5 @@
   if($noOfComments == 0)
     echo "This user has no comments";
 ?>
+</div>
 </div>

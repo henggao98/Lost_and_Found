@@ -19,6 +19,19 @@ body
   font-size: 55px;
 }
 
+input[type=text] {
+  width: 50%;
+  padding: 12px 20px;
+  margin: 5px 0;
+  box-sizing: border-box;
+  border: 3px solid #ccc;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  outline: none;
+  height: 10px;
+}
+
+
 /* Style the top navigation bar */
 .topnav
 {
@@ -68,6 +81,13 @@ body
   margin-top: 20px;
 }
 
+.card2
+{
+  background-color:#F8F4E6;
+  padding: 20px;
+  margin-top: 20px'
+}
+  
 /* Clear floats after the columns */
 .row:after
 {
@@ -89,12 +109,13 @@ body
 .formPopup {
     display: none;
     position: fixed;
-    top: 10vh;
-  right: 10vh;
+    top: 40%;
+    left: 50%;
     border: 3px solid #FFBB33;
     background-color: #FFFAE5;
     z-index: 9;
-    width: 310px;
+    width: 400px;
+    height: 300px;
     padding: 1%;
 }
 
@@ -106,12 +127,13 @@ body
 
 /* Full-width input fields */
 .formContainer textarea {
-    width: 88%;
+    width: 90%;
     padding: 15px;
     margin-top: 2%;
     margin-bottom: 2%;
     background: white;
     border: 3px solid #ccc;
+    height: 160px;
 }
 
 /* When the inputs get focus, do something */
@@ -152,6 +174,22 @@ body
   text-align: center;
   cursor: pointer;
   
+}
+
+.button2 {
+  margin-top: 2%;
+  margin-bottom: 1%;
+  background-color: #ccc;
+  border: none;
+  padding: 7px 20px;
+  color: white;
+  cursor: pointer;
+  outline: none;
+}
+
+.button2:hover {
+  color: white;
+  background-color: black;
 }
 
 .button:hover {

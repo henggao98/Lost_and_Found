@@ -17,6 +17,11 @@
       {
         if($row["ID"] == $matchedRow["ItemID"])
         {
+          $displayId = $row["FinderID"];
+          $sql = "SELECT Name, Email FROM Users WHERE ID = 'displayId'";
+          $displayResult = $conn->query($sql);
+          $dRow = mysqli_fetch_assoc($displayResult);
+
           $matchedItems++;
           //update the number label of the item.
 

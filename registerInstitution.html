@@ -15,15 +15,15 @@
     <a class="navButton" href="index.html"><i class="fa fa-fw fa-home">
     </i>Home</a>
     </li>
-  
+
     <li>
     <a class="navButton" href="registration.html"><i class="fa fa-key"></i>Register</a>
     </li>
-	
+
 	<li>
     <a class="navButton" href="info.html"><i class="fa fa-info-circle"></i>About</a>
     </li>
-	
+
   </ul>
 </div>
 
@@ -31,23 +31,27 @@
   <div class="gridItem">
     <h1><legend align="center"><b>Register an institution</b></legend></h1>
 	<br>
-    <form method="post" action="">
+    <form method="post" action="images.php">
       <span class="error">* <?php echo $nameErr;?> </span>
       <label for="name">Name of the institution</label>
       <input type="text" name="name" placeholder="The name of the institution..">
-	  
-	  <span class="error">* <?php echo $nameErr;?> </span>
-      <label for="name">Address of the institution</label>
-      <input type="text" name="name" placeholder="The address of the institution..">
-	  
+
 	  <span class="error">* <?php echo $_SESSION["emailErr"];?> </span>
       <label for="email">Email</label>
       <input type="text" name="email" placeholder="Email..">
-	  
+
+    <span class="error">* <?php echo $nameErr;?> </span>
+      <label for="name">Password</label>
+      <input type="password" name="pass" placeholder="Password..">
+
+    <span class="error">* <?php echo $nameErr;?> </span>
+      <label for="name">Confirm Password</label>
+      <input type="password" name="pass2" placeholder="Confirm Password..">
+
 	  <span class="error">* <?php echo $phoneErr;?> </span>
       <label for="phone">Phone</label>
       <input type="tel" name="phone" placeholder="Phone..">
-	  
+
 	  <label for="type">Type of institution<label>
 	  <select class="select" name="option">
 	    <option value="type" selected>
@@ -63,21 +67,21 @@
 		<option value="publicPlace">Public places</option>
 		<option value="other">Other</option>
 	  </select>
-	  
+
 	  <p>
 	  <label for="institutionImage">Upload a photo for your institution</label>
 	  <br>
-	  <input type="file" id="photo" name="photo" accept="image/*">
+	  <input type="file" id="uploaded_file" name='uploaded_file' accept="image/*">
 	  </p>
-	  
+
 	  <label class="termsAndCond">I have read and agree to the
 	    <a href="terms.html"> Terms and conditions</a> and the
 		<a href="privacy.html"> Privacy Policy.</a>
       <input type="checkbox">
       <span class="checkmark"></span>
       </label>
-  
-      <input class="buttons" type="submit" value="Register">
+
+      <input class="buttons" type="submit" value="Register" name="Register">
     </form>
   </div>
 </div>

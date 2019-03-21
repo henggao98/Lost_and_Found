@@ -100,7 +100,9 @@ function test_input($data) {
   <a href="index.php" style="float:right"><i class="fa fa-fw fa-home"></i>Home</a>
   <a href="account.php" style="float:right"><i class="fa fa-fw fa-user"></i>Account</a>
   <a href="info.html" style="float:right"><i class="fa fa-fw fa-info-circle"></i>About</a>
-  <a href="items.php" style="float:right"><i class="fa fa-fw fa-globe"></i>Search Items</a>
+  <a href="institutions.php" class="active" style="float:right"><i class="fa fa-fw fa-globe"></i>Search Places</a>
+  <a href="items.php" style="float:right"><i class="fa fa-fw fa-search"></i>Search Items</a>
+  <a href="found.php" class="active">Found Something</a>
   <form name="searchForm" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
     <input type="text" name="search" placeholder="Search.." value="<?php echo($_SESSION['search']); ?>">
     <input type="submit"

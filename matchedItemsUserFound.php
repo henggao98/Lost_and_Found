@@ -17,6 +17,7 @@
       {
         if($row["ID"] == $matchedRow["ItemID"])
         {
+          $displayID = $row["FinderId"];
           $matchedItems++;
           //update the number label of the item.
 
