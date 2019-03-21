@@ -113,6 +113,91 @@ body
   margin-top: 5px;
 }
 
+/* The popup form - hidden by default */
+.formPopup {
+    display: none;
+    position: fixed;
+    top: 10vh;
+  right: 10vh;
+    border: 3px solid #FFBB33;
+    background-color: #FFFAE5;
+    z-index: 9;
+    width: 310px;
+    padding: 1%;
+}
+
+/* Add styles to the form container */
+.formContainer {
+    background-color: #FFFAE5;
+    padding: 5%;
+}
+
+/* Full-width input fields */
+.formContainer textarea {
+    width: 88%;
+    padding: 15px;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    background: white;
+    border: 3px solid #ccc;
+}
+
+/* When the inputs get focus, do something */
+.formContainer textarea:focus {
+    border: 3px solid #FFBB33;
+    outline: none;
+}
+
+/* Set a style for the submit/login button */
+.formContainer .popupLogin {
+    float: right;
+    background-color: #EDB100;
+    padding: 10px 20px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    outline: none;
+    margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+/* Add some hover effects to buttons */
+.formContainer .popupLogin:hover, .open-button:hover, .facebook:hover {
+    background-color: #F4D475;
+}
+
+.show {
+  display: block;
+}
+
+.button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  
+}
+
+.button:hover {
+  background-color: #555;
+}
+
+.buttonInactive {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #555;
+  text-align: center;
+  cursor: default;
+  width: 15%
+}
+
 /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 800px)
 {

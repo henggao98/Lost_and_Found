@@ -12,14 +12,33 @@ argument>
 <?php
 if($matchedRow["Status"] == 1)
 {
+  $itemUSerID = $row["FinderID"]; // SORRY FOR THIS VARIABLE
+  $USerID = $_SESSION["id"];
 ?>
-<p><button class="button" onclick="location.href='itemRecieved.php?itemID=<?php echo($row["ID"]) ?> &  matchedID = <?php echo($matchedRow["ID"])?>'">Recieved from Finder</button></p>
+
+<button class="button" onclick="document.getElementById('<?php echo("popup" . $itemUSerID) ?>').classList.toggle('show');">Recieved from Finder</button>
+
+<div class="formPopup" id="<?php echo("popup" . $itemUSerID) ?>">
+  <button class="button" onclick="document.getElementById('<?php echo("popup" . $itemUSerID) ?>').classList.toggle('none');">X</button>
+  <form action="leaveComment.php?CommenterID=<?php echo($USerID) ?>&CommentedID=<?php echo($itemUSerID) ?>&itemID=<?php echo($row['ID']) ?>&matchedRow=<?php echo($matchedRow['ID']) ?>" class="formContainer" method="POST">
+
+
+    <textarea name="textArea" placeholder="Leave a comment..." required></textarea><br>
+    
+    <button class="button" onclick="location.href='itemRecieved.php?itemID=<?php echo($row["ID"]) ?> &  matchedID = <?php echo($matchedRow["ID"])?>'" >Don't Leave Comment</button>
+
+    <input type="submit" name="submitButton" class="button">
+
+  </form>
+</div>
+
+
 <?php
 }
 else
 {
 ?>
-<p><button class="button" disabled>Awaiting confirmation from finder</button></p>
+<p><button class="buttonInactive" disabled>Awaiting confirmation from finder</button></p>
 <?php
 }
 ?>

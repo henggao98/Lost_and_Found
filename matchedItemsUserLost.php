@@ -10,7 +10,7 @@
   {
     if($matchedRow["MislayerID"] == $sessionId)
     {
-      $sql = "SELECT ID, FinderId, ItemName, Descript, Location, Date FROM Items";
+      $sql = "SELECT ID, FinderID, ItemName, Descript, Location, Date FROM Items";
       $itemsResult = $conn->query($sql);
 
       while($row = $itemsResult->fetch_assoc())
