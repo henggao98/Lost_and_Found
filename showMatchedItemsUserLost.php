@@ -4,7 +4,7 @@
 
   <h4 style="float:right">Found By<a href="viewComments.php?id=<?php echo($row["FinderID"]) ?>" style="color:#EDB100">
     <?php
-      echo $dRow["Name"]; 
+      echo $dRow["Name"];
     ?>
   </a></h4>
 <h4>

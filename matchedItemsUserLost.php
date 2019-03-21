@@ -17,9 +17,9 @@
       {
         if($row["ID"] == $matchedRow["ItemID"])
         {
-          $displayId = $row["FinderID"];
-          $sql = "SELECT Name, Email FROM Users WHERE ID = 'displayId'";
-          $displayResult = $conn->query($sql);
+          $displayId = $matchedRow["FinderID"];
+          $sqlDisplay = "SELECT Name, Email FROM Users WHERE ID = '$displayId'";
+          $displayResult = $conn->query($sqlDisplay);
           $dRow = mysqli_fetch_assoc($displayResult);
 
           $matchedItems++;
