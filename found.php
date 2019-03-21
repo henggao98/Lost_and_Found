@@ -3,8 +3,6 @@ include_once 'db_connection.php';
 
 // For the sake of testing
 session_start();
-$_SESSION["id"] = 9;
-$_SESSION['loggedIn'] = 1;
 //Check that the user is logged in, if not disconnect
 if($_SESSION["loggedIn"] == 0)
   {
