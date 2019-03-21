@@ -2,8 +2,11 @@
 // define variables and set to empty values
 include_once 'db_connection.php';
 session_start();
-if(isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] == 1)
+$loggedIn = false;
+if(isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] == 1){
+  $loggedIn = true;
   $userID = $_SESSION['id'];
+}
 
 if(isset($_GET['id']))
 {
@@ -24,11 +27,11 @@ $institutionDetails = $institutionResult->fetch_assoc();
 $title = $institutionDetails["Name"];
 $institutionID = $institutionDetails["ID"];
 
-$sql = "SELECT `ID`, `ItemName`, `Descript`, `Location`, `Date` FROM `Items` WHERE `FinderID` = '$institutionID'";
+$sql = "SELECT * FROM `Items` WHERE `FinderID` = '$institutionID'";
 $result = $conn->query($sql);
 
 $totalItems = mysqli_num_rows($result);
-$itemsPerPage = 3;
+$itemsPerPage = 10;
 $totalPages = ceil($totalItems / $itemsPerPage);
 
 // Check that the page number is set.

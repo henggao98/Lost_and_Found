@@ -2,6 +2,12 @@
 // define variables and set to empty values
 include_once 'db_connection.php';
 session_start();
+$loggedIn = false;
+if(isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] == 1)
+{
+  $loggedIn = true;
+  $userID = $_SESSION['id'];
+}
 //$id = $_GET["id"];
 $sql = "SELECT `ID`, `Name`, `Email`, `Rating`, `Phone` FROM `Users` WHERE `isInstitution` = 1";
 $result = $conn->query($sql);
