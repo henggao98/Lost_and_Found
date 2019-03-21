@@ -32,11 +32,24 @@
     <a href="found.php" style="float:right"><i class='fas fa-hand-holding-heart'></i>Found Something</a>
   </div>
 
-
-<h2>Comments: </h2>
 <?php
   $id = $_GET["id"];
+  $sqlUser = "SELECT Name, Rating FROM Users WHERE ID = '$id'";
+  $userResult = $conn->query($sqlUser);
+  $userRow = mysqli_fetch_assoc($userResult);
+?>
 
+<div class="row">
+  <div class="leftcolumn">
+
+  <div class="card">
+    <p size="16"><b>Name: </b> <?php echo($userRow["Name"]) ?></p>
+    <p><b>Rating: </b> <?php echo($userRow["Rating"]) ?></p>
+  </div>
+  </div>
+
+  <div class="rightcolumn">
+<?php
   $sqlComment = "SELECT * FROM Ratings";
   $commentResult = $conn->query($sqlComment);
   $noOfComments = 0;
@@ -72,4 +85,4 @@
   if($noOfComments == 0)
     echo "This user has no comments";
 ?>
-
+</div>
