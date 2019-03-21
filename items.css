@@ -65,6 +65,12 @@ body
   text-decoration: none;
 }
 
+.topnav a.active 
+{
+  background-color: #F4D475;
+  color: white;
+}
+
 /* Change color on hover */
 .topnav a:hover
 {
