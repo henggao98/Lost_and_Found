@@ -8,6 +8,7 @@ if($_SESSION["loggedIn"] == 0)
   {
     echo "You are not logged in";
     $conn->close();
+    header("Location: index.php");
   }//if
 
 // <?php echo htmlspecialchars($_SERVER["PHP_SELF"]);>? for selfsubmitting form
@@ -64,7 +65,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {/*copied from www.w3school.com */
           VALUES ('{$finderID}', '{$itemName}', '{$description}', '{$location}', NOW())";
 
     if($conn->query($insertQuery) === TRUE)
-      echo "New item added successfully";
+      header("Location: items.php");
     else
       echo "Error1";
   }
