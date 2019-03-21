@@ -75,10 +75,10 @@ include "found_functionality.php";
        <select id="type" name="itemName" onchange="showfield0(this.options[this.selectedIndex].value)" required>
 	   <option selected disabled>Choose type of object...</option>
 
-         	<option value="wallet">Phone</option>
-         	<option value="keys">Laptop</option>
-         	<option value="laptop">Wallet</option>
-		 	<option value="phone">Keys</option>
+         	<option value="wallet">Wallet</option>
+         	<option value="keys">Keys</option>
+         	<option value="laptop">Laptop</option>
+		 	<option value="phone">Phone</option>
          	<option value="other">Other</option>
 
        </select>
