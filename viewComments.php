@@ -16,6 +16,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <style>
+  .checked {
+    color: orange;
+}
+  </style>
 
   <body>
 
@@ -43,8 +50,24 @@
   <div class="leftcolumn">
 
   <div class="card">
-    <p size="16"><b>Name: </b> <?php echo($userRow["Name"]) ?></p>
-    <p><b>Rating: </b> <?php echo($userRow["Rating"]) ?></p>
+    <p><b>Name: </b> <?php echo($userRow["Name"]) ?></p>
+    <p><b>Rating: </b>
+    <?php
+    $stars = round($userRow["Rating"]);
+    for($index = 0; $index < $stars; $index++)
+    {
+    ?>
+      <span class = "fa fa-star checked"></span>
+    <?php } ?>
+    <?php
+    for($index = 0; $index < (5 - $stars); $index++)
+    { ?>
+      <span class = "fa fa-star"></span>
+    <?php
+    }
+    echo '(' . $userRow["Rating"] . ')';
+    ?>
+  </p>
   </div>
   </div>
 
