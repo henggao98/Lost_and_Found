@@ -8,7 +8,7 @@
     $itemID = $_GET['itemID'];
     $matchedID = $_GET['matchedID'];
 
-    $checkQuerry = "SELECT "
+    $checkQuerry = "SELECT MislayerID FROM Matched WHERE "
 
     $sqlItem = "DELETE FROM Items WHERE ID = $itemID";
     $conn->query($sqlItem);
