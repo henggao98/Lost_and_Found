@@ -126,6 +126,7 @@ function test_input($data) {
 <div class="topnav">
   <a href="index.php" style="float:right"><i class="fa fa-fw fa-home"></i>Home</a>
   <a href="account.php" style="float:right"><i class="fa fa-fw fa-user"></i>Account</a>
+  <a href="about.html" style="float:right"><i class="fa fa-fw fa-info-circle"></i>About</a>
   <a href="institutions.php" style="float:right"><i class="fa fa-fw fa-globe"></i>Search Places</a>
   <form name="searchForm" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
     <input type="text" name="search" placeholder="Search.." value="<?php echo($_SESSION['search']); ?>">

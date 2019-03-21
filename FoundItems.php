@@ -4,7 +4,7 @@
   $foundItems = 0;
   $sql = "SELECT ID, FinderId, ItemName, Descript, Location, Date FROM Items";
   $itemsResult = $conn->query($sql);
-
+  $loggedIn = true;
 
   while($itemsRow = $itemsResult->fetch_assoc())
   {
@@ -25,9 +25,7 @@
       if(!$isMatched)
       {
         $foundItems++;
-        echo "<h3>Found Item:  " . $foundItems .
-         "</h3><br>";//put a No.label on each item in sequence.
-        include "item.php";
+        include "showFoundItems.php";
       }//if
     }//if
   }//while

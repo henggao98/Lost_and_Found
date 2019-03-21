@@ -13,16 +13,16 @@
  <div class="header0">
     <b>Lost & Found</b>
 </div>
-   <ul>
+   <ul class="a">
     <li><a href="index.php"><i class="fa fa-fw fa-home"></i>Home</a></li>
     <li><a href="account.php"><i class="fa fa-fw fa-user"></i>Account</a></li>
   </ul>
   <br>
 <div class="row">
   <div class="column side"><center><br><br>
-  <img src="train(1).png" width="125px"><br>
-  <img src="place.png" width="125px" alt="Flowers in Chania"><br><br><br>
-  <img src="museum.png" width="125px"><br></center><br>
+  <img src="train(1).png" width="120px"><br>
+  <img src="place.png" width="120px" alt="Flowers in Chania"><br><br><br>
+  <img src="museum.png" width="120px"><br></center><br>
   </div>
   <div class="column middle" >
   <div class="container">
@@ -39,15 +39,21 @@
       <label for="location">Location</label>
     </div>
     <div class="col-75">
-      <select id="country" name="location">
-	    <optgroup label="Choose type of the location">
+	<script type="text/javascript">
+		function showfield(location){
+		  if(location=='other')document.getElementById('div1').innerHTML=' <br> Provide the location in the field below: <input type="text" name="other" required/>';
+		  else document.getElementById('div1').innerHTML='';
+		}
+		</script>
+    		<select id="country" name="location" onchange="showfield(this.options[this.selectedIndex].value)" required>
+		<option selected disabled>Choose type of location...</option>
         <option value="transport">Public Transport</option>
-        <option value="university">University Faculty</option>
-        <option value="museum">Museum</option>
-		<option value="library">Library</option>
+        <option value="university">Museum</option>
+        <option value="museum">Street</option>
+		<option value="library">Restaurant</option>
         <option value="other">Other</option>
-		</optgroup>
       </select>
+	  <div id="div1"></div>
     </div>
   </div>
   <div class="row">
@@ -55,15 +61,23 @@
       <label for="type">Type of the object: </label>
     </div>
     <div class="col-75">
-       <select id="type" name="itemName">
-	     <optgroup label="Choose type of the object">
-         	<option value="wallet">Wallet</option>
-         	<option value="keys">Keys</option>
-         	<option value="laptop">Laptop</option>
-		 	<option value="phone">Phone</option>
+		<script type="text/javascript">
+		function showfield0(name){
+		  if(name=='other')document.getElementById('div2').innerHTML=' <br> Provide the type of the item in the field below: <input type="text" name="other" required />';
+		  else document.getElementById('div2').innerHTML='';
+		}
+		</script>
+       <select id="type" name="itemName" onchange="showfield0(this.options[this.selectedIndex].value)" required>
+	   <option selected disabled>Choose type of object...</option>
+	     
+         	<option value="wallet">Phone</option>
+         	<option value="keys">Laptop</option>
+         	<option value="laptop">Wallet</option>
+		 	<option value="phone">Keys</option>
          	<option value="other">Other</option>
-		 </optgroup>
+		
        </select>
+	   <div id="div2"></div>
 	</div>
 	</div>
 	
@@ -79,7 +93,7 @@
 
       </div>
       <div class="col-75">
-        <textarea id="item_description" name="description" placeholder="Provide description of the object as well as more exact location" style="height:210px"></textarea>
+        <textarea id="item_description" name="description" placeholder="Provide description of the object as well as more exact location" style="height:190px" required></textarea>
       </div>
     </div>
 	<br>
@@ -92,11 +106,12 @@
 </div>
 
   <div class="column side" ><center><br><br>
-  <img src="passport.png" width="125px"><br><br>
-  <img src="wallet.png" width="125px"><br><br>
-  <img src="smartphone.png" width="125px"><br></center><br>
+  <img src="passport.png" width="120px"><br><br>
+  <img src="wallet.png" width="120px"><br><br>
+  <img src="smartphone.png" width="120px"><br></center>
   </div>
   </div>
   </div>
+  <div class="footer"><center><a href="privacy.html"> Privacy Policy </a> --- <a href="terms.html"> Terms of use</a></center></div>
 </body>
 </html>
