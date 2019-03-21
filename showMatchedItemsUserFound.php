@@ -42,6 +42,3 @@ elseif ($matchedRow["Status"] == 0)
 }
 ?>
 </div>
-
-
-make it look the same to the claim button of items Page

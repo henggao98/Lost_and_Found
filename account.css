@@ -85,13 +85,17 @@ body{
 .main {
   -ms-flex: 70%; /* IE10 */
   flex: 70%;
-  padding: 10%;
+  padding: 0%;
   overflow:hidden;
   height:auto;
   width:auto;
   Background-color:#F8F4E6;
   text-align:center;
+}
 
+
+.noMatchedMessage{
+  text-align: center;
 }
 
 .button {
@@ -181,3 +185,8 @@ color:#black;
     border-style: outset;
     border-color: #F9E6AD
   }
+
+.footer
+{
+  margin-top:50px;
+}

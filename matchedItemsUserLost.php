@@ -28,6 +28,6 @@
 
   if($matchedItems == 0)
   {
-    echo "You have no matched items <br><br>";
-  }//if 
+    echo "<p class="noMatchedMessage">You have no matched items </p><br>";
+  }//if
 ?>
