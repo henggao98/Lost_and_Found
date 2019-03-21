@@ -45,7 +45,7 @@ if($loggedIn)
 
 if($loggedIn)
 {
-  if($itemID == $userID)
+  if($itemFinderID == $userID)
   {
   ?>
     <p><button class="buttonInactive" disabled>Item posted by you</button></p>
