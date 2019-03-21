@@ -1,8 +1,13 @@
 <div class="card"><h2>
 <?php echo $row["ItemName"]; ?>
 </h2>
-
-  <h4 style="float:right">Found By<a href="viewComments.php?id=<?php echo($row["FinderID"]) ?>" style="color:#EDB100">
+<?php
+  if($dRow["isInstitution"] == 1)
+    $found = "Found In ";
+  else
+    $found = "Found By ";
+?>
+    <h4 style="float:right"><?php echo($found) ?><a href="viewComments.php?id=<?php echo($row["FinderID"]) ?>" style="color:#EDB100">
     <?php
       echo $dRow["Name"];
     ?>

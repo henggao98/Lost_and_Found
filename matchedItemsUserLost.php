@@ -18,7 +18,7 @@
         if($row["ID"] == $matchedRow["ItemID"])
         {
           $displayId = $matchedRow["FinderID"];
-          $sqlDisplay = "SELECT Name, Email FROM Users WHERE ID = '$displayId'";
+          $sqlDisplay = "SELECT Name, isInstitution FROM Users WHERE ID = '$displayId'";
           $displayResult = $conn->query($sqlDisplay);
           $dRow = mysqli_fetch_assoc($displayResult);
 
