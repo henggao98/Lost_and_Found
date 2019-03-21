@@ -32,12 +32,6 @@ input[type=text] {
 }
 
 
-input[type=text]:focus 
-{
-  border: 3px solid #FFBB33;
-}
-
-
 /* Style the top navigation bar */
 .topnav
 {
@@ -174,20 +168,19 @@ input[type=text]:focus
 }
 
 .button2 {
-  float: right;
   margin-top: 2%;
   margin-bottom: 1%;
-  background-color: #EDB100;
-  padding: 10px 20px;
+  background-color: #ccc;
   border: none;
+  padding: 7px 20px;
   color: white;
   cursor: pointer;
   outline: none;
 }
 
 .button2:hover {
-  color: #EDB100;
-  background-color: white;
+  color: white;
+  background-color: black;
 }
 
 .button:hover {
