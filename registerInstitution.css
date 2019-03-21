@@ -11,7 +11,7 @@ body {
 .navbar {
   text-decoration: none;
   width: 100%;
-  background-color: #EDB100;  
+  background-color: #EDB100;
   display: block;
 }
 
@@ -27,7 +27,7 @@ li {
   float: right;
 }
 
-/* Buttons in the navigation bar */ 
+/* Buttons in the navigation bar */
 li a:link, li a:visited {
   display: block;
   color: white;
@@ -91,7 +91,7 @@ i {
 }
 
 /* Text input fields */
-input[type=text]{
+input[type=text], input[type=password]{
   width: 100%;
   padding: 12px 20px;
   margin: 5px 0;
@@ -114,7 +114,7 @@ input[type=tel] {
   border: 3px solid #ccc;
   -webkit-transition: 0.5s;
   transition: 0.5s;
-  outline: none;	
+  outline: none;
 }
 
 input[type=tel]:focus {
@@ -210,8 +210,8 @@ input[type=file] {
 
 /* Colours for the Terms and Conditions and the Privacy Policy links */
 a:link {
-  color: #EDB100; 
-  background-color: transparent; 
+  color: #EDB100;
+  background-color: transparent;
   text-decoration: none;
 }
 

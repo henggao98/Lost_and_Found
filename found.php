@@ -3,6 +3,8 @@ include_once 'db_connection.php';
 
 // For the sake of testing
 session_start();
+$_SESSION["id"] = 9;
+$_SESSION['loggedIn'] = 1;
 //Check that the user is logged in, if not disconnect
 if($_SESSION["loggedIn"] == 0)
   {
@@ -10,7 +12,7 @@ if($_SESSION["loggedIn"] == 0)
     $conn->close();
   }//if
 
-// <?php echo htmlspecialchars($_SERVER["PHP_SELF"]);>? for selfsubmitting form 
+// <?php echo htmlspecialchars($_SERVER["PHP_SELF"]);>? for selfsubmitting form
 
 $itemName = $description = $location = $date = "";
 $itemNameErr = $descriptionErr = $locationErr = $dateErr = "";
@@ -26,7 +28,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {/*copied from www.w3school.com */
   // The name of the item
   if (empty($_POST["itemName"])) {
     $nameErr = "The type of item is required";
-  } else {
+  }
+  else if ($_POST['itemName'] == 'other'){
+    $itemName = test_input($_POST["nameOther"]);
+    $countOfSuccessfulFields ++;
+  }
+  else
+  {
     $itemName = test_input($_POST["itemName"]);
     $countOfSuccessfulFields ++;
   }
@@ -42,6 +50,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {/*copied from www.w3school.com */
   // The location of the item
   if (empty($_POST["location"])) {
     $locationErr = "The location of the item is required";
+}
+    else if ($_POST['location'] == 'other'){
+      $location = test_input($_POST["locationOther"]);
+      $countOfSuccessfulFields ++;
   } else {
     $location = test_input($_POST["location"]);
     $countOfSuccessfulFields ++;
@@ -56,10 +68,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {/*copied from www.w3school.com */
     if($conn->query($insertQuery) === TRUE)
       echo "New item added successfully";
     else
-      echo "Error";
+      echo "Error1";
   }
   else
-    echo "Error";
+    echo "Error2";
 }
 
 function test_input($data) {/*copied from www.w3school.com */
