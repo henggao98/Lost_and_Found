@@ -52,16 +52,10 @@
   <div class="rightcolumn" >
       <h1 align="center" style="color:#EDB100";>Found Items</h1>
       <?php include 'FoundItems.php';?>
-    <h1 align="center", style="color:#EDB100;">Matched Items</h1>
-      <br>
-      <div class="card2">
-        <h2>Items you've found</h2>
-        <?php include 'matchedItemsUserFound.php';?>
-      </div>
-      <div class="card2">
-        <h2>Item's you've lost</h2>
-        <?php include 'matchedItemsUserLost.php';?>
-      </div>
+      <h1 align="center", style="color:#EDB100;">Matched Items</h1>
+      <?php include 'matchedItemsUserFound.php';?>
+      <h1 align="center" style="color:#EDB100";>Claimed Items</h1>
+      <?php include 'matchedItemsUserLost.php';?>
   </div><!--coloumn-->
  </body>
  </html>

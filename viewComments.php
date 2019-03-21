@@ -65,7 +65,7 @@
       <span class = "fa fa-star"></span>
     <?php
     }
-    echo '(' . $userRow["Rating"] . ')';
+    echo '(' . round($userRow["Rating"], 1) . ')';
     ?>
   </p>
   </div>

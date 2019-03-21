@@ -10,23 +10,8 @@
   {
     if($itemsRow["FinderId"] == $sessionId)
     {
-      $isMatched = false;
-      $sql = "SELECT FinderID, MislayerID, ItemID FROM Matched";
-      $matchedResult = $conn->query($sql);
-
-      while($matchedRow = $matchedResult->fetch_assoc())
-      {
-        if($matchedRow["FinderID"] == $sessionId && $matchedRow["ItemID"] == $itemsRow["ID"])
-        {
-          $isMatched = true;
-        }//if
-      }//while
-
-      if(!$isMatched)
-      {
-        $foundItems++;
-        include "showFoundItems.php";
-      }//if
+      $foundItems++;
+      include "showFoundItems.php";
     }//if
   }//while
 
