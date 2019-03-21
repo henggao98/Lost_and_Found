@@ -109,12 +109,13 @@ input[type=text] {
 .formPopup {
     display: none;
     position: fixed;
-    top: 10vh;
-  right: 10vh;
+    top: 40%;
+    left: 50%;
     border: 3px solid #FFBB33;
     background-color: #FFFAE5;
     z-index: 9;
-    width: 310px;
+    width: 400px;
+    height: 300px;
     padding: 1%;
 }
 
@@ -126,12 +127,13 @@ input[type=text] {
 
 /* Full-width input fields */
 .formContainer textarea {
-    width: 88%;
+    width: 90%;
     padding: 15px;
     margin-top: 2%;
     margin-bottom: 2%;
     background: white;
     border: 3px solid #ccc;
+    height: 160px;
 }
 
 /* When the inputs get focus, do something */
