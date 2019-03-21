@@ -17,11 +17,12 @@
       {
         if($commenterRow["ID"] == $commentRow["CommenterID"])
         {
+
           echo "Comment: " . $commentRow["Comment"];
 ?><br>
 <?php
           echo "From: " . $commenterRow["Name"];
-?><br>
+?><br><br>
 <?php
         }
       }

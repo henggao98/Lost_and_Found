@@ -8,8 +8,8 @@
   {
 ?>
   <form method="post" action="phoneNumber.php">
-    Phone: <input type="text" name="phone">
-    <input type="submit" value="Submit">
+    Phone: <input type="text" name="phone" placeholder="Phone number..">
+    <input class="button2" type="submit" value="Submit">
   </form>
 <?php
   }else
