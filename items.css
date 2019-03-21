@@ -155,7 +155,11 @@ input[type=text]
 
 input[type=text]:focus
 {
+<<<<<<< HEAD
   width: 50%;
+=======
+  width: 45%;
+>>>>>>> Ana
 }
 
 /* for the pagination in the footer*/
