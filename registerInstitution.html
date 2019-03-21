@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="registerInstitution.css">
+</head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<body>
+
+<img src="homePageLogo.png" class="logo">
+
+<div class="navbar">
+  <ul>
+    <li>
+    <a class="navButton" href="index.html"><i class="fa fa-fw fa-home">
+    </i>Home</a>
+    </li>
+  
+    <li>
+    <a class="navButton" href="registration.html"><i class="fa fa-key"></i>Register</a>
+    </li>
+	
+	<li>
+    <a class="navButton" href="info.html"><i class="fa fa-info-circle"></i>About</a>
+    </li>
+	
+  </ul>
+</div>
+
+<div class="gridContainer">
+  <div class="gridItem">
+    <h1><legend align="center"><b>Register an institution</b></legend></h1>
+	<br>
+    <form method="post" action="">
+      <span class="error">* <?php echo $nameErr;?> </span>
+      <label for="name">Name of the institution</label>
+      <input type="text" name="name" placeholder="The name of the institution..">
+	  
+	  <span class="error">* <?php echo $nameErr;?> </span>
+      <label for="name">Address of the institution</label>
+      <input type="text" name="name" placeholder="The address of the institution..">
+	  
+	  <span class="error">* <?php echo $_SESSION["emailErr"];?> </span>
+      <label for="email">Email</label>
+      <input type="text" name="email" placeholder="Email..">
+	  
+	  <span class="error">* <?php echo $phoneErr;?> </span>
+      <label for="phone">Phone</label>
+      <input type="tel" name="phone" placeholder="Phone..">
+	  
+	  <label for="type">Type of institution<label>
+	  <select class="select" name="option">
+	    <option value="type" selected>
+	    Choose the type of the institution</option>
+		<option value="building">Buildings</option>
+		<option value="museum">Museums</option>
+		<option value="cafe">Cafes</option>
+		<option value="restaurant">Restaurants</option>
+		<option value="university">Universities</option>
+		<option value="store">Stores</option>
+		<option value="park">Parks</option>
+		<option value="library">Libraries</option>
+		<option value="publicPlace">Public places</option>
+		<option value="other">Other</option>
+	  </select>
+	  
+	  <p>
+	  <label for="institutionImage">Upload a photo for your institution</label>
+	  <br>
+	  <input type="file" id="photo" name="photo" accept="image/*">
+	  </p>
+	  
+	  <label class="termsAndCond">I have read and agree to the
+	    <a href="terms.html"> Terms and conditions</a> and the
+		<a href="privacy.html"> Privacy Policy.</a>
+      <input type="checkbox">
+      <span class="checkmark"></span>
+      </label>
+  
+      <input class="buttons" type="submit" value="Register">
+    </form>
+  </div>
+</div>
+
+</body>
+</html>

@@ -10,7 +10,21 @@
 <img src="homePageLogo.png" class="logo">
 
 <div class="navbar">
-  <a class="homeButton" href="index.php"><i class="fa fa-fw fa-home"></i>Home</a>
+  <ul>
+    <li>
+    <a class="navButton" href="index.php"><i class="fa fa-fw fa-home">
+    </i>Home</a>
+    </li>
+  
+    <li>
+    <a class="navButton" href="registerInstitution.html"><i class="fa fa-key"></i>Register an institution</a>
+    </li>
+	
+	<li>
+    <a class="navButton" href="info.html"><i class="fa fa-info-circle"></i>About</a>
+    </li>
+	
+  </ul>
 </div>
 
 
@@ -29,8 +43,8 @@
       <input type="text" name="email" placeholder="Your email..">
 	  
 	  <label class="termsAndCond">I have read and agree to the
-	    <a href="#"> Terms and conditions</a> and the
-		<a href="#"> Privacy Policy.</a>
+	    <a href="terms.html"> Terms and conditions</a> and the
+		<a href="privacy.html"> Privacy Policy.</a>
       <input type="checkbox">
       <span class="checkmark"></span>
       </label>
@@ -53,15 +67,15 @@
 
       <span class="error">* <?php echo $passErr;?> </span>
       <label for="password">Password</label>
-      <input type="text" name="pass" placeholder="Your password..">
+      <input type="password" name="pass" placeholder="Your password..">
 
       <span class="error">* <?php echo $pass2Err;?></span>
       <label for="password">Confirm password</label>
-      <input type="text" name="pass2" placeholder="Confirm password..">
+      <input type="password" name="pass2" placeholder="Confirm password..">
 	  
 	  <label class="termsAndCond">I have read and agree to the
-	    <a href="#"> Terms and conditions</a> and the
-		<a href="#"> Privacy Policy.</a>
+	    <a href="terms.html"> Terms and conditions</a> and the
+		<a href="privacy.html"> Privacy Policy.</a>
       <input type="checkbox">
       <span class="checkmark"></span>
       </label>

@@ -73,7 +73,11 @@ body{
    font-size-adjust: auto;
    text-align: center;
    background-color: white;
+<<<<<<< HEAD
    padding: 10px;
+=======
+   padding: 20px;
+>>>>>>> develop
 }
 
 
@@ -87,8 +91,36 @@ body{
   width:auto;
   Background-color:#F8F4E6;
   text-align:center;
+
 }
 
+.button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 15%;
+}
+
+.button:hover {
+  background-color: #555;
+}
+
+.buttonInactive {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #555;
+  text-align: center;
+  cursor: default;
+  width: 15%
+}
 
 .subtitle{
 font-size:30px;
@@ -122,11 +154,7 @@ color:#black;
     margin-top: 20px;
   }
 
-  .card:hover{
-    -ms-transform: scale(1.2); /* IE 9 */
-    -webkit-transform: scale(1.2); /* Safari 3-8 */
-    transform: scale(1.2);
-  }
+
 
   input[type=text]
   {
@@ -146,4 +174,10 @@ color:#black;
   input[type=text]:focus
   {
     width: 70%;
+  }
+
+  p.outset
+  {
+    border-style: outset;
+    border-color: #F9E6AD
   }

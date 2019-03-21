@@ -1,21 +1,50 @@
-<div class="card"><h2>
-<?php echo $row["ItemName"]; ?>
-</h2><p class="outset"><h4>
-<?php echo $row["Location"] . ', ' . $row["Date"]; ?>
-</h4></p><p>
-<?php echo $row["Descript"]; ?>  
-</p>
 <?php
+/*
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
-if(isset($_SESSION["loggedIn"]) && $_SESSION["loggedIn"] == 1)
+*/
+
+if($loggedIn)
 {
   $itemID = $row['ID'];
+  $itemFinderID = $row['FinderID'];
 
   $matchedMislayerSQL = "SELECT * FROM Matched WHERE MislayerID='$userID' AND  ItemID='$itemID' ";
   $matchedMislayerResult = $conn->query($matchedMislayerSQL);
 
+  $finderSQL = "SELECT Name FROM Users WHERE ID='$itemFinderID'";
+  $finderResult = $conn->query($finderSQL);
+  $finderRow = $finderResult->fetch_assoc();
+}
+?>
+<div class="card">
+<h2>
+  <?php echo $row["ItemName"]; ?>
+</h2>
+
+<?php if($loggedIn){ ?>
+<p>
+  <h4 style="float:right">Found by <a href="viewComments.php?id=<?php echo($userID) ?>" style="color:#EDB100">
+    <?php
+    echo $finderRow["Name"];
+    ?>
+  </a></h4>
+</p>  
+<?php } ?>
+
+<p class="outset"><h4>
+  <?php echo $row["Location"] . ', ' . $row["Date"]; ?>
+</h4></p>
+
+<p>
+<?php echo $row["Descript"]; ?>  
+</p>
+
+<?php
+
+if($loggedIn)
+{
   if($itemID == $userID)
   {
   ?>

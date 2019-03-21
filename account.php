@@ -2,8 +2,10 @@
   session_start();
   if(!isset($_SESSION["loggedIn"]))
     header("Location: index.php");
-  else if(isset($_SESSIOIN["loggedIn"]) && $_SESSION["loggedIn"] == 0)
+  else if(isset($_SESSION["loggedIn"]) && $_SESSION["loggedIn"] == 0)
     header("Location: index.php");
+  else if($_SESSION["loggedIn"] == 1 && isset($_SESSION["loggedIn"]))
+    $loggedIn = true;
 
   include_once "db_connection.php";
 ?>
@@ -39,7 +41,7 @@
 <div class="row"><!--genericContainer-->
   <div class="side"><!--left column-->
     <div class="PersonalInformationContainer">
-      <h2 class="subtitle">Personal Information</h2>
+      <h2 class="subtitle">Account Information</h2>
       <?php include 'PersonalInformation.php';?>
     </div>
   </div>
@@ -48,7 +50,15 @@
     <div class="MatchedItemContainer">
       <h2 class="subtitle">Matched Items</h2>
       <br>
-      <?php include 'MatchedItems.php';?>
+        <div class="rightcolumn">
+          <h4 class="subtitle">Items you've found</h4>
+          <?php include 'matchedItemsUserFound.php';?>
+        </div>
+        <br>
+        <div class="rightcolumn">
+          <h3 class="subtitle">Item's you've lost</h3>
+          <?php include 'matchedItemsUserLost.php';?>
+        </div>
     </div>
     <br>
 
@@ -60,15 +70,8 @@
     </div>
     <br>
 
-
-    <div>
-      <button class="button">Leave a message</button>
-    </div>
-
   </div>  <!--end main-->
 </div><!--coloumn-->
-
-
-
  </body>
  </html>
+

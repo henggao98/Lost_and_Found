@@ -1,0 +1,234 @@
+body {
+  font-family: Helvetica;
+  font-size: 14px;
+}
+
+.error {
+	color: #ff0000;
+}
+
+/* Navigation bar */
+.navbar {
+  text-decoration: none;
+  width: 100%;
+  background-color: #EDB100;  
+  display: block;
+}
+
+/* List of buttons in the navigation bar */
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+li {
+  float: right;
+}
+
+/* Buttons in the navigation bar */ 
+li a:link, li a:visited {
+  display: block;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  padding: 14px 25px;
+}
+
+li a:hover, li a:active {
+  background-color: #F4D475;
+}
+
+/* Home icon */
+i {
+  margin-right: 3px;
+}
+
+/* Lost and found logo */
+.logo {
+  width: 8%;
+  margin-left: 47%;
+}
+
+/* Container for the form */
+.gridContainer {
+  display: flex;
+  background-color: white;
+  padding-top: 0.5%;
+  padding-bottom: 1%;
+  margin-top: 2%;
+  align-content: center;
+  -webkit-align-content: center;
+  margin-left: 10vw;
+  margin-right: 10vw;
+  height: auto;
+}
+
+/* Container for the institution registration */
+.gridItem {
+  background-color: #FFFAE5;
+  padding: 3%;
+  height: auto;
+}
+
+/* Button for submitting the registration */
+.buttons {
+  float: right;
+  margin-top: 2%;
+  margin-bottom: 1%;
+  background-color: #EDB100;
+  padding: 10px 20px;
+  border: none;
+  color: white;
+  cursor: pointer;
+  outline: none;
+}
+
+.buttons:hover {
+  color: #EDB100;
+  background-color: white;
+}
+
+/* Text input fields */
+input[type=text]{
+  width: 100%;
+  padding: 12px 20px;
+  margin: 5px 0;
+  box-sizing: border-box;
+  border: 3px solid #ccc;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  outline: none;
+}
+
+input[type=text]:focus {
+  border: 3px solid #FFBB33;
+}
+
+input[type=tel] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 5px 0;
+  box-sizing: border-box;
+  border: 3px solid #ccc;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  outline: none;	
+}
+
+input[type=tel]:focus {
+  border: 3px solid #FFBB33;
+}
+
+input[type=email] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 5px 0;
+  box-sizing: border-box;
+  border: 3px solid #ccc;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  outline: none;
+}
+
+input[type=email]:focus {
+  border: 3px solid #FFBB33;
+}
+
+input[type=file] {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+/* Terms and conditions text container */
+.termsAndCond {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  font-size: 11px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.termsAndCond input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 15px;
+  width: 15px;
+  background-color: #ccc;
+}
+
+/* On mouse-over, add a yellowish background color */
+.termsAndCond:hover input ~ .checkmark {
+  background-color: #F4D475;
+}
+
+/* When the checkbox is checked, add an orange background */
+.termsAndCond input:checked ~ .checkmark {
+  background-color: #EDB100;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.termsAndCond input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.termsAndCond .checkmark:after {
+  left: 5px;
+  top: 3px;
+  width: 3px;
+  height: 5px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+/* Colours for the Terms and Conditions and the Privacy Policy links */
+a:link {
+  color: #EDB100; 
+  background-color: transparent; 
+  text-decoration: none;
+}
+
+a:visited {
+  color: #EDB100;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #F4D475;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+a:active {
+  color: #EDB100;
+  background-color: transparent;
+  text-decoration: underline;
+}

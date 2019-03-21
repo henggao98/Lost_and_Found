@@ -1,14 +1,14 @@
 <?php
-//Select any matched items and display them
+//Select any matched items, this user has lost and display them
 
   $matchedItems = 0;
-  $sql = "SELECT FinderID, MislayerID, ItemID FROM Matched";
+  $sql = "SELECT * FROM Matched";
   $matchedResult = $conn->query($sql);
 
 
   while($matchedRow = $matchedResult->fetch_assoc())
   {
-    if($matchedRow["MislayerID"] == $sessionId || $matchedRow["FinderID"] == $sessionId)
+    if($matchedRow["MislayerID"] == $sessionId)
     {
       $sql = "SELECT ID, FinderId, ItemName, Descript, Location, Date FROM Items";
       $itemsResult = $conn->query($sql);
@@ -18,10 +18,9 @@
         if($row["ID"] == $matchedRow["ItemID"])
         {
           $matchedItems++;
-          echo "<h3>Matched Item: " . $matchedItems . "</h3><br>";
           //update the number label of the item.
 
-          include "itemWithoutClaim.php";
+          include "showMatchedItemsUserLost.php";
         }//if
       }//while
     }//if
@@ -30,5 +29,5 @@
   if($matchedItems == 0)
   {
     echo "You have no matched items <br><br>";
-  }//if
+  }//if 
 ?>
