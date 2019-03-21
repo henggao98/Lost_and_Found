@@ -17,18 +17,6 @@ body{
 a:link {
   text-decoration: none;
 }
-
-a:visited {
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-a:active {
-  text-decoration: underline;
-}
 p{
 	text-align: justify;
 }
@@ -170,6 +158,7 @@ input[type=submit] {
 	background-color: #fff1ac;
 	color: #fff;
 	padding:5px;
+	font-size: 10px;
 }
 
 /* The Close Button */
