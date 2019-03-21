@@ -15,6 +15,7 @@
   <head><link rel="stylesheet" href="items.css"></head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
 
   <body>
 
@@ -25,14 +26,14 @@
   <div class="topnav">
     <a href="index.php" style="float:right"><i class="fa fa-fw fa-home"></i>Home</a>
     <a href="account.php" style="float:right"><i class="fa fa-fw fa-user"></i>Account</a>
-    <a href="items.php" style="float:right"><i class="fa fa-fw fa-globe"></i>Search Items</a>
-    <a href="about.html" style="float:right"><i class="fa fa-fw fa-info-circle"></i>About</a>
+    <a href="info.html" style="float:right"><i class="fa fa-fw fa-info-circle"></i>About</a>
     <a href="institutions.php" style="float:right"><i class="fa fa-fw fa-globe"></i>Search Places</a>
+    <a href="items.php" style="float:right"><i class="fa fa-fw fa-search"></i>Search Items</a>
+    <a href="found.php" style="float:right"><i class='fas fa-hand-holding-heart'></i>Found Something</a>
   </div>
 
-<div class="card">
+
 <h2>Comments: </h2>
-<div class="card2">
 <?php
   $id = $_GET["id"];
 
@@ -53,8 +54,13 @@
         {
 ?>
           <div class="card">
-          <h4><?php echo "Comment:" . $commentRow["Comment"]; ?></h4><br>
-          <h4><?php echo "Commented by: " . $row["Name"]; ?></h4><br>
+          <h2>
+            <?php echo $row["Name"]; ?>
+          </h2>
+
+          <p class="outset"><h4>
+            <?php echo $commentRow["Comment"]; ?>
+          </h4></p>
           </div>
 <?php
           $noOfComments++;
@@ -66,5 +72,4 @@
   if($noOfComments == 0)
     echo "This user has no comments";
 ?>
-</div>
-</div>
+

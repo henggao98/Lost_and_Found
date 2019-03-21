@@ -20,6 +20,7 @@
   </head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
   <body>
 
 <div class="logo">
@@ -32,7 +33,7 @@
   <a href="info.html" style="float:right"><i class="fa fa-fw fa-info-circle"></i>About</a>
   <a href="institutions.php" style="float:right"><i class="fa fa-fw fa-globe"></i>Search Places</a>
   <a href="items.php" style="float:right"><i class="fa fa-fw fa-search"></i>Search Items</a>
-  <a href="found.php" style="float:right">Found Something</a>
+  <a href="found.php" style="float:right"><i class='fas fa-hand-holding-heart'></i>Found Something</a>
 </div>
 
 <div class="row">

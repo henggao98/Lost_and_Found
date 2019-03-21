@@ -10,7 +10,7 @@
 if($matchedRow["Status"] == 1)
 {
 ?>
-  <p></p>
+  <p><button class="buttonInactive">Not Yet Returned</button></p>
 <?php
 }
 elseif ($matchedRow["Status"] == 0)

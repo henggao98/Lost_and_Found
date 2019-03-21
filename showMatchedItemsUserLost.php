@@ -51,6 +51,9 @@ if($matchedRow["Status"] == 1)
 }
 else
 {
+?>
+  <button class="buttonInactive">Not Yet Returned</button>
+<?php
 }
 ?>
 </div>
