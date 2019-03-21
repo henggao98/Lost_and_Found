@@ -47,19 +47,15 @@
 
 
   <div class="rightcolumn" >
-    <div class="card">
-      <div class="card">
       <h1 align="center" style="color:#EDB100";>Found Items</h1>
-      <br>
       <?php include 'FoundItems.php';?>
-    </div>
     <h1 align="center", style="color:#EDB100;">Matched Items</h1>
       <br>
-      <div class="card">
+      <div class="card2">
         <h2>Items you've found</h2>
         <?php include 'matchedItemsUserFound.php';?>
       </div>
-      <div class="card">
+      <div class="card2">
         <h2>Item's you've lost</h2>
         <?php include 'matchedItemsUserLost.php';?>
       </div>

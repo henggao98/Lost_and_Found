@@ -80,6 +80,13 @@ input[type=text] {
   padding: 20px;
   margin-top: 20px;
 }
+
+.card2
+{
+  background-color:#F8F4E6;
+  padding: 20px;
+  margin-top: 20px'
+}
   
 /* Clear floats after the columns */
 .row:after
