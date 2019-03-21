@@ -46,9 +46,6 @@ if($matchedRow["Status"] == 1)
 }
 else
 {
-?>
-<p><button class="buttonInactive" disabled>Awaiting confirmation from finder</button></p>
-<?php
 }
 ?>
 </div>

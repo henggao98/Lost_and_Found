@@ -33,7 +33,7 @@ input[type=text] {
 
 
 /* Style the top navigation bar */
-.topnav
+.topnav 
 {
   overflow: hidden;
   background-color: #EDB100;
@@ -49,6 +49,13 @@ input[type=text] {
   padding: 14px 16px;
   text-decoration: none;
 }
+
+.topnav a.active 
+{
+  background-color: #F4D475;
+  color: white;
+}
+
 
 /* Change color on hover */
 .topnav a:hover
