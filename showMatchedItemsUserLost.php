@@ -1,10 +1,19 @@
 <div class="card"><h2>
 <?php echo $row["ItemName"]; ?>
-</h2><p class="outset"><h4>
+</h2>
+
+  <h4 style="float:right">Found By<a href="viewComments.php?id=<?php echo($row["FinderID"]) ?>" style="color:#EDB100">
+    <?php
+      echo $dRow["Name"]; 
+    ?>
+  </a></h4>
+<h4>
+<p class="outset"><h4>
 <?php echo $row["Location"] . ', ' . $row["Date"]; ?>
 </h4></p><p>
 <?php echo $row["Descript"]; ?>
 </p>
+<p>
 
 <! When this button is pressed call the recievedItem function with $row["ItemID"] as the 
 argument>
