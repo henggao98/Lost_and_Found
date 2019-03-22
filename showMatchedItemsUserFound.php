@@ -1,5 +1,10 @@
 <div class="card"><h2>
 <?php echo $row["ItemName"]; ?>
+  <h4 style="float:right">Claimed by: <a href="viewComments.php?id=<?php echo($matchedRow["MislayerID"]) ?>" style="color:#EDB100">
+    <?php
+      echo $dRow["Name"];
+    ?>
+  </a></h4>
 </h2><p class="outset"><h4>
 <?php echo $row["Location"] . ', ' . $row["Date"]; ?>
 </h4></p><p>

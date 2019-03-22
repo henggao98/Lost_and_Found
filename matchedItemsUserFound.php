@@ -17,7 +17,11 @@
       {
         if($row["ID"] == $matchedRow["ItemID"])
         {
-          $displayID = $row["FinderId"];
+          $displayId = $matchedRow["MislayerID"];
+          $sqlDisplay = "SELECT Name, isInstitution FROM Users WHERE ID = '$displayId'";
+          $displayResult = $conn->query($sqlDisplay);
+          $dRow = mysqli_fetch_assoc($displayResult);
+
           $matchedItems++;
           //update the number label of the item.
 
