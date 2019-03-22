@@ -1,6 +1,6 @@
 
 <?php
-  $sql = "SELECT CommentedID, CommenterID, Comment FROM Ratings";
+  $sql = "SELECT CommentedID, CommenterID, Comment, Rating FROM Ratings";
   $commentResult = $conn->query($sql);
 
   while($commentRow = $commentResult->fetch_assoc())
@@ -23,7 +23,7 @@
 </a>
 </h4>
 <?php
-    $stars = round($commenterRow["Rating"]);
+    $stars = round($commentRow["Rating"]);
     for($index = 0; $index < $stars; $index++)
     {
     ?>
