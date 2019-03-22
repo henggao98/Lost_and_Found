@@ -33,6 +33,6 @@
 
   if($matchedItems == 0)
   {
-    echo "You have no matched items <br><br>";
+    echo "You have no claimed items <br><br>";
   }//if 
 ?>
