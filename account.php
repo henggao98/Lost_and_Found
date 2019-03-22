@@ -57,6 +57,19 @@
       <h1 align="center" style="color:#EDB100";>Claimed Items</h1>
       <?php include 'matchedItemsUserLost.php';?>
   </div><!--coloumn-->
+
+  <style>
+  .links {
+	color: #FFBB33;
+	text-decoration: underline;
+  }
+  </style>
+
+  <br>
+  <div class="center">
+    <a href="privacy.html" class="links"> Privacy Policy </a> --- <a href="terms.html" class="links"> Terms of use</a>
+  </div>
+
  </body>
  </html>
 

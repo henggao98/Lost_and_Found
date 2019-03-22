@@ -275,6 +275,12 @@ input[type=text] {
   text-align: center;
 }
 
+.links {
+	color: #FFBB33;
+	text-decoration: underline;
+}
+
+
 .pagination
 {
   display: inline-block;
