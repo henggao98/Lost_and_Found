@@ -31,7 +31,8 @@ $counter = 0;
 $index = -$startItemIndex;
 $endItemIndex = $currentPage * $itemsPerPage;
 
-$result1 = $conn->query($sql);
+$sql1 = "SELECT * FROM Items ORDER BY ID DESC";
+$result1 = $conn->query($sql1);
 
 // SHOWING THE ITEMS.
 while($row = $result1->fetch_assoc()){

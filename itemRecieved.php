@@ -2,12 +2,12 @@
   include_once "db_connection.php";
   session_start();
 
-  if(isset($_GET['itemID']) && isset($_GET['matchedID']) && isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] == 1)
+  if(isset($_GET['itemID']) && isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] == 1)
   {
 
     $userID = $_SESSION["id"];
     $itemID = test_input($_GET['itemID']);
-    $matchedID = test_input($_GET['matchedID']);
+
 
     $checkQuerry = "SELECT * FROM Matched WHERE MislayerID='$userID' AND ItemID='$itemID'";
     $checkResult = $conn->query($checkQuerry);

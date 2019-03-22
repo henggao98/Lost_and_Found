@@ -79,8 +79,8 @@ body {
     color: white;
     cursor: pointer;
     outline: none;
-    margin-top: 5%;
-	margin-bottom: 5%;
+    margin-left: 5%;
+	margin-bottom: 10%;
 }
 
 .facebook:hover {
@@ -199,63 +199,6 @@ a {
   text-decoration: none;
 }
 
-/* Removed from html
-  <div class="popoverWrapper">
-    <button class="popoverTitle info">ABOUT</button>
-      <div class="popoverContent">
-        <p class="popoverMessage">
-	  You can search for an item by clicking on the LOST SOMETHING button.
-	  You can post an item that you found by clicking on the FOUND SOMETHING button. When you are logged in, you are able to claim lost items.
-	    </p>
-      </div>
-    </div>
-
-
-.popoverTitle {
-  text-decoration: none;
-  color: #FFBB33;
-  font-size: 12px;
-}
-
-.popoverWrapper {
-  float: right;
-  display: inline-block;
-}
-.popoverContent {
-  margin-top: 5rem;
-  opacity: 0;
-  visibility: hidden;
-  position: absolute;
-  transform: translate(0, 10px);
-  background-color: #FFFAE5;
-  padding: 1.5rem;
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
-  width: 20vw;
-}
-.popoverContent:before {
-  position: absolute;
-  z-index: -1;
-  content: "";
-  right: calc(40% - 10px);
-  border-style: solid 2px;
-  border-width: 0px 10px 10px 10px;
-  border-color: transparent transparent #FFBB33 transparent;
-  transition-duration: 0.2s;
-  transition-property: transform;
-}
-.popoverWrapper:hover .popoverContent {
-  z-index: 10;
-  opacity: 1;
-  visibility: visible;
-  transform: translate(0, -20px);
-  transition: all 0.5s cubic-bezier(0.75, -0.02, 0.2, 0.97);
-}
-.popoverMessage {
-  text-align: left;
-}
-
-*/
-
 /* Container for the LOST SOMETHING and FOUND SOMETHING button */
 .buttonContainer {
 	display: grid;
@@ -354,13 +297,6 @@ a {
 	display: grid;
 }
 
-ul.b {
-  list-style-type: circle;
-}
-ul.b li{
-	float: none;
-}
-
 .card{
 	padding: 15px;
 	color: black;
@@ -381,6 +317,25 @@ ul.b li{
   content: "";
   display: table;
   clear: both;
+}
+
+.footer{
+	background-color: #FFFBE5;
+	color: #FFFBE5;
+	padding: 5px;
+	margin-top: 17px;
+}
+
+.links {
+    color: #FFBB33;
+}
+
+.links:hover {
+	text-decoration: underline;
+}
+
+ul {
+    margin-top: 30px;
 }
 
 @media screen and (max-width: 850px) {

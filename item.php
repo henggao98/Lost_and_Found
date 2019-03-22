@@ -13,7 +13,7 @@ if($loggedIn)
   $matchedMislayerSQL = "SELECT * FROM Matched WHERE MislayerID='$userID' AND  ItemID='$itemID' ";
   $matchedMislayerResult = $conn->query($matchedMislayerSQL);
 
-  $finderSQL = "SELECT Name, ID FROM Users WHERE ID='$itemFinderID'";
+  $finderSQL = "SELECT Name, ID, isInstitution FROM Users WHERE ID='$itemFinderID'";
   $finderResult = $conn->query($finderSQL);
   $finderRow = $finderResult->fetch_assoc();
 }
@@ -25,7 +25,12 @@ if($loggedIn)
 
 <?php if($loggedIn){ ?>
 <p>
-  <h4 style="float:right">Found by <a href="viewComments.php?id=<?php echo($finderRow["ID"]) ?>" style="color:#EDB100">
+  <h4 style="float:right">
+    <?php 
+      if( $finderRow['isInstitution'] == '1') echo "Found In";
+      else echo "Found by";
+     ?>
+    <a href="viewComments.php?id=<?php echo($finderRow["ID"]) ?>" style="color:#EDB100">
     <?php
     echo $finderRow["Name"];
     ?>
@@ -37,9 +42,10 @@ if($loggedIn)
   <?php echo $row["Location"] . ', ' . $row["Date"]; ?>
 </h4></p>
 
-<p>
-<?php echo $row["Descript"]; ?>  
-</p>
+<?php
+if($loggedIn)
+  echo "<p>" . $row["Descript"] . "</p>";  
+?>
 
 <?php
 

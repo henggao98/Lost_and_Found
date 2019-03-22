@@ -1,10 +1,15 @@
 <div class="card"><h2>
 <?php echo $row["ItemName"]; ?>
 </h2>
-
-  <h4 style="float:right">Found By<a href="viewComments.php?id=<?php echo($row["FinderID"]) ?>" style="color:#EDB100">
+<?php
+  if($dRow["isInstitution"] == 1)
+    $found = "Found In ";
+  else
+    $found = "Found By ";
+?>
+    <h4 style="float:right"><?php echo($found) ?><a href="viewComments.php?id=<?php echo($row["FinderID"]) ?>" style="color:#EDB100">
     <?php
-      echo $dRow["Name"]; 
+      echo $dRow["Name"];
     ?>
   </a></h4>
 <h4>
@@ -29,8 +34,20 @@ if($matchedRow["Status"] == 1)
 
 <div class="formPopup" id="<?php echo("popup" . $itemUSerID) ?>">
   <button class="button" onclick="document.getElementById('<?php echo("popup" . $itemUSerID) ?>').classList.toggle('show');">X</button>
-  <form action="leaveComment.php?CommenterID=<?php echo($USerID) ?>&CommentedID=<?php echo($itemUSerID) ?>&itemID=<?php echo($row['ID']) ?>&matchedRow=<?php echo($matchedRow['ID']) ?>" class="formContainer" method="POST">
+  <form action="leaveComment.php?CommenterID=<?php echo($USerID) ?>&CommentedID=<?php echo($itemUSerID) ?>&itemID=<?php echo($row['ID']) ?>" class="formContainer" method="POST">
 
+    <div class="rate">
+    <input type="radio" id="<?php echo($itemUSerID . "star5") ?>" name="rate" value="5" />
+    <label for="<?php echo($itemUSerID . "star5") ?>" title="text">5 stars</label>
+    <input type="radio" id="<?php echo($itemUSerID . "star4") ?>" name="rate" value="4" />
+    <label for="<?php echo($itemUSerID . "star4") ?>" title="text">4 stars</label>
+    <input type="radio" id="<?php echo($itemUSerID . "star3") ?>" name="rate" value="3" />
+    <label for="<?php echo($itemUSerID . "star3") ?>" title="text">3 stars</label>
+    <input type="radio" id="<?php echo($itemUSerID . "star2") ?>" name="rate" value="2" />
+    <label for="<?php echo($itemUSerID . "star2") ?>" title="text">2 stars</label>
+    <input type="radio" id="<?php echo($itemUSerID . "star1") ?>" name="rate" value="1" />
+    <label for="<?php echo($itemUSerID . "star1") ?>" title="text">1 star</label>
+    </div>
 
     <textarea name="textArea" placeholder="Leave a comment..." required></textarea><br>
     
@@ -47,7 +64,7 @@ if($matchedRow["Status"] == 1)
 else
 {
 ?>
-<p><button class="buttonInactive" disabled>Awaiting confirmation from finder</button></p>
+  <button class="buttonInactive">Not Yet Returned</button>
 <?php
 }
 ?>

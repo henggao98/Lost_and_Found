@@ -20,6 +20,7 @@
   </head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
   <body>
 
 <div class="logo">
@@ -28,9 +29,11 @@
 
 <div class="topnav">
   <a href="index.php" style="float:right"><i class="fa fa-fw fa-home"></i>Home</a>
-  <a href="items.php" style="float:right"><i class="fa fa-fw fa-globe"></i>Search Items</a>
+  <a href="account.php" style="float:right" class="active"><i class="fa fa-fw fa-user"></i>Account</a>
   <a href="info.html" style="float:right"><i class="fa fa-fw fa-info-circle"></i>About</a>
   <a href="institutions.php" style="float:right"><i class="fa fa-fw fa-globe"></i>Search Places</a>
+  <a href="items.php" style="float:right"><i class="fa fa-fw fa-search"></i>Search Items</a>
+  <a href="found.php" style="float:right"><i class='fas fa-hand-holding-heart'></i>Found Something</a>
 </div>
 
 <div class="row">
@@ -40,7 +43,7 @@
       <?php include 'PersonalInformation.php';?>
     </div>
     <div class="card">
-      <h2>Comments:</h2>
+      <h3>Comments:</h3>
       <?php include 'accountComments.php';?>
     </div>
   </div>
@@ -49,16 +52,10 @@
   <div class="rightcolumn" >
       <h1 align="center" style="color:#EDB100";>Found Items</h1>
       <?php include 'FoundItems.php';?>
-    <h1 align="center", style="color:#EDB100;">Matched Items</h1>
-      <br>
-      <div class="card2">
-        <h2>Items you've found</h2>
-        <?php include 'matchedItemsUserFound.php';?>
-      </div>
-      <div class="card2">
-        <h2>Item's you've lost</h2>
-        <?php include 'matchedItemsUserLost.php';?>
-      </div>
+      <h1 align="center", style="color:#EDB100;">Matched Items</h1>
+      <?php include 'matchedItemsUserFound.php';?>
+      <h1 align="center" style="color:#EDB100";>Claimed Items</h1>
+      <?php include 'matchedItemsUserLost.php';?>
   </div><!--coloumn-->
  </body>
  </html>
