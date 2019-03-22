@@ -199,42 +199,26 @@ function test_input($data) {/*copied from www.w3school.com */
 </head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
 <body>
 
 <img src="homePageLogo.png" class="logo">
 
-<div class="navbar">
-  <ul>
-    <li>
-    <a href="index.php" class="navButton"><i class="fa fa-fw fa-home">
+<div class="topnav">
+    <a href="index.php" style="color:white"><i class="fa fa-fw fa-home">
     </i>Home</a>
-    </li>
-  
-    <li>
-    <a href="registration.php" class="navButton"><i class="fa fa-key"></i>Register</a>
-    </li>
 	
-    <li>
-	<a href="account.php" class="navButton"><i class="fa fa-fw fa-user"></i>Account</a>
-	</li>
+    <a href="registration.php" style="color:white"><i class="fa fa-key"></i>Registration</a>
+
+    <a href="registerInstitution.php" class="active" style="color:white"><i class="fa fa-key"></i>Register an institution</a>
 	
-	<li>
-    <a href="info.html" class="navButton"><i class="fa fa-fw fa-info-circle"></i>About</a>
-	</li>
+	<a href="account.php" style="color:white"><i class="fa fa-fw fa-user"></i>Account</a>
 	
-	<li>
-    <a href="institutions.php" class="navButton"><i class="fa fa-fw fa-globe"></i>Search Places</a>
-	</li>
+    <a href="institutions.php" style="color:white"><i class="fa fa-fw fa-globe"></i>Search Places</a>
 	
-	<li>
-    <a href="items.php" class="navButton"><i class="fa fa-fw fa-search"></i>Search Items</a>
-	</li>
+    <a href="items.php" style="color:white"><i class="fa fa-fw fa-search"></i>Search Items</a>
 	
-	<li>
-    <a href="found.php" class="navButton"><i class='fas fa-hand-holding-heart'></i>Found Something</a>
-	</li>
-	
-  </ul>
+    <a href="found.php" style="color:white"><i class="fas fa-hand-holding-heart"></i>Found Something</a>
 </div>
 
 <div class="gridContainer">
