@@ -54,13 +54,33 @@ function test_input($data) {
 <div class="navbar">
   <ul>
     <li>
-    <a class="navButton" href="index.html"><i class="fa fa-fw fa-home">
+    <a href="index.php" class="navButton"><i class="fa fa-fw fa-home">
     </i>Home</a>
     </li>
   
     <li>
-    <a class="navButton" href="registerInstitution.html"><i class="fa fa-key"></i>Register an institution</a>
+    <a href="registerInstitution.php" class="navButton"><i class="fa fa-key"></i>Register an institution</a>
     </li>
+	
+    <li>
+	<a href="account.php" class="navButton"><i class="fa fa-fw fa-user"></i>Account</a>
+	</li>
+	
+	<li>
+    <a href="info.html" class="navButton"><i class="fa fa-fw fa-info-circle"></i>About</a>
+	</li>
+	
+	<li>
+    <a href="institutions.php" class="navButton"><i class="fa fa-fw fa-globe"></i>Search Places</a>
+	</li>
+	
+	<li>
+    <a href="items.php" class="navButton"><i class="fa fa-fw fa-search"></i>Search Items</a>
+	</li>
+	
+	<li>
+    <a href="found.php" class="navButton"><i class='fas fa-hand-holding-heart'></i>Found Something</a>
+	</li>
 	
   </ul>
 </div>
