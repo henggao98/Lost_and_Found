@@ -35,7 +35,6 @@ if(isset($_SESSION["loggedIn"]) && $_SESSION["loggedIn"] == 1)
         <?php echo $name; ?>
       </button>
     </a>
-    <a href="info.html"><button class="info">ABOUT</button></a>
   </div>
   <?php
 }
@@ -46,7 +45,6 @@ else
     <button class="login" onclick="popup()">LOGIN</button>
       <a href="registration.php">
         <button class="register">REGISTER</button></a>
-	    <a href="info.html"><button class="info">ABOUT</button></a>
     </div>
   <?php
 }
@@ -85,6 +83,8 @@ else
   </div>
 </div>
 
+<a href="index.html#info" class="arrow"><i class="fas fa-angle-down" style="font-size:30px"></i></a>
+
 <center>
 
 <div class="infoContainer" id="info">
@@ -121,7 +121,7 @@ else
 					<div class="clearfix">
 					<i class="far fa-address-card" style="font-size:100px; float:left; padding:10px"></i> 
 					As a <b>finder</b> you need to provide us with some details. Our <a href="registration.html" class="links">registration</a> process is simple and takes no more than 2 minutes.
-					However, if you don't feel like creating the account on yet another website ours offers a <a href="registration.html" class="links">guest registration</a>, where you provide us only with
+					However, if you don't feel like creating the account on yet another website ours offers a guest registration, where you provide us only with
 					your first name and an email enabling the owner of the found property to contact with you.
 					<br>
 					</div>
@@ -132,7 +132,7 @@ else
 					In order for the item to appear on our website you need to fill out our <b>found item form</b>.You will need to provide us with details about location, where the item was found, type of the object, as well as a short description of it. The <b>important note</b> about the description you provide is that it contains:
 					<ul>
                     <li>Date you found the item</li>
-                    <li>Description of the place you found it at (i.e. if chosen "public transport" add "found on bus 147")</li>
+                    <li>Description of the place you found it at (i.e. if chosen “public transport” add “found on bus 147”)</li>
                     <li>Vague description of it (i.e. if the item you found has a specific feature like a specific colour of the etui, or specific scratch or damage <b>DO NOT</b> contain that information in the description.)</li>
 					</ul>
                     We ask you to write a very vague description allowing you to ask the claimer a more detailed question. We do so in order to make sure the item is returned to its true owner, which can only be achieved if the owner knows the specifics of the item you found.
