@@ -93,9 +93,24 @@
             <?php echo $row["Name"]; ?>
           </h2>
 
-          <p class="outset"><h4>
+         <p class = "outset"><h4>
+           <?php
+           $stars = round($commentRow["Rating"]);
+           for($index = 0; $index < $stars; $index++)
+           {
+           ?>
+           <span class = "fa fa-star checked"></span>
+           <?php } ?>
+          <?php
+          for($index = 0; $index < (5 - $stars); $index++)
+          { ?>
+          <span class = "fa fa-star"></span>
+          <?php
+          } ?>
+          <br>
             <?php echo $commentRow["Comment"]; ?>
-          </h4></p>
+          </h4>
+          </p>
           </div>
 <?php
           $noOfComments++;
