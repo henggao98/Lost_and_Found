@@ -33,7 +33,6 @@
   <div class="topnav">
     <a href="index.php" style="float:right"><i class="fa fa-fw fa-home"></i>Home</a>
     <a href="account.php" style="float:right"><i class="fa fa-fw fa-user"></i>Account</a>
-    <a href="info.html" style="float:right"><i class="fa fa-fw fa-info-circle"></i>About</a>
     <a href="institutions.php" style="float:right"><i class="fa fa-fw fa-globe"></i>Search Places</a>
     <a href="items.php" style="float:right"><i class="fa fa-fw fa-search"></i>Search Items</a>
     <a href="found.php" style="float:right"><i class='fas fa-hand-holding-heart'></i>Found Something</a>
