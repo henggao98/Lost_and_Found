@@ -40,6 +40,7 @@
           $count++;
         }
         $userRating = (float)$ratingSoFar / $count;
+        $userRating = round($userRating, 1);
 
         $insertRating = "UPDATE Users SET Rating='$userRating' WHERE ID='$commentedID'";
 
