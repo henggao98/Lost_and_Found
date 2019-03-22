@@ -21,6 +21,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <body>
 
 <div class="logo">
@@ -30,7 +31,6 @@
 <div class="topnav">
   <a href="index.php" style="float:right"><i class="fa fa-fw fa-home"></i>Home</a>
   <a href="account.php" style="float:right" class="active"><i class="fa fa-fw fa-user"></i>Account</a>
-  <a href="info.html" style="float:right"><i class="fa fa-fw fa-info-circle"></i>About</a>
   <a href="institutions.php" style="float:right"><i class="fa fa-fw fa-globe"></i>Search Places</a>
   <a href="items.php" style="float:right"><i class="fa fa-fw fa-search"></i>Search Items</a>
   <a href="found.php" style="float:right"><i class='fas fa-hand-holding-heart'></i>Found Something</a>
@@ -57,6 +57,19 @@
       <h1 align="center" style="color:#EDB100";>Claimed Items</h1>
       <?php include 'matchedItemsUserLost.php';?>
   </div><!--coloumn-->
+
+  <style>
+  .links {
+	color: #FFBB33;
+	text-decoration: underline;
+  }
+  </style>
+
+  <br>
+  <div class="center">
+    <a href="privacy.html" class="links"> Privacy Policy </a> --- <a href="terms.html" class="links"> Terms of use</a>
+  </div>
+
  </body>
  </html>
 

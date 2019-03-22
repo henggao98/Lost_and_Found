@@ -127,7 +127,6 @@ function test_input($data) {
 <div class="topnav">
   <a href="index.php" style="float:right"><i class="fa fa-fw fa-home"></i>Home</a>
   <a href="account.php" style="float:right"><i class="fa fa-fw fa-user"></i>Account</a>
-  <a href="info.html" style="float:right"><i class="fa fa-fw fa-info-circle"></i>About</a>
   <a href="institutions.php" style="float:right"><i class="fa fa-fw fa-globe"></i>Search Places</a>
   <a href="items.php" class="active" style="float:right"><i class="fa fa-fw fa-search"></i>Search Items</a>
   <a href="found.php" style="float:right"><i class='fas fa-hand-holding-heart'></i>Found Something</a>
@@ -165,10 +164,6 @@ function test_input($data) {
             <input type="radio" name="category" <?php if ($category == "Keys") { ?>checked='checked' <?php } ?>value="Keys" onChange="autoSubmitCategory();">
             <span class="checkmark"></span>
           </label>
-          <label class="container">Other
-            <input type="radio" name="category" <?php if ($category == "Other") { ?>checked='checked' <?php } ?>value="Other" onChange="autoSubmitCategory();">
-            <span class="checkmark"></span>
-          </label>
         </form>
       </div>
 
@@ -195,8 +190,20 @@ function test_input($data) {
             <input type="radio" name="location" <?php if ($location == "Restaurant") { ?>checked='checked' <?php } ?>value="Restaurant" onChange="autoSubmitLocation();">
             <span class="checkmark"></span>
           </label>
-          <label class="container">Other
-            <input type="radio" name="location" <?php if ($location == "Other") { ?>checked='checked' <?php } ?>value="Other" onChange="autoSubmitLocation();">
+          <label class="container">Cafes
+            <input type="radio" name="location" <?php if ($location == "Coffee") { ?>checked='checked' <?php } ?>value="Coffee" onChange="autoSubmitLocation();">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">Universities
+            <input type="radio" name="location" <?php if ($location == "University") { ?>checked='checked' <?php } ?>value="University" onChange="autoSubmitLocation();">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">Libraries
+            <input type="radio" name="location" <?php if ($location == "Library") { ?>checked='checked' <?php } ?>value="Library" onChange="autoSubmitLocation();">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">Buildings
+            <input type="radio" name="location" <?php if ($location == "Building") { ?>checked='checked' <?php } ?>value="Building" onChange="autoSubmitLocation();">
             <span class="checkmark"></span>
           </label>
         </form>
@@ -215,7 +222,11 @@ function test_input($data) {
 
   </div>
 </div>
-</div>
 
+</div>
+<br>
+<div class="center">
+  <a href="privacy.html" class="links"> Privacy Policy </a> --- <a href="terms.html" class="links"> Terms of use</a>
+</div>
 </body>
 </html>

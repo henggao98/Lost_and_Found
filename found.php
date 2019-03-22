@@ -21,7 +21,6 @@ include "found_functionality.php";
    <ul class="a">
     <li><a href="index.php"><i class="fa fa-fw fa-home"></i>Home</a></li>
     <li><a href="account.php"><i class="fa fa-fw fa-user"></i>Account</a></li>
-    <li><a href="info.html"><i class="fa fa-fw fa-info-circle"></i>About</a></li>
     <li><a href="institutions.php"><i class="fa fa-fw fa-globe"></i>Search Places</a></li>
     <li><a href="items.php"><i class="fa fa-fw fa-search"></i>Search Items</a></li>
     <li><a href="found.php" class="active"><i class='fas fa-hand-holding-heart'></i>Found Something</a></li>
@@ -29,9 +28,9 @@ include "found_functionality.php";
   <br>
 <div class="row">
   <div class="column side"><center><br><br>
-  <img src="train(1).png" width="120px"><br>
-  <img src="place.png" width="120px" alt="Flowers in Chania"><br><br><br>
-  <img src="museum.png" width="120px"><br></center><br>
+  <img src="train(1).png" width="65%"><br>
+  <img src="place.png" width="65%" alt="Flowers in Chania"><br><br><br>
+  <img src="museum.png" width="65%"><br></center><br>
   </div>
   <div class="column middle" >
   <div class="container">
@@ -102,7 +101,7 @@ include "found_functionality.php";
 
       </div>
       <div class="col-75">
-        <textarea id="item_description" name="description" placeholder="Provide description of the object as well as more exact location" style="height:190px" required></textarea>
+        <textarea id="item_description" name="description" placeholder="Please contain date of finding, location and vague description. For more info check exclamation marks!" style="height:190px" required></textarea>
       </div>
     </div>
 	<br>
@@ -115,12 +114,15 @@ include "found_functionality.php";
 </div>
 
   <div class="column side" ><center><br><br>
-  <img src="passport.png" width="120px"><br><br>
-  <img src="wallet.png" width="120px"><br><br>
-  <img src="smartphone.png" width="120px"><br></center>
+  <img src="passport.png" width="65%"><br><br>
+  <img src="wallet.png" width="65%"><br><br>
+  <img src="smartphone.png" width="65%"><br></center>
   </div>
   </div>
   </div>
-  <div class="footer"><center><a href="privacy.html"> Privacy Policy </a> --- <a href="terms.html"> Terms of use</a></center></div>
+  <div class="center"><br>
+   <a href="privacy.html" class="links"> Privacy Policy </a> --- <a href="terms.html" class="links"> Terms of use</a>
+  </div>
+  <!--<div class="footer"><center><a href="privacy.html"> Privacy Policy </a> --- <a href="terms.html"> Terms of use</a></center></div> -->
 </body>
 </html>

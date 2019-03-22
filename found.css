@@ -1,7 +1,8 @@
 body{
-	font-family: Helvetica, sans-serif;
-	background-color: #FFF8CC;
+	font-family: Helvetica;
+	background-color: #F8F4E6;
 	padding:10px;
+	height:100%;
 }
 * {
   box-sizing: border-box;
@@ -30,7 +31,7 @@ p{
   background-color: #edb100;
   padding: 5px;
   text-align: center;
-  font-size: 45px;
+  font-size: 55px;
 }
 
 
@@ -159,11 +160,24 @@ input[type=submit] {
   float: right
 }
 
-.footer{
-	background-color: #fff1ac;
+/*.footer{
 	color: #fff;
 	padding:5px;
 	font-size: 10px;
+   	position:relative;
+	bottom:0;
+	width:99%;
+	height:5%; 
+}*/
+
+.links {
+  color: #FFBB33;
+  text-decoration: underline;
+}
+
+.center
+{
+  text-align: center;
 }
 
 /* The Close Button */

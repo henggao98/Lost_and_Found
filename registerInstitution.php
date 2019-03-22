@@ -199,42 +199,26 @@ function test_input($data) {/*copied from www.w3school.com */
 </head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
 <body>
 
 <img src="homePageLogo.png" class="logo">
 
-<div class="navbar">
-  <ul>
-    <li>
-    <a href="index.php" class="navButton"><i class="fa fa-fw fa-home">
+<div class="topnav">
+    <a href="index.php" style="color:white"><i class="fa fa-fw fa-home">
     </i>Home</a>
-    </li>
-  
-    <li>
-    <a href="registration.php" class="navButton"><i class="fa fa-key"></i>Register</a>
-    </li>
 	
-    <li>
-	<a href="account.php" class="navButton"><i class="fa fa-fw fa-user"></i>Account</a>
-	</li>
+    <a href="registration.php" style="color:white"><i class="fa fa-key"></i>Registration</a>
+
+    <a href="registerInstitution.php" class="active" style="color:white"><i class="fa fa-key"></i>Register an institution</a>
 	
-	<li>
-    <a href="info.html" class="navButton"><i class="fa fa-fw fa-info-circle"></i>About</a>
-	</li>
+	<a href="account.php" style="color:white"><i class="fa fa-fw fa-user"></i>Account</a>
 	
-	<li>
-    <a href="institutions.php" class="navButton"><i class="fa fa-fw fa-globe"></i>Search Places</a>
-	</li>
+    <a href="institutions.php" style="color:white"><i class="fa fa-fw fa-globe"></i>Search Places</a>
 	
-	<li>
-    <a href="items.php" class="navButton"><i class="fa fa-fw fa-search"></i>Search Items</a>
-	</li>
+    <a href="items.php" style="color:white"><i class="fa fa-fw fa-search"></i>Search Items</a>
 	
-	<li>
-    <a href="found.php" class="navButton"><i class='fas fa-hand-holding-heart'></i>Found Something</a>
-	</li>
-	
-  </ul>
+    <a href="found.php" style="color:white"><i class="fas fa-hand-holding-heart"></i>Found Something</a>
 </div>
 
 <div class="gridContainer">
@@ -242,24 +226,77 @@ function test_input($data) {/*copied from www.w3school.com */
     <h1><legend align="center"><b>Register an institution</b></legend></h1>
   <br>
     <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" enctype="multipart/form-data">
-      <span class="error">* <?php echo $nameErr;?> </span>
-      <label for="name">Name of the institution</label>
+      
+      <?php
+      if(empty($nameErr)) 
+      { 
+        ?>
+        <span class="error">*</span>
+        <label>Name of the institution</label>
+        <?php 
+      }
+      else
+      {
+        ?>
+        <span class="error">* <?php echo $nameErr;?> </span>
+        <?php
+      } 
+      ?>
       <input type="text" name="name" placeholder="The name of the institution..">
 
-    <span class="error">* <?php echo $emailErr;?> </span>
-      <label for="email">Email</label>
+    <?php
+      if(empty($emailErr)) 
+      { 
+        ?>
+        <span class="error">*</span>
+        <label>Email</label>
+        <?php 
+      }
+      else
+      {
+        ?>
+        <span class="error">* <?php echo $emailErr;?> </span>
+        <?php
+      } 
+      ?>
       <input type="text" name="email" placeholder="Email..">
 
-    <span class="error">* <?php echo $nameErr;?> </span>
-      <label for="name">Password</label>
+    <?php
+      if(empty($passErr)) 
+      { 
+        ?>
+        <span class="error">*</span>
+        <label>Password</label>
+        <?php 
+      }
+      else
+      {
+        ?>
+        <span class="error">* <?php echo $passErr;?> </span>
+        <?php
+      } 
+      ?>
       <input type="password" name="pass" placeholder="Password..">
 
-    <span class="error">* <?php echo $nameErr;?> </span>
+    <span class="error">*</span>
       <label for="name">Confirm Password</label>
       <input type="password" name="pass2" placeholder="Confirm Password..">
 
-    <span class="error">* <?php echo $phoneErr;?> </span>
-      <label for="phone">Phone</label>
+    <?php
+      if(empty($phoneErr)) 
+      { 
+        ?>
+        <span class="error">*</span>
+        <label>Phone</label>
+        <?php 
+      }
+      else
+      {
+        ?>
+        <span class="error">* <?php echo $phoneErr;?> </span>
+        <?php
+      } 
+      ?>
       <input type="tel" name="phone" placeholder="Phone..">
 
     <label for="type">Type of institution<label>

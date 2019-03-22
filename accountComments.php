@@ -1,6 +1,6 @@
 
 <?php
-  $sql = "SELECT CommentedID, CommenterID, Comment FROM Ratings";
+  $sql = "SELECT CommentedID, CommenterID, Comment, Rating FROM Ratings";
   $commentResult = $conn->query($sql);
 
   while($commentRow = $commentResult->fetch_assoc())
@@ -8,7 +8,7 @@
     if($commentRow["CommentedID"] == $sessionId)
     {
 
-      $sql = "SELECT ID, Name FROM Users";
+      $sql = "SELECT ID, Name, Rating FROM Users";
       $commenterResult = $conn->query($sql);
 
       while($commenterRow = $commenterResult->fetch_assoc())
@@ -22,6 +22,23 @@
 ?>
 </a>
 </h4>
+<?php
+    $stars = round($commentRow["Rating"]);
+    for($index = 0; $index < $stars; $index++)
+    {
+    ?>
+      <span class = "fa fa-star checked"></span>
+    <?php } ?>
+    <?php
+    for($index = 0; $index < (5 - $stars); $index++)
+    { ?>
+      <span class = "fa fa-star"></span>
+    <?php
+    }
+    echo '(' . round($commenterRow["Rating"], 1) . ')';
+    ?>
+  </p>
+
 <p><?php
           echo $commentRow["Comment"];
 ?>

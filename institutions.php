@@ -106,7 +106,6 @@ function test_input($data) {
 <div class="topnav">
   <a href="index.php" style="float:right"><i class="fa fa-fw fa-home"></i>Home</a>
   <a href="account.php" style="float:right"><i class="fa fa-fw fa-user"></i>Account</a>
-  <a href="info.html" style="float:right"><i class="fa fa-fw fa-info-circle"></i>About</a>
   <a href="institutions.php" class="active" style="float:right"><i class="fa fa-fw fa-globe"></i>Search Places</a>
   <a href="items.php" style="float:right"><i class="fa fa-fw fa-search"></i>Search Items</a>
   <a href="found.php" style="float:right"><i class='fas fa-hand-holding-heart'></i>Found Something</a>
@@ -147,10 +146,6 @@ function test_input($data) {
           <input type="radio" name="location" <?php if ($location == "University") { ?>checked='checked' <?php } ?>value="University" onChange="autoSubmitLocation();">
           <span class="checkmark"></span>
         </label>
-        <label class="container">Stores
-          <input type="radio" name="location" <?php if ($location == "Store") { ?>checked='checked' <?php } ?>value="Store" onChange="autoSubmitLocation();">
-          <span class="checkmark"></span>
-        </label>
         <label class="container">Parks
           <input type="radio" name="location" <?php if ($location == "Park") { ?>checked='checked' <?php } ?>value="Park" onChange="autoSubmitLocation();">
           <span class="checkmark"></span>
@@ -179,6 +174,10 @@ function test_input($data) {
 
   </div>
 </div>
+</div>
+<br>
+<div class="center">
+  <a href="privacy.html" class="links"> Privacy Policy </a> --- <a href="terms.html" class="links"> Terms of use</a>
 </div>
 
 </body>

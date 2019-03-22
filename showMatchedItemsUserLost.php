@@ -37,6 +37,8 @@ if($matchedRow["Status"] == 1)
   <form action="leaveComment.php?CommenterID=<?php echo($USerID) ?>&CommentedID=<?php echo($itemUSerID) ?>&itemID=<?php echo($row['ID']) ?>" class="formContainer" method="POST">
 
     <div class="rate">
+      <b>Rate and Comment the Finder: </b>
+      <br>
     <input type="radio" id="<?php echo($itemUSerID . "star5") ?>" name="rate" value="5" />
     <label for="<?php echo($itemUSerID . "star5") ?>" title="text">5 stars</label>
     <input type="radio" id="<?php echo($itemUSerID . "star4") ?>" name="rate" value="4" />
@@ -47,7 +49,7 @@ if($matchedRow["Status"] == 1)
     <label for="<?php echo($itemUSerID . "star2") ?>" title="text">2 stars</label>
     <input type="radio" id="<?php echo($itemUSerID . "star1") ?>" name="rate" value="1" />
     <label for="<?php echo($itemUSerID . "star1") ?>" title="text">1 star</label>
-    </div>
+    </div><br>
 
     <textarea name="textArea" placeholder="Leave a comment..." required></textarea><br>
     
