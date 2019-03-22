@@ -164,10 +164,6 @@ function test_input($data) {
             <input type="radio" name="category" <?php if ($category == "Keys") { ?>checked='checked' <?php } ?>value="Keys" onChange="autoSubmitCategory();">
             <span class="checkmark"></span>
           </label>
-          <label class="container">Other
-            <input type="radio" name="category" <?php if ($category == "Other") { ?>checked='checked' <?php } ?>value="Other" onChange="autoSubmitCategory();">
-            <span class="checkmark"></span>
-          </label>
         </form>
       </div>
 
@@ -194,8 +190,20 @@ function test_input($data) {
             <input type="radio" name="location" <?php if ($location == "Restaurant") { ?>checked='checked' <?php } ?>value="Restaurant" onChange="autoSubmitLocation();">
             <span class="checkmark"></span>
           </label>
-          <label class="container">Other
-            <input type="radio" name="location" <?php if ($location == "Other") { ?>checked='checked' <?php } ?>value="Other" onChange="autoSubmitLocation();">
+          <label class="container">Cafes
+            <input type="radio" name="location" <?php if ($location == "Coffee") { ?>checked='checked' <?php } ?>value="Coffee" onChange="autoSubmitLocation();">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">Universities
+            <input type="radio" name="location" <?php if ($location == "University") { ?>checked='checked' <?php } ?>value="University" onChange="autoSubmitLocation();">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">Libraries
+            <input type="radio" name="location" <?php if ($location == "Library") { ?>checked='checked' <?php } ?>value="Library" onChange="autoSubmitLocation();">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container">Buildings
+            <input type="radio" name="location" <?php if ($location == "Building") { ?>checked='checked' <?php } ?>value="Building" onChange="autoSubmitLocation();">
             <span class="checkmark"></span>
           </label>
         </form>
