@@ -132,7 +132,7 @@ else
 					In order for the item to appear on our website you need to fill out our <b>found item form</b>.You will need to provide us with details about location, where the item was found, type of the object, as well as a short description of it. The <b>important note</b> about the description you provide is that it contains:
 					<ul>
                     <li>Date you found the item</li>
-                    <li>Description of the place you found it at (i.e. if chosen “public transport” add “found on bus 147”)</li>
+                    <li>Description of the place you found it at (i.e. if chosen "public transport" add "found on bus 147")</li>
                     <li>Vague description of it (i.e. if the item you found has a specific feature like a specific colour of the etui, or specific scratch or damage <b>DO NOT</b> contain that information in the description.)</li>
 					</ul>
                     We ask you to write a very vague description allowing you to ask the claimer a more detailed question. We do so in order to make sure the item is returned to its true owner, which can only be achieved if the owner knows the specifics of the item you found.
