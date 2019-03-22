@@ -2,6 +2,7 @@ body{
 	font-family: Helvetica, sans-serif;
 	background-color: #FFF8CC;
 	padding:10px;
+	height:100%;
 }
 * {
   box-sizing: border-box;
@@ -164,6 +165,10 @@ input[type=submit] {
 	color: #fff;
 	padding:5px;
 	font-size: 10px;
+   	position:relative;
+	bottom:0;
+	width:99%;
+	height:5%; 
 }
 
 /* The Close Button */

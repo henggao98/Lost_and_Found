@@ -29,9 +29,9 @@ include "found_functionality.php";
   <br>
 <div class="row">
   <div class="column side"><center><br><br>
-  <img src="train(1).png" width="120px"><br>
-  <img src="place.png" width="120px" alt="Flowers in Chania"><br><br><br>
-  <img src="museum.png" width="120px"><br></center><br>
+  <img src="train(1).png" width="65%"><br>
+  <img src="place.png" width="65%" alt="Flowers in Chania"><br><br><br>
+  <img src="museum.png" width="65%"><br></center><br>
   </div>
   <div class="column middle" >
   <div class="container">
@@ -102,7 +102,7 @@ include "found_functionality.php";
 
       </div>
       <div class="col-75">
-        <textarea id="item_description" name="description" placeholder="Provide description of the object as well as more exact location" style="height:190px" required></textarea>
+        <textarea id="item_description" name="description" placeholder="Please contain date of finding, location and vague description. For more info check exclamation marks!" style="height:190px" required></textarea>
       </div>
     </div>
 	<br>
@@ -115,9 +115,9 @@ include "found_functionality.php";
 </div>
 
   <div class="column side" ><center><br><br>
-  <img src="passport.png" width="120px"><br><br>
-  <img src="wallet.png" width="120px"><br><br>
-  <img src="smartphone.png" width="120px"><br></center>
+  <img src="passport.png" width="65%"><br><br>
+  <img src="wallet.png" width="65%"><br><br>
+  <img src="smartphone.png" width="65%"><br></center>
   </div>
   </div>
   </div>
