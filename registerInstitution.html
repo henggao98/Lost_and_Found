@@ -5,49 +5,53 @@
 </head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
 <body>
 
 <img src="homePageLogo.png" class="logo">
 
-<div class="topnav">
-    <a href="index.php" style="color:white"><i class="fa fa-fw fa-home">
+<div class="navbar">
+  <ul>
+    <li>
+    <a class="navButton" href="index.html"><i class="fa fa-fw fa-home">
     </i>Home</a>
-	
-    <a href="registration.php" style="color:white"><i class="fa fa-key"></i>Registration</a>
+    </li>
 
-    <a href="registerInstitution.php" class="active" style="color:white"><i class="fa fa-key"></i>Register an institution</a>
-	
-	<a href="account.php" style="color:white"><i class="fa fa-fw fa-user"></i>Account</a>
-	
-    <a href="institutions.php" style="color:white"><i class="fa fa-fw fa-globe"></i>Search Places</a>
-	
-    <a href="items.php" style="color:white"><i class="fa fa-fw fa-search"></i>Search Items</a>
-	
-    <a href="found.php" style="color:white"><i class="fas fa-hand-holding-heart"></i>Found Something</a>
+    <li>
+    <a class="navButton" href="registration.html"><i class="fa fa-key"></i>Register</a>
+    </li>
+
+	<li>
+    <a class="navButton" href="info.html"><i class="fa fa-info-circle"></i>About</a>
+    </li>
+
+  </ul>
 </div>
 
 <div class="gridContainer">
   <div class="gridItem">
     <h1><legend align="center"><b>Register an institution</b></legend></h1>
 	<br>
-    <form method="post" action="">
+    <form method="post" action="images.php">
       <span class="error">* <?php echo $nameErr;?> </span>
       <label for="name">Name of the institution</label>
       <input type="text" name="name" placeholder="The name of the institution..">
-	  
-	  <span class="error">* <?php echo $nameErr;?> </span>
-      <label for="name">Address of the institution</label>
-      <input type="text" name="name" placeholder="The address of the institution..">
-	  
+
 	  <span class="error">* <?php echo $_SESSION["emailErr"];?> </span>
       <label for="email">Email</label>
       <input type="text" name="email" placeholder="Email..">
-	  
+
+    <span class="error">* <?php echo $nameErr;?> </span>
+      <label for="name">Password</label>
+      <input type="password" name="pass" placeholder="Password..">
+
+    <span class="error">* <?php echo $nameErr;?> </span>
+      <label for="name">Confirm Password</label>
+      <input type="password" name="pass2" placeholder="Confirm Password..">
+
 	  <span class="error">* <?php echo $phoneErr;?> </span>
       <label for="phone">Phone</label>
       <input type="tel" name="phone" placeholder="Phone..">
-	  
+
 	  <label for="type">Type of institution<label>
 	  <select class="select" name="option">
 	    <option value="type" selected>
@@ -63,21 +67,21 @@
 		<option value="publicPlace">Public places</option>
 		<option value="other">Other</option>
 	  </select>
-	  
+
 	  <p>
 	  <label for="institutionImage">Upload a photo for your institution</label>
 	  <br>
-	  <input type="file" id="photo" name="photo" accept="image/*">
+	  <input type="file" id="uploaded_file" name='uploaded_file' accept="image/*">
 	  </p>
-	  
+
 	  <label class="termsAndCond">I have read and agree to the
 	    <a href="terms.html"> Terms and conditions</a> and the
 		<a href="privacy.html"> Privacy Policy.</a>
       <input type="checkbox">
       <span class="checkmark"></span>
       </label>
-  
-      <input class="buttons" type="submit" value="Register">
+
+      <input class="buttons" type="submit" value="Register" name="Register">
     </form>
   </div>
 </div>
