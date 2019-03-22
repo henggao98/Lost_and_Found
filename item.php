@@ -42,9 +42,10 @@ if($loggedIn)
   <?php echo $row["Location"] . ', ' . $row["Date"]; ?>
 </h4></p>
 
-<p>
-<?php echo $row["Descript"]; ?>  
-</p>
+<?php
+if($loggedIn)
+  echo "<p>" . $row["Descript"] . "</p>";  
+?>
 
 <?php
 
