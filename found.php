@@ -38,7 +38,7 @@ include "found_functionality.php";
   <h2><b>What have you found?   </b></h2><div class="dropdown">
           <i class='fas fa-exclamation-circle' style='font-size:25px; color: #FF7F00'></i>
           <div class="dropdown-content">
-		  In order to obtain more detailed information about how to properly fill out this form please visit our <a href = "info.html">info page </a>.
+		  In order to obtain more detailed information about how to properly fill out this form please visit our <a href = "index.php#info">info page </a>.
   </div></div>
   </div>
   <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
@@ -55,10 +55,14 @@ include "found_functionality.php";
 		</script>
     		<select id="country" name="location" onchange="showfield(this.options[this.selectedIndex].value)" required>
 		<option selected disabled>Choose type of location...</option>
-        <option value="transport">Public Transport</option>
-        <option value="university">University</option>
-        <option value="museum">Museum</option>
-		<option value="library">Libary</option>
+        <option value="Bus">Bus</option>
+        <option value="University">University</option>
+        <option value="Museum">Museum</option>
+        <option value="Street">Street</option>
+        <option value="Restaurant">Restaurant</option>
+        <option value="Cafe">Cafe</option>
+        <option value="Building">Building</option>
+		<option value="Library">Library</option>
         <option value="other">Other</option>
       </select>
 	  <div id="div1"></div>
@@ -78,10 +82,10 @@ include "found_functionality.php";
        <select id="type" name="itemName" onchange="showfield0(this.options[this.selectedIndex].value)" required>
 	   <option selected disabled>Choose type of object...</option>
 
-         	<option value="wallet">Wallet</option>
-         	<option value="keys">Keys</option>
-         	<option value="laptop">Laptop</option>
-		 	<option value="phone">Phone</option>
+         	<option value="Wallet">Wallet</option>
+         	<option value="Keys">Keys</option>
+         	<option value="Laptop">Laptop</option>
+		 	<option value="Phone">Phone</option>
          	<option value="other">Other</option>
 
        </select>
