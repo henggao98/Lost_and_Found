@@ -214,6 +214,7 @@ function test_input($data) {
   <?php include 'pagination.php'; ?>
 
   </div>
+  <a href="privacy.html" class="links"> Privacy Policy </a> --- <a href="terms.html" class="links"> Terms of use</a>
 </div>
 </div>
 
