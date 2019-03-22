@@ -226,24 +226,77 @@ function test_input($data) {/*copied from www.w3school.com */
     <h1><legend align="center"><b>Register an institution</b></legend></h1>
   <br>
     <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" enctype="multipart/form-data">
-      <span class="error">* <?php echo $nameErr;?> </span>
-      <label for="name">Name of the institution</label>
+      
+      <?php
+      if(empty($nameErr)) 
+      { 
+        ?>
+        <span class="error">*</span>
+        <label>Name of the institution</label>
+        <?php 
+      }
+      else
+      {
+        ?>
+        <span class="error">* <?php echo $nameErr;?> </span>
+        <?php
+      } 
+      ?>
       <input type="text" name="name" placeholder="The name of the institution..">
 
-    <span class="error">* <?php echo $emailErr;?> </span>
-      <label for="email">Email</label>
+    <?php
+      if(empty($emailErr)) 
+      { 
+        ?>
+        <span class="error">*</span>
+        <label>Email</label>
+        <?php 
+      }
+      else
+      {
+        ?>
+        <span class="error">* <?php echo $emailErr;?> </span>
+        <?php
+      } 
+      ?>
       <input type="text" name="email" placeholder="Email..">
 
-    <span class="error">* <?php echo $nameErr;?> </span>
-      <label for="name">Password</label>
+    <?php
+      if(empty($passErr)) 
+      { 
+        ?>
+        <span class="error">*</span>
+        <label>Password</label>
+        <?php 
+      }
+      else
+      {
+        ?>
+        <span class="error">* <?php echo $passErr;?> </span>
+        <?php
+      } 
+      ?>
       <input type="password" name="pass" placeholder="Password..">
 
-    <span class="error">* <?php echo $nameErr;?> </span>
+    <span class="error">*</span>
       <label for="name">Confirm Password</label>
       <input type="password" name="pass2" placeholder="Confirm Password..">
 
-    <span class="error">* <?php echo $phoneErr;?> </span>
-      <label for="phone">Phone</label>
+    <?php
+      if(empty($phoneErr)) 
+      { 
+        ?>
+        <span class="error">*</span>
+        <label>Phone</label>
+        <?php 
+      }
+      else
+      {
+        ?>
+        <span class="error">* <?php echo $phoneErr;?> </span>
+        <?php
+      } 
+      ?>
       <input type="tel" name="phone" placeholder="Phone..">
 
     <label for="type">Type of institution<label>

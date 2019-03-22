@@ -75,10 +75,38 @@ function test_input($data) {
     <h1><legend align="center"><b>Register as a guest</b></legend></h1>
   <br>
     <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-      <span class="error">* <?php echo $nameErrG;?> </span>
+      <?php
+      if(empty($nameErrG)) 
+      { 
+        ?>
+        <span class="error">*</span>
+        <label>Name</label>
+        <?php 
+      }
+      else
+      {
+        ?>
+        <span class="error">* <?php echo $nameErrG;?> </span>
+        <?php
+      } 
+      ?>
       <input type="text" name="name" placeholder="Your name.." required>
 
-      <span class="error">* <?php echo $emailErrG;?> </span>
+      <?php
+      if(empty($emailErrG)) 
+      { 
+        ?>
+        <span class="error">*</span>
+        <label>Email</label>
+        <?php 
+      }
+      else
+      {
+        ?>
+        <span class="error">* <?php echo $emailErrG;?> </span>
+        <?php
+      } 
+      ?>
       <input type="text" name="email" placeholder="Your email.." required>
     
     <label class="termsAndCond">I have read and agree to the
@@ -96,16 +124,60 @@ function test_input($data) {
     <h1><legend align="center"><b>Register</b></legend></h1>
   <br>
     <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-      <span class="error">* <?php echo $nameErrF;?> </span>
+
+      <?php
+      if(empty($nameErrF)) 
+      { 
+        ?>
+        <span class="error">*</span>
+        <label>Name</label>
+        <?php 
+      }
+      else
+      {
+        ?>
+        <span class="error">* <?php echo $nameErrF;?> </span>
+        <?php
+      } 
+      ?>
       <input type="text" name="name" placeholder="Your name.." required>
 
-      <span class="error">* <?php echo $emailErrF;?> </span>
+      <?php
+      if(empty($emailErrF)) 
+      { 
+        ?>
+        <span class="error">*</span>
+        <label>Email</label>
+        <?php 
+      }
+      else
+      {
+        ?>
+        <span class="error">* <?php echo $emailErrF;?> </span>
+        <?php
+      } 
+      ?>
       <input type="text" name="email" placeholder="Your email.." required>
 
-      <span class="error">* <?php echo $passErrF;?> </span>
+      <?php
+      if(empty($passErrF)) 
+      { 
+        ?>
+        <span class="error">*</span>
+        <label>Password</label>
+        <?php 
+      }
+      else
+      {
+        ?>
+        <span class="error">* <?php echo $passErrF;?> </span>
+        <?php
+      } 
+      ?>
       <input type="password" name="pass" placeholder="Your password.." required>
 
       <span class="error">*</span>
+      <label>Repeat Password</label>
       <input type="password" name="pass2" placeholder="Confirm password.." required>
     
     <label class="termsAndCond">I have read and agree to the
