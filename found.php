@@ -21,7 +21,6 @@ include "found_functionality.php";
    <ul class="a">
     <li><a href="index.php"><i class="fa fa-fw fa-home"></i>Home</a></li>
     <li><a href="account.php"><i class="fa fa-fw fa-user"></i>Account</a></li>
-    <li><a href="info.html"><i class="fa fa-fw fa-info-circle"></i>About</a></li>
     <li><a href="institutions.php"><i class="fa fa-fw fa-globe"></i>Search Places</a></li>
     <li><a href="items.php"><i class="fa fa-fw fa-search"></i>Search Items</a></li>
     <li><a href="found.php" class="active"><i class='fas fa-hand-holding-heart'></i>Found Something</a></li>
@@ -121,6 +120,9 @@ include "found_functionality.php";
   </div>
   </div>
   </div>
-  <div class="footer"><center><a href="privacy.html"> Privacy Policy </a> --- <a href="terms.html"> Terms of use</a></center></div>
+  <div class="center"><br>
+   <a href="privacy.html" class="links"> Privacy Policy </a> --- <a href="terms.html" class="links"> Terms of use</a>
+  </div>
+  <!--<div class="footer"><center><a href="privacy.html"> Privacy Policy </a> --- <a href="terms.html"> Terms of use</a></center></div> -->
 </body>
 </html>
