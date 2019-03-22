@@ -52,7 +52,17 @@ function test_input($data) {
 <img src="homePageLogo.png" class="logo">
 
 <div class="navbar">
-  <a class="homeButton" href="index.php"><i class="fa fa-fw fa-home"></i>Home</a>
+  <ul>
+    <li>
+    <a class="navButton" href="index.html"><i class="fa fa-fw fa-home">
+    </i>Home</a>
+    </li>
+  
+    <li>
+    <a class="navButton" href="registerInstitution.html"><i class="fa fa-key"></i>Register an institution</a>
+    </li>
+	
+  </ul>
 </div>
 
 
